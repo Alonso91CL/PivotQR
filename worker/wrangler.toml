@@ -5,10 +5,10 @@ compatibility_date = "2026-01-01"
 # La clave service_role NO va acá: se configura como secreto con:
 #   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
 [vars]
-SUPABASE_URL = "https://TU-PROYECTO.supabase.co"
+SUPABASE_URL = "https://mnjaelkdejlpjwtjzgpt.supabase.co"
 
 # Cuando tengas el dominio libre en Cloudflare, descomenta para atar el
 # Worker al enlace corto:
-# [[routes]]
-# pattern = "qr.pivotit.cl/*"
-# zone_name = "pivotit.cl"
+[[routes]]
+pattern = "qr.pivotit.cl/*"
+zone_name = "pivotit.cl"
