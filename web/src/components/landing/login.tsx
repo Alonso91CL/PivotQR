@@ -68,11 +68,9 @@ export function LoginModal() {
         <div className="mb-4 flex items-start justify-between text-white">
           <div>
             <Image
-              src="/brand/mark.svg"
+              src="/brand/logo.svg"
               alt="PivotQR"
-              width={500}
-              height={500}
-              className="mb-3 h-11 w-auto dark:invert"
+              className="mb-3 h-auto w-24"
             />
             <p className="text-sm text-gray-400">
               Enlaces cortos y QR dinámicos con métricas.
