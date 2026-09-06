@@ -13,10 +13,10 @@ Pasos en orden para poner en línea el "momento ajá". Verificar siempre los lí
 - ✖ Lo que sigue NO tiene vía por MCP → requiere acción manual (ver "Pasos manuales").
 
 ## Tutorial: pasos manuales (bloqueantes)
-Quedan solo 3 áreas manuales; las demás ya están hechas. Necessitas hacer tú (una vez):
+Dominios definidos: **`qr.pivotit.cl`** = enlaces cortos (worker, ya en vivo) y **`qrapp.pivotit.cl`** = panel (Vercel, DNS CNAME ya creado). Quedan solo 3 áreas manuales; necesitas hacer tú (una vez):
 1. Supabase dashboard → Authentication → Providers: activar **Email** y **Google**. Para Google: crear OAuth Client ID en Google Cloud y copiar la URI de redirect que muestra Supabase.
-2. Supabase dashboard → Authentication → URL Configuration: pegar la URL del sitio y el redirect `/auth/confirmado`.
-3. Cloudflare dashboard → Turnstile → crear sitio `PivotQR` y pasar Site Key + Secret Key (la API no expone ese endpoint). Luego yo las pongo en `web/.env.local` y en Vercel.
+2. Supabase dashboard → Authentication → URL Configuration: sitio `https://qrapp.pivotit.cl`, redirect `/auth/confirmado`.
+3. Cloudflare dashboard → Turnstile → crear sitio `PivotQR` con hostname `qrapp.pivotit.cl` y pasar Site Key + Secret Key (la API no expone ese endpoint). Luego yo las pongo en `web/.env.local` y en Vercel.
 4. Vercel dashboard → importar el repo `Alonso91CL/PivotQR` (o darme tu team slug/ID) y crear las 6 variables de entorno (o pasarme un token API para hacerlo yo).
 
 ## 1. Supabase (base + login + almacenamiento)
@@ -43,7 +43,7 @@ Quedan solo 3 áreas manuales; las demás ya están hechas. Necessitas hacer tú
   - `NEXT_PUBLIC_SHORT_URL` = `https://qr.pivotit.cl` (el enlace corto que verán los QR)
   - `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
   - `TURNSTILE_SECRET_KEY`
-- [ ] Asignar el dominio de la app (ej. `pivotqr.cl`) si aplica.
+- [ ] Asignar el dominio de la app: `qrapp.pivotit.cl` (CNAME a `cname.vercel-dns.com` ya creado en la zona).
 
 ## 4. Prueba del "momento ajá"
 - [ ] Crear cuenta, crear proyecto, pegar URL, generar.
