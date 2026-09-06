@@ -78,11 +78,11 @@ export function AppShell({
         <div className="flex h-16 items-center border-b border-gray-200 px-5 dark:border-gray-800">
           <Link href="/proyectos" className="inline-flex items-center">
             <Image
-              src="/brand/logo.svg"
+              src="/brand/logo-bk.svg"
               alt="PivotQR"
               width={150}
               height={55}
-              className="h-9 w-auto dark:invert"
+              className="h-9 w-auto"
               priority
             />
           </Link>
@@ -176,7 +176,7 @@ export function AppShell({
               alt="PivotQR"
               width={150}
               height={55}
-              className="h-8 w-auto dark:invert"
+              className="h-8 w-auto"
             />
           </Link>
           <div className="ml-auto">

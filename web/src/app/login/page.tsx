@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Image from "next/image";
 import { LoginForm } from "./login-form";
 
 export default function LoginPage() {
@@ -13,6 +14,17 @@ export default function LoginPage() {
         className="absolute -bottom-40 right-0 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl"
       />
       <div className="relative w-full max-w-sm">
+        <Image
+          src="/brand/logo-bk.svg"
+          alt="PivotQR"
+          width={500}
+          height={500}
+          className="mx-auto mb-1 h-16 w-auto"
+          priority
+        />
+        <p className="mb-8 text-center text-sm text-gray-400">
+          Enlaces cortos y QR dinámicos con métricas.
+        </p>
         <Suspense>
           <LoginForm />
         </Suspense>
