@@ -1,0 +1,539 @@
+{
+  "communities": {
+    "0": [
+      "ref_react",
+      "web_src_app_app_proyectos_create_proyecto_form",
+      "web_src_app_app_proyectos_create_proyecto_form_createproyectoform",
+      "web_src_app_app_proyectos_create_proyecto_form_createproyectoform_crear",
+      "web_src_app_login_login_form",
+      "web_src_app_login_login_form_loginform",
+      "web_src_app_login_login_form_loginform_entrarcongoogle",
+      "web_src_app_login_login_form_loginform_enviar",
+      "web_src_app_login_login_form_loginform_verificarturnstile",
+      "web_src_app_login_page",
+      "web_src_app_login_page_loginpage",
+      "web_src_components_app_shell",
+      "web_src_components_app_shell_userdropdown",
+      "web_src_components_app_shell_userdropdown_cerrarsesion",
+      "web_src_components_app_shell_userdropdown_fuera",
+      "web_src_components_landing_login",
+      "web_src_components_landing_login_loginbutton",
+      "web_src_components_landing_login_loginbutton_onclick",
+      "web_src_components_turnstile",
+      "web_src_components_turnstile_getturnstiletoken",
+      "web_src_components_turnstile_isturnstileactive",
+      "web_src_components_turnstile_turnstile",
+      "web_src_lib_supabase_client",
+      "web_src_lib_supabase_client_createclient"
+    ],
+    "1": [
+      "ref_eslint",
+      "ref_eslint_config_next",
+      "ref_react_dom",
+      "ref_supabase_ssr",
+      "ref_tailwindcss",
+      "ref_tailwindcss_postcss",
+      "ref_types_node",
+      "ref_types_qrcode",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_typescript",
+      "web_package",
+      "web_package_dependencies",
+      "web_package_dependencies_next",
+      "web_package_dependencies_qrcode",
+      "web_package_dependencies_react",
+      "web_package_dependencies_react_dom",
+      "web_package_dependencies_supabase_ssr",
+      "web_package_dependencies_supabase_supabase_js",
+      "web_package_name",
+      "web_package_packagemanager",
+      "web_package_private",
+      "web_package_scripts",
+      "web_package_scripts_build",
+      "web_package_scripts_dev",
+      "web_package_scripts_lint",
+      "web_package_scripts_start",
+      "web_package_version",
+      "web_src_lib_supabase_middleware",
+      "web_src_lib_supabase_middleware_updatesession",
+      "web_src_proxy",
+      "web_src_proxy_config",
+      "web_src_proxy_proxy"
+    ],
+    "2": [
+      "web_tsconfig",
+      "web_tsconfig_compileroptions",
+      "web_tsconfig_compileroptions_allowjs",
+      "web_tsconfig_compileroptions_esmoduleinterop",
+      "web_tsconfig_compileroptions_incremental",
+      "web_tsconfig_compileroptions_isolatedmodules",
+      "web_tsconfig_compileroptions_jsx",
+      "web_tsconfig_compileroptions_lib",
+      "web_tsconfig_compileroptions_module",
+      "web_tsconfig_compileroptions_moduleresolution",
+      "web_tsconfig_compileroptions_noemit",
+      "web_tsconfig_compileroptions_paths",
+      "web_tsconfig_compileroptions_plugins",
+      "web_tsconfig_compileroptions_resolvejsonmodule",
+      "web_tsconfig_compileroptions_skiplibcheck",
+      "web_tsconfig_compileroptions_strict",
+      "web_tsconfig_compileroptions_target",
+      "web_tsconfig_exclude",
+      "web_tsconfig_include"
+    ],
+    "3": [
+      "web_src_app_api_proyectos_id_enlaces_route",
+      "web_src_app_api_proyectos_id_enlaces_route_dynamic",
+      "web_src_app_api_proyectos_id_enlaces_route_post",
+      "web_src_app_api_proyectos_id_enlaces_route_routeparams",
+      "web_src_app_app_layout",
+      "web_src_app_app_layout_applayout",
+      "web_src_app_app_proyectos_id_page_proyectopage",
+      "web_src_app_app_proyectos_page",
+      "web_src_app_app_proyectos_page_dynamic",
+      "web_src_app_app_proyectos_page_proyectospage",
+      "web_src_app_auth_confirmado_route",
+      "web_src_app_auth_confirmado_route_get",
+      "web_src_components_app_shell_appshell",
+      "web_src_lib_slug",
+      "web_src_lib_slug_randomslug",
+      "web_src_lib_supabase_server",
+      "web_src_lib_supabase_server_createclient"
+    ],
+    "4": [
+      "ref_qrcode",
+      "web_src_app_app_proyectos_id_crear_enlace_form",
+      "web_src_app_app_proyectos_id_crear_enlace_form_crearenlaceform",
+      "web_src_app_app_proyectos_id_crear_enlace_form_crearenlaceform_crear",
+      "web_src_app_app_proyectos_id_page",
+      "web_src_app_app_proyectos_id_page_dynamic",
+      "web_src_app_page",
+      "web_src_app_page_barras",
+      "web_src_app_page_chats",
+      "web_src_app_page_features",
+      "web_src_app_page_landingpage",
+      "web_src_app_page_pasos",
+      "web_src_components_landing_login_loginmodal",
+      "web_src_components_landing_login_loginmodal_abrir",
+      "web_src_components_landing_login_loginmodal_cerrarconescape",
+      "web_src_components_qr_panel",
+      "web_src_components_qr_panel_qrpanel",
+      "web_src_components_qr_panel_qrpanel_contar",
+      "web_src_components_qr_panel_qrpanel_descargarsvg",
+      "web_src_lib_qr",
+      "web_src_lib_qr_buildqrdataurl",
+      "web_src_lib_qr_buildqrsvg",
+      "web_src_lib_qr_qrconfig",
+      "web_src_lib_types",
+      "web_src_lib_types_enlace",
+      "web_src_lib_types_proyecto"
+    ],
+    "5": [
+      "docs_prd",
+      "docs_prd_10_roadmap",
+      "docs_prd_11_riesgos_y_supuestos",
+      "docs_prd_12_cómo_sabremos_que_funcionó",
+      "docs_prd_1_resumen_ejecutivo",
+      "docs_prd_2_problema_y_oportunidad",
+      "docs_prd_3_usuarios_y_roles",
+      "docs_prd_4_alcance_del_v1_y_qué_queda_fuera",
+      "docs_prd_5_funcionalidades_detalladas",
+      "docs_prd_6_stack_y_costos",
+      "docs_prd_7_arquitectura",
+      "docs_prd_8_modelo_de_datos_y_reglas_de_acceso",
+      "docs_prd_9_seguridad",
+      "docs_prd_prd_pivotqr"
+    ],
+    "6": [
+      "ref_wrangler",
+      "worker_package",
+      "worker_package_devdependencies",
+      "worker_package_devdependencies_wrangler",
+      "worker_package_name",
+      "worker_package_pnpm",
+      "worker_package_pnpm_onlybuiltdependencies",
+      "worker_package_private",
+      "worker_package_scripts",
+      "worker_package_scripts_deploy",
+      "worker_package_scripts_dev"
+    ],
+    "7": [
+      "web_package_devdependencies",
+      "web_package_devdependencies_eslint",
+      "web_package_devdependencies_eslint_config_next",
+      "web_package_devdependencies_tailwindcss",
+      "web_package_devdependencies_tailwindcss_postcss",
+      "web_package_devdependencies_types_node",
+      "web_package_devdependencies_types_qrcode",
+      "web_package_devdependencies_types_react",
+      "web_package_devdependencies_types_react_dom",
+      "web_package_devdependencies_typescript"
+    ],
+    "8": [
+      "ref_supabase_supabase_js",
+      "web_src_app_s_slug_route",
+      "web_src_app_s_slug_route_dynamic",
+      "web_src_app_s_slug_route_get",
+      "web_src_app_s_slug_route_routeparams",
+      "web_src_lib_supabase_service",
+      "web_src_lib_supabase_service_createserviceclient",
+      "web_src_lib_ua",
+      "web_src_lib_ua_detectdevice"
+    ],
+    "9": [
+      "ref_next",
+      "web_next_config",
+      "web_next_config_nextconfig",
+      "web_src_app_layout",
+      "web_src_app_layout_metadata",
+      "web_src_app_layout_outfit",
+      "web_src_app_layout_roboto",
+      "web_src_app_layout_rootlayout"
+    ],
+    "10": [
+      "docs_04_funcionalidades",
+      "docs_04_funcionalidades_activar_pausar_campaña_p0",
+      "docs_04_funcionalidades_compartir_el_reporte_p0",
+      "docs_04_funcionalidades_cuentas_registro_y_login_p0",
+      "docs_04_funcionalidades_descarga_del_qr_p0",
+      "docs_04_funcionalidades_edición_dinámica_de_la_url_destino_p0",
+      "docs_04_funcionalidades_generador_url_enlace_corto_qr_dinámico_p0",
+      "docs_04_funcionalidades_personalización_del_qr_p1",
+      "docs_04_funcionalidades_pivotqr_funcionalidades_del_v1",
+      "docs_04_funcionalidades_proyectos_p0",
+      "docs_04_funcionalidades_reporte_en_vivo_dashboard_del_cliente_p0"
+    ],
+    "11": [
+      "worker_src_index",
+      "worker_src_index_detectdevice",
+      "worker_src_index_env",
+      "worker_src_index_fetch",
+      "worker_src_index_getlink",
+      "worker_src_index_linkrow",
+      "worker_src_index_recordscan"
+    ],
+    "12": [
+      "docs_05_stack",
+      "docs_05_stack_cloudflare_turnstile_anti_bots",
+      "docs_05_stack_cloudflare_workers",
+      "docs_05_stack_dominio_qr_pivotit_cl",
+      "docs_05_stack_librería_de_qr_qrcode",
+      "docs_05_stack_lo_que_no_usamos_y_por_qué",
+      "docs_05_stack_next_js_tailwind_en_vercel",
+      "docs_05_stack_pivotqr_stack",
+      "docs_05_stack_resumen",
+      "docs_05_stack_supabase"
+    ],
+    "13": [
+      "auth_users",
+      "supabase_migrations_0001_init",
+      "supabase_migrations_0001_init_public_links",
+      "supabase_migrations_0001_init_public_projects",
+      "supabase_migrations_0001_init_public_scans"
+    ],
+    "14": [
+      "web_eslint_config",
+      "web_eslint_config_eslintconfig"
+    ],
+    "15": [
+      "web_postcss_config",
+      "web_postcss_config_config"
+    ],
+    "16": [
+      "web_src_app_api_turnstile_route",
+      "web_src_app_api_turnstile_route_post"
+    ],
+    "17": [
+      "web_src_types_global_d",
+      "web_src_types_global_d_window"
+    ],
+    "18": [
+      "docs_07_base_de_datos",
+      "docs_07_base_de_datos_datos_sensibles",
+      "docs_07_base_de_datos_enlaces_cada_qr_un_enlace",
+      "docs_07_base_de_datos_entidades",
+      "docs_07_base_de_datos_escaneos",
+      "docs_07_base_de_datos_pivotqr_base_de_datos",
+      "docs_07_base_de_datos_proyectos",
+      "docs_07_base_de_datos_reglas_de_acceso",
+      "docs_07_base_de_datos_relaciones",
+      "docs_07_base_de_datos_usuarios"
+    ],
+    "19": [
+      "docs_checklist_fase1",
+      "docs_checklist_fase1_1_supabase_base_login_almacenamiento",
+      "docs_checklist_fase1_2_cloudflare_puente_anti_bots",
+      "docs_checklist_fase1_3_vercel_panel_y_reporte",
+      "docs_checklist_fase1_4_prueba_del_momento_ajá",
+      "docs_checklist_fase1_estado_actual_2026_09_05",
+      "docs_checklist_fase1_pivotqr_checklist_de_despliegue_para_la_fase_1",
+      "docs_checklist_fase1_tutorial_pasos_manuales_bloqueantes",
+      "docs_checklist_fase1_verificar_en_los_sitios_oficiales"
+    ],
+    "20": [
+      "docs_01_resumen",
+      "docs_01_resumen_cómo_lo_resuelve",
+      "docs_01_resumen_el_problema",
+      "docs_01_resumen_en_qué_se_diferencia",
+      "docs_01_resumen_estado",
+      "docs_01_resumen_para_quién",
+      "docs_01_resumen_pivotqr_resumen",
+      "docs_01_resumen_qué_es"
+    ],
+    "21": [
+      "docs_08_roadmap",
+      "docs_08_roadmap_fase_1_el_puente_y_el_momento_ajá",
+      "docs_08_roadmap_fase_2_control_de_campaña",
+      "docs_08_roadmap_fase_3_reporte_ejecutivo",
+      "docs_08_roadmap_fase_4_marca_y_lanzamiento",
+      "docs_08_roadmap_pivotqr_roadmap",
+      "docs_08_roadmap_primeros_pasos_concretos",
+      "docs_08_roadmap_próxima_fase"
+    ],
+    "22": [
+      "docs_02_usuarios",
+      "docs_02_usuarios_pivotqr_usuarios_y_roles",
+      "docs_02_usuarios_quién_paga",
+      "docs_02_usuarios_recorrido_principal",
+      "docs_02_usuarios_roles_del_sistema",
+      "docs_02_usuarios_usuario_principal",
+      "docs_02_usuarios_usuarios_secundarios"
+    ],
+    "23": [
+      "docs_03_mvp",
+      "docs_03_mvp_criterio_de_corte",
+      "docs_03_mvp_después_de_validar",
+      "docs_03_mvp_futuro",
+      "docs_03_mvp_pivotqr_alcance_del_mvp",
+      "docs_03_mvp_qué_no_hace_este_mvp",
+      "docs_03_mvp_v1_imprescindible"
+    ],
+    "24": [
+      "docs_06_arquitectura",
+      "docs_06_arquitectura_decisiones",
+      "docs_06_arquitectura_diagrama",
+      "docs_06_arquitectura_las_piezas",
+      "docs_06_arquitectura_pivotqr_arquitectura",
+      "docs_06_arquitectura_recorrido_de_una_acción_real_el_escaneo"
+    ],
+    "25": [
+      "docs_iniciar_desarrollo",
+      "docs_iniciar_desarrollo_antes_de_empezar",
+      "docs_iniciar_desarrollo_cómo_usar_este_archivo",
+      "docs_iniciar_desarrollo_pivotqr_iniciar_desarrollo",
+      "docs_iniciar_desarrollo_prompt"
+    ],
+    "26": [
+      "readme",
+      "readme_documentación",
+      "readme_estado",
+      "readme_pivotqr",
+      "readme_qué_hace"
+    ],
+    "27": [
+      "agents",
+      "agents_graphify",
+      "agents_pivotqr",
+      "agents_reglas_para_agentes"
+    ],
+    "28": [
+      "web_readme",
+      "web_readme_deploy_on_vercel",
+      "web_readme_getting_started",
+      "web_readme_learn_more"
+    ],
+    "29": [
+      "docs_readme",
+      "docs_readme_documentación",
+      "docs_readme_pivotqr"
+    ],
+    "30": [
+      "web_agents",
+      "web_agents_this_is_not_the_next_js_you_know"
+    ],
+    "31": [
+      "web_claude"
+    ]
+  },
+  "cohesion": {
+    "0": 0.17028985507246377,
+    "1": 0.06439393939393939,
+    "2": 0.10526315789473684,
+    "3": 0.19117647058823528,
+    "4": 0.12,
+    "5": 0.14285714285714285,
+    "6": 0.18181818181818182,
+    "7": 0.2,
+    "8": 0.3333333333333333,
+    "9": 0.25,
+    "10": 0.18181818181818182,
+    "11": 0.42857142857142855,
+    "12": 0.2,
+    "13": 0.6,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 0.2,
+    "19": 0.2222222222222222,
+    "20": 0.25,
+    "21": 0.25,
+    "22": 0.2857142857142857,
+    "23": 0.2857142857142857,
+    "24": 0.3333333333333333,
+    "25": 0.4,
+    "26": 0.4,
+    "27": 0.5,
+    "28": 0.5,
+    "29": 0.6666666666666666,
+    "30": 1.0,
+    "31": 1.0
+  },
+  "gods": [
+    {
+      "id": "web_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "web_src_lib_supabase_client_createclient",
+      "label": "createClient()",
+      "degree": 13
+    },
+    {
+      "id": "docs_prd_prd_pivotqr",
+      "label": "PRD — PivotQR",
+      "degree": 13
+    },
+    {
+      "id": "web_src_lib_supabase_server_createclient",
+      "label": "createClient()",
+      "degree": 11
+    },
+    {
+      "id": "docs_04_funcionalidades_pivotqr_funcionalidades_del_v1",
+      "label": "PivotQR — Funcionalidades del V1",
+      "degree": 10
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 9
+    },
+    {
+      "id": "docs_05_stack_pivotqr_stack",
+      "label": "PivotQR — Stack",
+      "degree": 9
+    },
+    {
+      "id": "docs_checklist_fase1_pivotqr_checklist_de_despliegue_para_la_fase_1",
+      "label": "PivotQR — Checklist de despliegue para la Fase 1",
+      "degree": 8
+    },
+    {
+      "id": "docs_01_resumen_pivotqr_resumen",
+      "label": "PivotQR — Resumen",
+      "degree": 7
+    },
+    {
+      "id": "docs_08_roadmap_pivotqr_roadmap",
+      "label": "PivotQR — Roadmap",
+      "degree": 7
+    }
+  ],
+  "surprises": [
+    {
+      "source": "entrarConGoogle()",
+      "target": "createClient()",
+      "source_files": [
+        "web/src/app/login/login-form.tsx",
+        "web/src/lib/supabase/client.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `entrarConGoogle()` unexpectedly reaches hub `createClient()`"
+    },
+    {
+      "source": "cerrarSesion()",
+      "target": "createClient()",
+      "source_files": [
+        "web/src/components/app-shell.tsx",
+        "web/src/lib/supabase/client.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `cerrarSesion()` unexpectedly reaches hub `createClient()`"
+    },
+    {
+      "source": "onClick()",
+      "target": "createClient()",
+      "source_files": [
+        "web/src/components/landing/login.tsx",
+        "web/src/lib/supabase/client.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `onClick()` unexpectedly reaches hub `createClient()`"
+    },
+    {
+      "source": "QrPanel()",
+      "target": "createClient()",
+      "source_files": [
+        "web/src/components/qr-panel.tsx",
+        "web/src/lib/supabase/client.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "AppLayout()",
+      "target": "createClient()",
+      "source_files": [
+        "web/src/app/(app)/layout.tsx",
+        "web/src/lib/supabase/server.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `AppLayout()` unexpectedly reaches hub `createClient()`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `react` connect `createClient` to `web/package.json`, `[id]/page.tsx`?",
+      "why": "High betweenness centrality (0.062) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `@supabase/ssr` connect `web/package.json` to `createClient`, `createClient`?",
+      "why": "High betweenness centrality (0.037) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `devDependencies` connect `devDependencies` to `web/package.json`?",
+      "why": "High betweenness centrality (0.026) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Env`, `LinkRow`, `Window` to the rest of the system?",
+      "why": "160 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `web/package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06439393939393939 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `compilerOptions` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `[id]/page.tsx` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.12 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

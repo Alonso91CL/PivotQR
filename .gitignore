@@ -17,6 +17,12 @@ build/
 .opencode/
 .docs/design
 
+# Grafo de conocimiento Graphify: artefactos volátiles
+.docs/graphify-out/cache/
+.docs/graphify-out/cost.json
+.docs/graphify-out/*.tmp
+.docs/graphify-out/2*/
+
 # Sistema
 .DS_Store
 Thumbs.db
