@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Roboto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -25,7 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`dark ${outfit.variable} ${roboto.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col overflow-x-hidden">{children}</body>
+      <body className="flex min-h-full flex-col overflow-x-hidden">
+          {children}
+          <Analytics />
+        </body>
     </html>
   );
 }

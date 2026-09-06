@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -75,8 +76,15 @@ export function AppShell({
         }`}
       >
         <div className="flex h-16 items-center border-b border-gray-200 px-5 dark:border-gray-800">
-          <Link href="/proyectos" className="text-lg font-bold text-gray-900 dark:text-white">
-            Pivot<span className="text-brand-400">QR</span>
+          <Link href="/proyectos" className="inline-flex items-center">
+            <Image
+              src="/brand/logo.svg"
+              alt="PivotQR"
+              width={150}
+              height={55}
+              className="h-9 w-auto dark:invert"
+              priority
+            />
           </Link>
         </div>
 
@@ -162,8 +170,14 @@ export function AppShell({
               <path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
             </svg>
           </button>
-          <Link href="/proyectos" className="text-base font-bold lg:hidden">
-            Pivot<span className="text-brand-400">QR</span>
+          <Link href="/proyectos" className="inline-flex items-center lg:hidden">
+            <Image
+              src="/brand/logo.svg"
+              alt="PivotQR"
+              width={150}
+              height={55}
+              className="h-8 w-auto dark:invert"
+            />
           </Link>
           <div className="ml-auto">
             <UserDropdown email={email} />

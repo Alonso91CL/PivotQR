@@ -9,6 +9,8 @@ import {
   Turnstile,
 } from "@/components/turnstile";
 
+const redirectTo = `${process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin}/auth/confirmado`;
+
 export function LoginForm() {
   const router = useRouter();
 
@@ -56,7 +58,7 @@ export function LoginForm() {
           email,
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/auth/confirmado`,
+            emailRedirectTo: redirectTo,
           },
         });
         if (signUpError) throw signUpError;
@@ -88,7 +90,7 @@ export function LoginForm() {
     setError(null);
     await createClient().auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/confirmado` },
+      options: { redirectTo },
     });
   }
 

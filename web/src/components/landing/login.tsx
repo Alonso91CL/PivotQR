@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { LoginForm } from "@/app/login/login-form";
 import { createClient } from "@/lib/supabase/client";
@@ -66,9 +67,13 @@ export function LoginModal() {
       <div className="w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
         <div className="mb-4 flex items-start justify-between text-white">
           <div>
-            <p className="text-2xl font-bold">
-              Pivot<span className="text-primary">QR</span>
-            </p>
+            <Image
+              src="/brand/mark.svg"
+              alt="PivotQR"
+              width={500}
+              height={500}
+              className="mb-3 h-11 w-auto dark:invert"
+            />
             <p className="text-sm text-gray-400">
               Enlaces cortos y QR dinámicos con métricas.
             </p>

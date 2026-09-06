@@ -1,5 +1,6 @@
 import { buildQRDataUrl } from "@/lib/qr";
 import { LoginButton, LoginModal } from "@/components/landing/login";
+import Image from "next/image";
 
 const SHORT_MOCK = "https://qr.pivotit.cl/EJEMPLO";
 
@@ -117,8 +118,15 @@ export default async function LandingPage() {
       <div aria-hidden className="l-header-gradient absolute inset-x-0 top-0 h-[180px]" />
 
       <header className="sticky top-0 z-20 flex h-16 items-center justify-between px-5 md:px-[5%]">
-        <a href="#" className="text-xl font-bold text-gray-900">
-          Pivot<span className="text-primary">QR</span>
+        <a href="#" className="inline-flex items-center">
+          <Image
+            src="/brand/logo.svg"
+            alt="PivotQR"
+            width={150}
+            height={55}
+            className="h-9 w-auto"
+            priority
+          />
         </a>
         <nav className="hidden items-center gap-6 md:flex">
           <a href="#como-funciona" className="text-sm font-medium text-gray-700 hover:text-primary">
@@ -307,9 +315,13 @@ export default async function LandingPage() {
 
       <footer className="flex flex-col items-center justify-between gap-8 border-t border-gray-200 px-6 py-10 md:flex-row md:items-start">
         <div className="flex flex-col items-center gap-2 md:items-start">
-          <p className="text-xl font-bold text-gray-900">
-            Pivot<span className="text-primary">QR</span>
-          </p>
+          <Image
+            src="/brand/logo.svg"
+            alt="PivotQR"
+            width={150}
+            height={55}
+            className="h-8 w-auto"
+          />
           <p className="max-w-xs text-center text-sm text-gray-500 md:text-left">
             Enlaces cortos y códigos QR dinámicos con métricas, para saber si tu
             campaña funcionó.
