@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -17,6 +18,17 @@ export function isTurnstileActive(): boolean {
 // Anti-bots en registro y login. Si no hay clave configurada (entorno de
 // desarrollo), no se muestra y no bloquea el flujo.
 export function Turnstile() {
+  useEffect(() => {
+    if (!SITE_KEY) return;
+    window.pivotqrOnTurnstile = (token: string) => {
+      window.__pivotqrTurnstileToken = token;
+    };
+    return () => {
+      delete window.pivotqrOnTurnstile;
+      delete window.__pivotqrTurnstileToken;
+    };
+  }, []);
+
   if (!SITE_KEY) return null;
 
   return (
@@ -24,11 +36,6 @@ export function Turnstile() {
       <Script
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.pivotqrOnTurnstile = function (t) { window.__pivotqrTurnstileToken = t; };`,
-        }}
       />
       <div
         className="cf-turnstile"

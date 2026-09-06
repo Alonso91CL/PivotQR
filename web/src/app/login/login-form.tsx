@@ -93,15 +93,15 @@ export function LoginForm() {
   }
 
   return (
-    <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 shadow-xl">
-      <div className="mb-5 grid grid-cols-2 gap-1 rounded-lg bg-slate-950 p-1 text-sm">
+    <div className="rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-theme-xl">
+      <div className="mb-5 grid grid-cols-2 gap-1 rounded-lg border border-gray-800 bg-gray-950 p-1 text-sm">
         <button
           type="button"
           onClick={() => {
             setModo("ingresar");
             setError(null);
           }}
-          className={`rounded-md py-2 ${modo === "ingresar" ? "bg-slate-800 text-white" : "text-slate-400"}`}
+          className={`rounded-md py-2 ${modo === "ingresar" ? "bg-gray-800 text-white" : "text-gray-400"}`}
         >
           Ingresar
         </button>
@@ -111,7 +111,7 @@ export function LoginForm() {
             setModo("registrar");
             setError(null);
           }}
-          className={`rounded-md py-2 ${modo === "registrar" ? "bg-slate-800 text-white" : "text-slate-400"}`}
+          className={`rounded-md py-2 ${modo === "registrar" ? "bg-gray-800 text-white" : "text-gray-400"}`}
         >
           Registrarse
         </button>
@@ -124,7 +124,7 @@ export function LoginForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="correo@ejemplo.com"
-          className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
         />
         <input
           type="password"
@@ -133,34 +133,34 @@ export function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Contraseña (mínimo 6 caracteres)"
-          className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
         />
 
         <Turnstile />
 
-        {error && <p className="text-sm text-red-400">{error}</p>}
-        {mensaje && <p className="text-sm text-emerald-400">{mensaje}</p>}
+        {error && <p className="text-sm text-error-400">{error}</p>}
+        {mensaje && <p className="text-sm text-success-400">{mensaje}</p>}
 
         <button
           type="submit"
           disabled={cargando}
-          className="w-full rounded-lg bg-emerald-500 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400 disabled:opacity-50"
+          className="w-full rounded-lg bg-brand-500 py-2 text-sm font-semibold text-white transition hover:bg-brand-600 disabled:opacity-50"
         >
           {cargando ? "Procesando…" : modo === "registrar" ? "Crear cuenta" : "Entrar"}
         </button>
       </form>
 
-      <div className="my-4 flex items-center gap-3 text-xs text-slate-500">
-        <span className="h-px flex-1 bg-slate-800" />
+      <div className="my-4 flex items-center gap-3 text-xs text-gray-500">
+        <span className="h-px flex-1 bg-gray-800" />
         o
-        <span className="h-px flex-1 bg-slate-800" />
+        <span className="h-px flex-1 bg-gray-800" />
       </div>
 
       <button
         type="button"
         onClick={entrarConGoogle}
         disabled={cargando}
-        className="w-full rounded-lg border border-slate-700 bg-slate-800 py-2 text-sm font-medium text-white transition hover:bg-slate-700 disabled:opacity-50"
+        className="w-full rounded-lg border border-gray-700 bg-gray-800 py-2 text-sm font-medium text-white transition hover:bg-gray-700 disabled:opacity-50"
       >
         Continuar con Google
       </button>

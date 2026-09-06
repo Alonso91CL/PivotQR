@@ -30,11 +30,13 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
   return (
     <div className="space-y-6">
       <div>
-        <Link href="/proyectos" className="text-sm text-emerald-400 hover:underline">
+        <Link href="/proyectos" className="text-sm text-brand-400 hover:underline">
           ← Mis proyectos
         </Link>
-        <h1 className="mt-1 text-2xl font-bold text-white">{proyecto.nombre}</h1>
-        {proyecto.descripcion && <p className="text-sm text-slate-400">{proyecto.descripcion}</p>}
+        <h1 className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">{proyecto.nombre}</h1>
+        {proyecto.descripcion && (
+          <p className="text-sm text-gray-500 dark:text-gray-400">{proyecto.descripcion}</p>
+        )}
       </div>
 
       <CrearEnlaceForm proyectoId={proyecto.id} />
@@ -48,7 +50,7 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
           ))}
         </ul>
       ) : (
-        <p className="rounded-xl border border-dashed border-slate-700 p-8 text-center text-sm text-slate-500">
+        <p className="rounded-xl border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400">
           Aún no hay enlaces. Pega la URL de tu campaña arriba para crear el primero.
         </p>
       )}

@@ -59,7 +59,7 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
   }
 
   return (
-    <div className="flex flex-col gap-4 rounded-xl border border-slate-800 bg-slate-900 p-5 sm:flex-row">
+    <div className="flex flex-col gap-4 rounded-xl border border-gray-800 bg-gray-900 p-5 sm:flex-row">
       <div className="flex-shrink-0">
         {qrPng ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -69,20 +69,33 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
             className="h-40 w-40 rounded-lg bg-white"
           />
         ) : (
-          <div className="h-40 w-40 animate-pulse rounded-lg bg-slate-800" />
+          <div className="h-40 w-40 animate-pulse rounded-lg bg-gray-800" />
         )}
       </div>
 
       <div className="min-w-0 flex-1 space-y-3">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${enlace.pausado ? "bg-amber-500/20 text-amber-300" : "bg-emerald-500/20 text-emerald-300"}`}>
+            <span
+              className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                enlace.pausado
+                  ? "bg-warning-500/20 text-warning-300"
+                  : "bg-success-500/20 text-success-300"
+              }`}
+            >
               {enlace.pausado ? "Pausado" : "Activo"}
             </span>
-            <span className="text-xs text-slate-500">Creado {new Date(enlace.creado_en).toLocaleString()}</span>
+            <span className="text-xs text-gray-500">
+              Creado{" "}
+              {new Date(enlace.creado_en).toLocaleString("es-CL", {
+                timeZone: "America/Santiago",
+                dateStyle: "medium",
+                timeStyle: "short",
+              })}
+            </span>
           </div>
-          <p className="mt-2 truncate font-mono text-sm text-emerald-400">{shortUrl}</p>
-          <p className="mt-1 truncate text-xs text-slate-500" title={enlace.url_destino}>
+          <p className="mt-2 truncate font-mono text-sm text-brand-400">{shortUrl}</p>
+          <p className="mt-1 truncate text-xs text-gray-500" title={enlace.url_destino}>
             → {enlace.url_destino}
           </p>
         </div>
@@ -90,9 +103,9 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
         <div className="flex items-center gap-6">
           <div>
             <p className="text-3xl font-bold text-white">{scanCount}</p>
-            <p className="text-xs text-slate-400">{scanCount === 1 ? "escaneo" : "escaneos"}</p>
+            <p className="text-xs text-gray-400">{scanCount === 1 ? "escaneo" : "escaneos"}</p>
           </div>
-          <p className="max-w-56 text-xs text-slate-500">
+          <p className="max-w-56 text-xs text-gray-500">
             Escanea el QR con tu teléfono y mira cómo se suma el contador en vivo.
           </p>
         </div>
@@ -101,13 +114,13 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
           <a
             href={qrPng ?? "#"}
             download={`pivotqr-${enlace.slug}.png`}
-            className="rounded-lg bg-emerald-500 px-3 py-1.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
+            className="rounded-lg bg-brand-500 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-brand-600"
           >
             Descargar PNG
           </a>
           <button
             onClick={descargarSvg}
-            className="rounded-lg border border-slate-700 px-3 py-1.5 text-sm text-slate-200 transition hover:bg-slate-800"
+            className="rounded-lg border border-gray-700 px-3 py-1.5 text-sm text-gray-200 transition hover:bg-gray-800"
           >
             Descargar SVG
           </button>

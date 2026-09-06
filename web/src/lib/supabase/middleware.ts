@@ -29,10 +29,16 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const isLoginPage = request.nextUrl.pathname.startsWith("/login");
-  const isPublicAsset = request.nextUrl.pathname.startsWith("/_next");
+  const pathname = request.nextUrl.pathname;
+  const isPublic =
+    pathname === "/login" ||
+    pathname === "/" ||
+    pathname.startsWith("/auth/") ||
+    pathname.startsWith("/s/") ||
+    pathname.startsWith("/_next");
+  const isLoginPage = pathname.startsWith("/login");
 
-  if (!user && !isLoginPage && !isPublicAsset) {
+  if (!user && !isPublic) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);

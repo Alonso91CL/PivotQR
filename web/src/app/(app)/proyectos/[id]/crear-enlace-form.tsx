@@ -42,7 +42,7 @@ export function CrearEnlaceForm({ proyectoId }: { proyectoId: string }) {
   return (
     <form
       onSubmit={crear}
-      className="flex flex-col gap-2 rounded-xl border border-slate-800 bg-slate-900 p-4 sm:flex-row"
+      className="flex flex-col gap-2 rounded-xl border border-gray-800 bg-gray-900 p-4 sm:flex-row"
     >
       <input
         type="url"
@@ -50,17 +50,19 @@ export function CrearEnlaceForm({ proyectoId }: { proyectoId: string }) {
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         placeholder="Pega la URL de destino, ej. https://pizzerialuigi.com/menu"
-        className="flex-1 rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        className="flex-1 rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
       />
       <button
         type="submit"
         disabled={cargando}
-        className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400 disabled:opacity-50"
+        className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600 disabled:opacity-50"
       >
         {cargando ? "Generando…" : "Generar enlace y QR"}
       </button>
-      {error && <p className="text-sm text-red-400">{error}</p>}
-      {ok && <p className="text-xs text-emerald-400">Enlace creado. Escanéalo y mira el contador.</p>}
+      {error && <p className="text-sm text-error-400">{error}</p>}
+      {ok && (
+        <p className="text-xs text-success-400">Enlace creado. Escanéalo y mira el contador.</p>
+      )}
     </form>
   );
 }
