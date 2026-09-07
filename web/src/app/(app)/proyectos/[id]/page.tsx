@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CrearEnlaceForm } from "@/app/(app)/proyectos/[id]/crear-enlace-form";
+import { CompartirReporte } from "@/components/compartir-reporte";
 import { QrPanel } from "@/components/qr-panel";
 import { createClient } from "@/lib/supabase/server";
 import type { Enlace, Proyecto } from "@/lib/types";
@@ -13,7 +14,7 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
 
   const { data: proyecto } = await supabase
     .from("projects")
-    .select("id, nombre, descripcion")
+    .select("id, nombre, descripcion, reporte_publico, codigo_acceso")
     .eq("id", id)
     .single<Proyecto>();
 
@@ -40,6 +41,14 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
       </div>
 
       <CrearEnlaceForm proyectoId={proyecto.id} />
+
+      <CompartirReporte
+        proyecto={{
+          id: proyecto.id,
+          reporte_publico: proyecto.reporte_publico,
+          codigo_acceso: proyecto.codigo_acceso,
+        }}
+      />
 
       {enlaces && enlaces.length > 0 ? (
         <ul className="space-y-4">

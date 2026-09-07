@@ -3,11 +3,11 @@
   "1": "web/package.json",
   "2": "compilerOptions",
   "3": "createClient",
-  "4": "[id]/page.tsx",
+  "4": "proyectos/[id]/page.tsx",
   "5": "PRD — PivotQR",
   "6": "worker/package.json",
-  "7": "devDependencies",
-  "8": "[slug]/route.ts",
+  "7": "dependencies",
+  "8": "dashboard.tsx",
   "9": "app/layout.tsx",
   "10": "PivotQR — Funcionalidades del V1",
   "11": "index.ts",
@@ -31,5 +31,6 @@
   "29": "PivotQR",
   "30": "web/AGENTS.md",
   "31": "CLAUDE.md",
-  "32": "@supabase/ssr"
+  "32": "proxy.ts",
+  "33": "CompartirReporte"
 }

@@ -36,10 +36,10 @@
     "semantic_hash": "27cac66fd665279f694dc1fe4c4d4810"
   },
   "web/src/app/(app)/proyectos/[id]/page.tsx": {
-    "mtime": 1788657918.8854702,
-    "seen": 1788658835.086485,
-    "ast_hash": "18d23ca9cd1772b3a92aeab2dd76aa4c",
-    "semantic_hash": "18d23ca9cd1772b3a92aeab2dd76aa4c"
+    "mtime": 1788790898.7961466,
+    "seen": 1788791207.0858305,
+    "ast_hash": "0e56e0fd77385ecbd7f19669fdcb06ef",
+    "semantic_hash": ""
   },
   "web/src/app/(app)/proyectos/create-proyecto-form.tsx": {
     "mtime": 1788657918.8854702,
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "web/src/components/qr-panel.tsx": {
-    "mtime": 1788789977.4644158,
-    "seen": 1788790015.1615586,
-    "ast_hash": "98e755b713809619c604a8de1d577669",
+    "mtime": 1788790366.0485075,
+    "seen": 1788791207.0858579,
+    "ast_hash": "cf62ba9fda8d521e6c30fb429d37181d",
     "semantic_hash": ""
   },
   "web/src/components/turnstile.tsx": {
@@ -144,10 +144,10 @@
     "semantic_hash": "33c5eeadecaac1960f1e56bab50d4cb8"
   },
   "web/src/lib/supabase/middleware.ts": {
-    "mtime": 1788657918.8926208,
-    "seen": 1788658835.086505,
-    "ast_hash": "54e9f392910aad4d20356126a6d613cc",
-    "semantic_hash": "54e9f392910aad4d20356126a6d613cc"
+    "mtime": 1788790740.477029,
+    "seen": 1788791207.085867,
+    "ast_hash": "f118c038afbbabf8c81392c383465e84",
+    "semantic_hash": ""
   },
   "web/src/lib/supabase/server.ts": {
     "mtime": 1788654636.6835978,
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts": {
-    "mtime": 1788789947.7283332,
-    "seen": 1788790015.1615431,
-    "ast_hash": "024947a97668ecd4cb41e5e1e8dad606",
+    "mtime": 1788790366.0462515,
+    "seen": 1788791207.0858352,
+    "ast_hash": "5893ff132bba37db4d948647e0c06b1d",
     "semantic_hash": ""
   },
   ".docs/assets/favicon.png": {
@@ -411,6 +411,42 @@
     "mtime": 1788664854.04525,
     "seen": 1788790015.1616232,
     "ast_hash": "fcebb9b1644fae8366e23904cd8982d6",
+    "semantic_hash": ""
+  },
+  "web/src/app/api/proyectos/[id]/reporte/route.ts": {
+    "mtime": 1788790870.7377114,
+    "seen": 1788791207.0858386,
+    "ast_hash": "5a3ff64b6418b9c134517c228f5134fb",
+    "semantic_hash": ""
+  },
+  "web/src/app/api/reporte/[proyecto_id]/route.ts": {
+    "mtime": 1788790762.479651,
+    "seen": 1788791207.08584,
+    "ast_hash": "49fd2a5b87e4675921d832da27c2a2d6",
+    "semantic_hash": ""
+  },
+  "web/src/app/reporte/[id]/page.tsx": {
+    "mtime": 1788790774.3159678,
+    "seen": 1788791207.0858512,
+    "ast_hash": "5335383b7ee622b28f8bb4bf1a25cf04",
+    "semantic_hash": ""
+  },
+  "web/src/components/compartir-reporte.tsx": {
+    "mtime": 1788790921.674425,
+    "seen": 1788791207.0858552,
+    "ast_hash": "651b8b2e43307e11dd75292bba5014cd",
+    "semantic_hash": ""
+  },
+  "web/src/components/reporte/acceso-form.tsx": {
+    "mtime": 1788790786.150905,
+    "seen": 1788791207.0858588,
+    "ast_hash": "c94ef01e661aabefedbb7506e6104ce9",
+    "semantic_hash": ""
+  },
+  "web/src/components/reporte/dashboard.tsx": {
+    "mtime": 1788790946.089775,
+    "seen": 1788791207.08586,
+    "ast_hash": "fc16a107fea39a90d9803685b99de27c",
     "semantic_hash": ""
   }
 }
