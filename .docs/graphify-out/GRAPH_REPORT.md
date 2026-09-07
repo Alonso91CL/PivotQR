@@ -1,15 +1,16 @@
-# Graph Report - PivotQR  (2026-09-05)
+# Graph Report - PivotQR  (2026-09-07)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 53 files · ~61,689 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 291 nodes · 340 edges · 32 communities (25 shown, 5 thin omitted)
+- 303 nodes · 358 edges · 33 communities (26 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `05daf508`
+- Built from commit: `30a8ce9c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,55 +45,56 @@
 - web/README.md
 - PivotQR
 - web/AGENTS.md
+- @supabase/ssr
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
 2. `createClient()` - 13 edges
-3. `PRD — PivotQR` - 13 edges
-4. `createClient()` - 11 edges
+3. `createClient()` - 13 edges
+4. `PRD — PivotQR` - 13 edges
 5. `PivotQR — Funcionalidades del V1` - 10 edges
 6. `react` - 9 edges
 7. `PivotQR — Stack` - 9 edges
-8. `PivotQR — Checklist de despliegue para la Fase 1` - 8 edges
-9. `PivotQR — Resumen` - 7 edges
-10. `PivotQR — Roadmap` - 7 edges
+8. `QrPanel()` - 8 edges
+9. `PivotQR — Checklist de despliegue para la Fase 1` - 8 edges
+10. `PivotQR — Resumen` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `entrarConGoogle()` --calls--> `createClient()`  [EXTRACTED]
-  web/src/app/login/login-form.tsx → web/src/lib/supabase/client.ts
-- `cerrarSesion()` --calls--> `createClient()`  [EXTRACTED]
-  web/src/components/app-shell.tsx → web/src/lib/supabase/client.ts
-- `onClick()` --calls--> `createClient()`  [EXTRACTED]
-  web/src/components/landing/login.tsx → web/src/lib/supabase/client.ts
-- `QrPanel()` --calls--> `createClient()`  [EXTRACTED]
-  web/src/components/qr-panel.tsx → web/src/lib/supabase/client.ts
+- `ProyectosPage()` --calls--> `createClient()`  [EXTRACTED]
+  web/src/app/(app)/proyectos/page.tsx → web/src/lib/supabase/server.ts
 - `AppLayout()` --calls--> `createClient()`  [EXTRACTED]
   web/src/app/(app)/layout.tsx → web/src/lib/supabase/server.ts
+- `ProyectoPage()` --calls--> `createClient()`  [EXTRACTED]
+  web/src/app/(app)/proyectos/[id]/page.tsx → web/src/lib/supabase/server.ts
+- `PATCH()` --calls--> `createClient()`  [EXTRACTED]
+  web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts → web/src/lib/supabase/server.ts
+- `GET()` --calls--> `createClient()`  [EXTRACTED]
+  web/src/app/auth/confirmado/route.ts → web/src/lib/supabase/server.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (32 total, 5 thin omitted)
+## Communities (33 total, 5 thin omitted)
 
 ### Community 0 - "createClient"
-Cohesion: 0.17
-Nodes (14): react, CreateProyectoForm(), LoginForm(), entrarConGoogle(), enviar(), verificarTurnstile(), UserDropdown(), cerrarSesion() (+6 more)
+Cohesion: 0.14
+Nodes (16): react, CreateProyectoForm(), dynamic, ProyectosPage(), LoginForm(), entrarConGoogle(), enviar(), verificarTurnstile() (+8 more)
 
 ### Community 1 - "web/package.json"
-Cohesion: 0.06
-Nodes (30): eslint, eslint-config-next, react-dom, @supabase/ssr, tailwindcss, @tailwindcss/postcss, @types/node, @types/qrcode (+22 more)
+Cohesion: 0.07
+Nodes (28): eslint, eslint-config-next, react-dom, tailwindcss, @tailwindcss/postcss, @types/node, @types/qrcode, @types/react (+20 more)
 
 ### Community 2 - "compilerOptions"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 3 - "createClient"
-Cohesion: 0.19
-Nodes (11): dynamic, POST(), RouteParams, AppLayout(), ProyectoPage(), dynamic, ProyectosPage(), GET() (+3 more)
+Cohesion: 0.18
+Nodes (12): dynamic, PATCH(), RouteParams, dynamic, POST(), RouteParams, AppLayout(), ProyectoPage() (+4 more)
 
 ### Community 4 - "[id]/page.tsx"
-Cohesion: 0.12
-Nodes (16): qrcode, CrearEnlaceForm(), dynamic, barras, chats, features, LandingPage(), pasos (+8 more)
+Cohesion: 0.11
+Nodes (18): qrcode, CrearEnlaceForm(), dynamic, barras, chats, features, LandingPage(), pasos (+10 more)
 
 ### Community 5 - "PRD — PivotQR"
 Cohesion: 0.14
@@ -163,8 +165,8 @@ Cohesion: 0.40
 Nodes (4): Antes de empezar, Cómo usar este archivo, PivotQR — Iniciar desarrollo, Prompt
 
 ### Community 26 - "PivotQR"
-Cohesion: 0.40
-Nodes (4): Documentación, Estado, PivotQR, Qué hace
+Cohesion: 0.25
+Nodes (7): Documentación, Estado, PivotQR, Qué hace, Repositorio, Roadmap, Stack
 
 ### Community 27 - "PivotQR"
 Cohesion: 0.50
@@ -174,25 +176,29 @@ Nodes (3): graphify, PivotQR, Reglas para agentes
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
+### Community 32 - "@supabase/ssr"
+Cohesion: 0.47
+Nodes (4): @supabase/ssr, updateSession(), config, proxy()
+
 ## Knowledge Gaps
-- **160 isolated node(s):** `Env`, `LinkRow`, `Window`, `RouteParams`, `QRConfig` (+155 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 190 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **167 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+162 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 198 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `createClient` to `web/package.json`, `[id]/page.tsx`?**
-  _High betweenness centrality (0.062) - this node is a cross-community bridge._
-- **Why does `@supabase/ssr` connect `web/package.json` to `createClient`, `createClient`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+- **Why does `@supabase/ssr` connect `@supabase/ssr` to `createClient`, `web/package.json`, `createClient`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `web/package.json`?**
   _High betweenness centrality (0.026) - this node is a cross-community bridge._
-- **What connects `Env`, `LinkRow`, `Window` to the rest of the system?**
-  _160 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
+  _167 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `createClient` be split into smaller, more focused modules?**
+  _Cohesion score 0.1402116402116402 - nodes in this community are weakly interconnected._
 - **Should `web/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.06439393939393939 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `[id]/page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
