@@ -3,6 +3,13 @@ export {};
 declare global {
   interface Window {
     __pivotqrTurnstileToken?: string | null;
-    pivotqrOnTurnstile?: (token: string) => void;
+    turnstile?: {
+      render: (
+        element: HTMLElement | string,
+        options: Record<string, unknown>,
+      ) => string;
+      remove: (widgetId: string) => void;
+      reset: (widgetId: string) => void;
+    };
   }
 }
