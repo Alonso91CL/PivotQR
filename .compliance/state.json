@@ -38,7 +38,7 @@
     "sec-mfa": { "status": "fail", "evidence": "sin MFA en el código", "remediation": "Activar MFA en Supabase Auth (opcional, recomendado)" },
     "sec-logs": { "status": "fail", "evidence": "sin audit log de acciones de usuario", "remediation": "Implementar audit log (actor, IP, acción, timestamp)" },
     "sec-tenant": { "status": "pass", "evidence": "RLS por owner_id en projects/links/scans (0001_init.sql:19-38)", "remediation": "" },
-    "sec-secrets": { "status": "fail", "evidence": ".env.local versionado en el repo con secrets", "remediation": "Sacar .env.local del tracking y rotar credenciales" },
+    "sec-secrets": { "status": "pass", "evidence": ".env* ignorado (gitignore raiz y web); sin archivos .env en el historial git", "remediation": "" },
     "sec-backups": { "status": "unknown", "evidence": "depende de plan Supabase", "remediation": "Confirmar backups y política de restauración" },
     "inc-brechas": { "status": "partial", "evidence": "docs/21719-plan-respuesta-brechas.md + registro generado", "remediation": "Activar el plan y designar contacto" },
     "ctrl-interno": { "status": "partial", "evidence": "segregación de funciones declarada en MPD; documental", "remediation": "Documentar autorizaciones de pagos/compras" },
@@ -46,11 +46,11 @@
   },
   "frameworks": {
     "ley-21719": {
-      "score": 0.52,
+      "score": 0.57,
       "controls_required": 21,
-      "pass": 8,
+      "pass": 9,
       "partial": 10,
-      "fail": 3
+      "fail": 2
     },
     "ley-21595": {
       "score": 0.44,

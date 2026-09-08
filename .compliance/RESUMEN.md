@@ -10,7 +10,7 @@
 
 | Marco | Score | ✅ | ⚠️ | ❌ |
 |---|---|---|---|---|
-| **Ley 21.719** (datos personales) | 52% | 8 | 10 | 3 |
+| **Ley 21.719** (datos personales) | 57% | 9 | 10 | 2 |
 | **Ley 21.595** (delitos económicos) | 44% | 4 | 5 | 0 |
 
 ---
@@ -28,9 +28,9 @@
 ## Brechas prioritarias
 
 ### Críticas
-1. **`.env.local` versionado en el repo** con credenciales (control `sec-secrets`). *Acción inmediata:* sacar del tracking y **rotar** las claves expuestas (Supabase, Turnstile, OIDC).
+1. **⚠️ Verificado y descartado:** los secrets **no** están en el repositorio. `.env*` está ignorado (`.gitignore` raíz y `web/.gitignore`) y no hay archivos `.env` en el historial git. Control `sec-secrets` = ✅. (El `.env.local.example` de `web/` quedó completo y versionable.)
 2. **Sin política de privacidad pública ni consentimiento** en el registro (controles `data-info`, `data-licitud`, `data-consent-text`). La documentación ya está en `docs/`; falta publicarla e integrar el checkbox.
-3. **Sin derechos ARCO completos** (controles `data-derechos`): no hay export de datos, borrado de cuenta ni oposición implementados.
+3. **Sin derechos ARCO completos** (control `data-derechos`): no hay export de datos, borrado de cuenta ni oposición implementados.
 
 ### Altas
 4. **Sin retención de datos** — los escaneos se acumulan indefinidamente (control `data-minimizacion`). Implementar retención de 24 meses + anonimización.
@@ -67,6 +67,6 @@
 ---
 
 ## Próximos pasos (1 siguiente paso recomendado)
-**Remediar la brecha crítica #1 ahora mismo:** sacar `.env.local` del repositorio y rotar las credenciales expuestas. A continuación, publicar la política de privacidad y añadir el checkbox de consentimiento al registro.
+**Publicar la política de privacidad y añadir el checkbox de consentimiento al registro**, seguido de los derechos ARCO (export y borrado de cuenta) y la retención de escaneos (24 meses).
 
-¿Quieres que realice las remediaciones de código (purgar `.env.local`, política + consentimiento en registro, MFA, retención de escaneos, audit log, endpoints ARCO) en una rama?
+¿Quieres que realice las remediaciones de código (política + consentimiento en registro, MFA, retención de escaneos, audit log, endpoints ARCO) en una rama?
