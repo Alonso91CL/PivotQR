@@ -44,10 +44,14 @@ export function AccesoReporte({
               onChange={(e) => setCodigo(e.target.value)}
               placeholder="Código de 6 caracteres"
               autoComplete="off"
+              aria-invalid={error ? true : undefined}
+              aria-describedby={error ? "acceso-error" : undefined}
               className="mt-1.5 w-full rounded-lg border border-gray-700 bg-gray-800 px-3.5 py-2.5 text-gray-100 placeholder-gray-500 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
             />
             {error && (
-              <p className="mt-1.5 text-sm text-red-400">El código no es válido. Inténtalo de nuevo.</p>
+              <p id="acceso-error" role="alert" className="mt-1.5 text-sm text-error-400">
+                El código no es válido. Inténtalo de nuevo.
+              </p>
             )}
           </div>
 

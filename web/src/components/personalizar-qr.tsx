@@ -61,7 +61,7 @@ export function PersonalizarQr({
               aria-label="Color del patrón"
               className="h-9 w-12 cursor-pointer rounded-lg border border-gray-700 bg-gray-800 p-1"
             />
-            <span className="font-mono text-xs text-gray-500">{valores.colorPatron ?? "#000000"}</span>
+            <span className="font-mono text-xs text-gray-400">{valores.colorPatron ?? "#000000"}</span>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export function PersonalizarQr({
         </div>
       </div>
 
-      <p className="mt-3 text-[11px] leading-4 text-gray-500">
+      <p className="mt-3 text-[11px] leading-4 text-gray-400">
         Con logo, el QR usa máxima corrección de errores para seguir escaneando. El QR cambia al
         instante; pulsa “Guardar personalización” para guardarlo.
       </p>

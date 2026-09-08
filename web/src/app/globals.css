@@ -4,7 +4,7 @@
 
 @theme {
   --font-outfit: Outfit, sans-serif;
-  --font-roboto: Roboto, sans-serif;
+  --font-open-sans: Open Sans, sans-serif;
 
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -20,8 +20,10 @@
   --color-current: currentColor;
   --color-transparent: transparent;
   --color-white: #ffffff;
-  --color-black: #101828;
-  --color-primary: #4f55c1;
+  --color-black: #000000;
+  --color-primary: var(--color-brand-500);
+  --color-accent: #d97706;
+  --color-on-accent: #000000;
 
   --color-brand-25: #f2f7ff;
   --color-brand-50: #ecf3ff;
@@ -144,7 +146,14 @@
   }
 
   body {
-    @apply font-normal font-outfit bg-gray-50 text-gray-800;
+    @apply font-normal font-open-sans bg-gray-50 text-gray-800;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-outfit), sans-serif;
   }
 }
 
@@ -189,10 +198,10 @@
 .l-header-gradient {
   background: linear-gradient(
     83deg,
-    #ceaed474 15%,
-    #abd4e693 33%,
-    #73edc097 79%,
-    #8c91e86b 100%
+    #7592ff4d 15%,
+    #465fff38 33%,
+    #2a31d82e 79%,
+    #1619504d 100%
   );
   filter: blur(90px);
 }

@@ -84,7 +84,11 @@ export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) 
         {!reportePublico && (
           <button
             type="button"
-            onClick={() => void guardar({ regenerar: true })}
+            onClick={() => {
+              if (window.confirm("¿Generar un nuevo código? El anterior dejará de funcionar.")) {
+                void guardar({ regenerar: true });
+              }
+            }}
             disabled={cargando}
             className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 disabled:opacity-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
           >
@@ -104,8 +108,8 @@ export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) 
         <span
           className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
             reportePublico
-              ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-              : "bg-amber-500/10 text-amber-600 dark:text-amber-400"
+              ? "bg-success-500/10 text-success-600 dark:text-success-400"
+              : "bg-warning-500/10 text-warning-600 dark:text-warning-400"
           }`}
         >
           {reportePublico ? "Público" : "Privado"}
@@ -123,7 +127,7 @@ export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) 
         )}
       </div>
 
-      {error && <p className="mt-3 text-sm text-red-600 dark:text-red-400">{error}</p>}
+      {error && <p role="alert" className="mt-3 text-sm text-error-600 dark:text-error-400">{error}</p>}
     </section>
   );
 }

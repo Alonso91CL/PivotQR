@@ -40,11 +40,17 @@ function Columnas({ items, step = 1 }: { items: { label: string; valor: number }
         {items.map((it, i) => (
           <div
             key={i}
-            className="group relative flex h-full flex-1 flex-col justify-end"
+            role="img"
+            aria-label={`${it.label}: ${it.valor} escaneos`}
+            tabIndex={0}
+            className="group relative flex h-full flex-1 flex-col justify-end rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/70"
             title={`${it.label}: ${it.valor} escaneos`}
           >
             {it.valor > 0 && (
-              <span className="pointer-events-none absolute -top-5 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded bg-gray-800 px-1.5 text-[10px] leading-4 text-gray-200 opacity-0 transition group-hover:opacity-100">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded bg-gray-800 px-1.5 text-[11px] leading-4 text-gray-200 opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100"
+              >
                 {it.valor}
               </span>
             )}
@@ -55,7 +61,7 @@ function Columnas({ items, step = 1 }: { items: { label: string; valor: number }
           </div>
         ))}
       </div>
-      <div className="mt-1.5 flex gap-[3px] text-[10px] text-gray-500">
+      <div className="mt-1.5 flex gap-[3px] text-[11px] text-gray-400">
         {items.map((it, i) => (
           <span key={i} className="flex-1 text-center">
             {i % step === 0 ? it.label : ""}
@@ -196,7 +202,7 @@ export function ReporteDashboard({
 
   if (desacceso) {
     return (
-      <p className="rounded-xl border border-red-900/50 bg-red-950/30 p-6 text-center text-sm text-red-300">
+      <p className="rounded-xl border border-error-900/50 bg-error-950/30 p-6 text-center text-sm text-error-300">
         Código de acceso incorrecto. No tienes permisos para ver este reporte.
       </p>
     );
@@ -226,16 +232,21 @@ export function ReporteDashboard({
         <div>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-60" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-60 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-500" />
             </span>
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-400">En vivo</span>
           </div>
-          <p className="mt-2 text-5xl font-bold tracking-tight text-white sm:text-6xl">
-            {resumen.total.toLocaleString("es-CL")}
-          </p>
-          <p className="mt-1 text-sm text-gray-400">
-            escaneos registrados{actualizadoEn ? ` · actualizado ${actualizadoEn.toLocaleTimeString("es-CL", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}` : ""}
+          <div role="status" aria-atomic="true">
+            <p className="mt-2 font-outfit text-5xl font-bold tracking-tight text-white sm:text-6xl">
+              {resumen.total.toLocaleString("es-CL")}
+            </p>
+            <p className="mt-1 text-sm text-gray-400">escaneos registrados</p>
+          </div>
+          <p className="mt-2 text-xs text-gray-400">
+            {actualizadoEn
+              ? `actualizado ${actualizadoEn.toLocaleTimeString("es-CL", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}`
+              : "cargando…"}
           </p>
         </div>
         <div className="text-right">
@@ -262,7 +273,7 @@ export function ReporteDashboard({
             <Vacío />
           )}
           <div className="mt-5 border-t border-gray-800 pt-4">
-            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">Sistemas operativos</h3>
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-400">Sistemas operativos</h3>
             {resumen.sistemas.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {resumen.sistemas.map((s) => (
@@ -294,8 +305,8 @@ export function ReporteDashboard({
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
                     e.pausado
-                      ? "bg-amber-500/10 text-amber-400"
-                      : "bg-emerald-500/10 text-emerald-400"
+                      ? "bg-warning-500/10 text-warning-400"
+                      : "bg-success-500/10 text-success-400"
                   }`}
                 >
                   {e.pausado ? "pausado" : "activo"}
@@ -314,5 +325,5 @@ export function ReporteDashboard({
 }
 
 function Vacío() {
-  return <p className="py-4 text-center text-sm text-gray-500">Sin datos aún</p>;
+  return <p className="py-4 text-center text-sm text-gray-400">Sin datos aún</p>;
 }

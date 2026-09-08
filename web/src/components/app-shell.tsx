@@ -117,21 +117,6 @@ export function AppShell({
               </li>
             </ul>
           </div>
-
-          <div>
-            <h2 className="mb-2 px-3 text-xs font-medium uppercase tracking-wide text-gray-400">
-              Próximamente
-            </h2>
-            <ul className="space-y-1">
-              {["Reportes", "Personalización"].map((p) => (
-                <li key={p}>
-                  <span className="menu-item menu-item-inactive cursor-not-allowed opacity-50">
-                    {p}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </nav>
 
 

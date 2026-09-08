@@ -13,6 +13,16 @@ Proyecto de códigos QR (PivotQR).
 - Si `.docs/` aún no existe o está vacía, no inventes el alcance: sigue la etapa de definición (Skill `crear-proyecto`) antes de construir.
 - No modifiques la carpeta `.opencode/`: es el framework de definición, no se trackea.
 
+## ui-ux-pro-max
+
+Skill de diseño UI/UX instalado localmente en `.opencode/skills/ui-ux-pro-max/`. Úsalo al diseñar, revisar o corregir interfaces (componentes, páginas, accesibilidad, colores, tipografía, charts, responsive). Su buscador se invoca con `py -3` (en Windows el `python` del PATH es el alias de MS Store y falla):
+
+```bash
+py -3 ".opencode/skills/ui-ux-pro-max/scripts/search.py" "<consulta>" --domain <ux|style|color|typography|chart|landing|icons|product|react|nextjs...>
+```
+
+Para dirección visual de una página/proyecto usa `--design-system`; para guía de implementación pasa `--stack nextjs`.
+
 ## graphify
 
 This project has a knowledge graph at .docs/graphify-out/ with god nodes, community structure, and cross-file relationships.

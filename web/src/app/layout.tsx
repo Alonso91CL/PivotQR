@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Roboto } from "next/font/google";
+import { Open_Sans, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -8,10 +8,9 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`dark ${outfit.variable} ${roboto.variable} h-full antialiased`}
+      className={`dark ${outfit.variable} ${openSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-hidden">
           {children}

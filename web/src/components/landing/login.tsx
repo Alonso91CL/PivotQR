@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LoginForm } from "@/app/login/login-form";
 import { createClient } from "@/lib/supabase/client";
@@ -36,6 +36,8 @@ export function LoginButton({
 
 export function LoginModal() {
   const [open, setOpen] = useState(false);
+  const dialogoRef = useRef<HTMLDivElement>(null);
+  const prevFocus = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     function abrir() {
@@ -47,11 +49,38 @@ export function LoginModal() {
 
   useEffect(() => {
     if (!open) return;
-    function cerrarConEscape(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
+    prevFocus.current = document.activeElement as HTMLElement | null;
+
+    function manejarTeclado(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const dialogo = dialogoRef.current;
+      if (!dialogo) return;
+      const focusables = dialogo.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
-    document.addEventListener("keydown", cerrarConEscape);
-    return () => document.removeEventListener("keydown", cerrarConEscape);
+
+    document.addEventListener("keydown", manejarTeclado);
+    return () => document.removeEventListener("keydown", manejarTeclado);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) return;
+    prevFocus.current?.focus?.();
   }, [open]);
 
   if (!open) return null;
@@ -60,10 +89,14 @@ export function LoginModal() {
     <div
       role="dialog"
       aria-modal="true"
+      aria-labelledby="pivotqr-login-modal-titulo"
       className="fixed inset-0 z-99999 flex items-center justify-center overflow-y-auto bg-gray-950/70 p-4 backdrop-blur-sm"
       onClick={() => setOpen(false)}
     >
-      <div className="w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogoRef} className="w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+        <h2 id="pivotqr-login-modal-titulo" className="sr-only">
+          Inicia sesión o crea una cuenta
+        </h2>
         <div className="mb-4 flex items-start justify-between text-white">
           <button
             type="button"

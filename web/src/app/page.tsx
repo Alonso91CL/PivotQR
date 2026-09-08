@@ -114,7 +114,7 @@ export default async function LandingPage() {
   const qrMock = await buildQRDataUrl(SHORT_MOCK);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-white font-roboto text-gray-900">
+    <div className="relative min-h-screen overflow-hidden bg-white font-open-sans text-gray-900">
       <div aria-hidden className="l-header-gradient absolute inset-x-0 top-0 h-[180px]" />
 
       <header className="sticky top-0 z-20 flex h-16 items-center justify-between px-5 md:px-[5%]">
@@ -151,7 +151,7 @@ export default async function LandingPage() {
             <p className="mb-6 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs font-medium text-gray-600 shadow-theme-xs">
               Enlace corto · QR dinámico · métricas en una sola pantalla
             </p>
-            <h1 className="text-4xl font-semibold uppercase leading-tight md:text-6xl md:leading-[70px]">
+            <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
               Pega tu URL.
               <br />
               <span className="text-primary">Mide cada escaneo.</span>
@@ -164,7 +164,7 @@ export default async function LandingPage() {
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
               <LoginButton
                 label="Crear mi primer QR"
-                className="inline-flex items-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+                className="inline-flex items-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-on-accent transition hover:bg-warning-600"
               />
               <a
                 href="#como-funciona"
@@ -205,11 +205,11 @@ export default async function LandingPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-xl border border-gray-100 bg-gray-50 p-3">
-                    <p className="text-2xl font-bold text-gray-900">1.284</p>
+                    <p className="font-outfit text-2xl font-bold text-gray-900">1.284</p>
                     <p className="text-xs text-gray-500">Escaneos totales</p>
                   </div>
                   <div className="rounded-xl border border-gray-100 bg-gray-50 p-3">
-                    <p className="text-2xl font-bold text-success-600">+140</p>
+                    <p className="font-outfit text-2xl font-bold text-success-600">+140</p>
                     <p className="text-xs text-gray-500">Hoy</p>
                   </div>
                 </div>
@@ -297,7 +297,7 @@ export default async function LandingPage() {
         </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-20 pt-6">
-          <div className="flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-br from-brand-50 to-sky-50 px-8 py-12 text-center md:py-16">
+          <div className="flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-br from-brand-50 to-brand-100 px-8 py-12 text-center md:py-16">
             <h2 className="text-3xl font-semibold text-gray-900 md:text-4xl">
               ¿Listo para saber si tu campaña funcionó?
             </h2>
@@ -307,7 +307,7 @@ export default async function LandingPage() {
             </p>
             <LoginButton
               label="Crear mi primer QR"
-              className="inline-flex items-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+              className="inline-flex items-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-on-accent transition hover:bg-warning-600"
             />
           </div>
         </section>

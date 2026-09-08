@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import {
   getTurnstileToken,
@@ -67,6 +67,12 @@ export function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [mensaje, setMensaje] = useState<string | null>(null);
   const [cargando, setCargando] = useState(false);
+
+  const errorRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (error) errorRef.current?.focus();
+  }, [error]);
 
   async function verificarTurnstile(): Promise<boolean> {
     if (!isTurnstileActive()) return true;
@@ -167,28 +173,65 @@ export function LoginForm() {
       </div>
 
       <form onSubmit={enviar} className="space-y-3">
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="correo@ejemplo.com"
-          className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
-        />
-        <input
-          type="password"
-          required
-          minLength={6}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Contraseña (mínimo 6 caracteres)"
-          className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
-        />
+        <div>
+          <label
+            htmlFor="pivot-login-email"
+            className="mb-1.5 block text-sm font-medium text-gray-300"
+          >
+            Correo electrónico
+          </label>
+          <input
+            id="pivot-login-email"
+            type="email"
+            required
+            autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="correo@ejemplo.com"
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? "pivot-login-error" : undefined}
+            className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="pivot-login-password"
+            className="mb-1.5 block text-sm font-medium text-gray-300"
+          >
+            Contraseña
+          </label>
+          <input
+            id="pivot-login-password"
+            type="password"
+            required
+            minLength={6}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Mínimo 6 caracteres"
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? "pivot-login-error" : undefined}
+            className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
+          />
+        </div>
 
         <Turnstile />
 
-        {error && <p className="text-sm text-error-400">{error}</p>}
-        {mensaje && <p className="text-sm text-success-400">{mensaje}</p>}
+        {error && (
+          <p
+            id="pivot-login-error"
+            ref={errorRef}
+            tabIndex={-1}
+            role="alert"
+            className="rounded-lg border border-error-500/30 bg-error-950/40 px-3 py-2 text-sm text-error-400"
+          >
+            {error}
+          </p>
+        )}
+        {mensaje && (
+          <p role="status" className="text-sm text-success-400">
+            {mensaje}
+          </p>
+        )}
 
         <button
           type="submit"
@@ -199,7 +242,7 @@ export function LoginForm() {
         </button>
       </form>
 
-      <div className="my-4 flex items-center gap-3 text-xs text-gray-500">
+      <div className="my-4 flex items-center gap-3 text-xs text-gray-400">
         <span className="h-px flex-1 bg-gray-800" />
         o
         <span className="h-px flex-1 bg-gray-800" />

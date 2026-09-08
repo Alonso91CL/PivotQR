@@ -174,7 +174,7 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-4 rounded-xl border border-gray-800 bg-gray-900 p-5 sm:flex-row">
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 self-center sm:self-auto">
           {qrPng ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -207,7 +207,7 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
               >
                 {pausado ? "Pausado" : "Activo"}
               </span>
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-gray-400">
                 Creado{" "}
                 {new Date(enlace.creado_en).toLocaleString("es-CL", {
                   timeZone: "America/Santiago",
@@ -242,11 +242,11 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
           </div>
 
           <div className="flex items-center gap-6">
-            <div>
-              <p className="text-3xl font-bold text-white">{scanCount}</p>
+            <div role="status" aria-atomic="true">
+              <p className="font-outfit text-3xl font-bold text-white">{scanCount}</p>
               <p className="text-xs text-gray-400">{scanCount === 1 ? "escaneo" : "escaneos"}</p>
             </div>
-            <p className="max-w-56 text-xs text-gray-500">
+            <p className="max-w-56 text-xs text-gray-400">
               {pausado
                 ? "Campaña pausada: al escanear el QR se muestra el aviso y los escaneos siguen contando."
                 : "Escanea el QR con tu teléfono y mira cómo se suma el contador en vivo."}
@@ -284,8 +284,8 @@ export function QrPanel({ enlace }: { enlace: Enlace }) {
             </button>
           </div>
 
-          {error && <p className="text-xs text-error-400">{error}</p>}
-          {okMsg && <p className="text-xs text-success-400">{okMsg}</p>}
+          {error && <p role="alert" className="text-xs text-error-400">{error}</p>}
+          {okMsg && <p role="status" className="text-xs text-success-400">{okMsg}</p>}
         </div>
       </div>
 

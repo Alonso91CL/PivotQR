@@ -11,7 +11,7 @@ export default function LoginPage() {
       />
       <div
         aria-hidden
-        className="absolute -bottom-40 right-0 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl"
+        className="absolute -bottom-40 right-0 h-72 w-72 rounded-full bg-brand-500/10 blur-3xl"
       />
       <div className="relative w-full max-w-sm">
         <Image
