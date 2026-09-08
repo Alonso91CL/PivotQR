@@ -1,23 +1,11 @@
 import { createServiceClient } from "@/lib/supabase/service";
+import { MAX_SCANS, type ReporteScan } from "@/lib/reporte";
 import { NextResponse, type NextRequest } from "next/server";
 import type { Enlace, Proyecto } from "@/lib/types";
 
 type RouteParams = { params: Promise<{ proyecto_id: string }> };
 
 export const dynamic = "force-dynamic";
-
-export interface ReporteScan {
-  id: string;
-  enlace_id: string;
-  ciudad: string | null;
-  region: string | null;
-  pais: string | null;
-  dispositivo: string;
-  so: string;
-  fecha_utc: string;
-}
-
-const MAX_SCANS = 2000;
 
 // Lectura pública del reporte: si el proyecto es privado se exige el código
 // de acceso (validado aquí, en el servidor) como define .docs/07-base-de-datos.md.
@@ -44,8 +32,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
   const { data: enlaces } = await supabase
     .from("links")
-    .select("id, slug, url_destino, pausado, creado_en")
+    .select("id, slug, nombre, descripcion, url_destino, pausado, creado_en")
     .eq("proyecto_id", proyecto_id)
+    .is("eliminado_en", null)
     .order("creado_en", { ascending: false })
     .returns<Enlace[]>();
 

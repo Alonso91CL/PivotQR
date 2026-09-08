@@ -2,6 +2,8 @@ export interface Enlace {
   id: string;
   proyecto_id: string;
   slug: string;
+  nombre: string;
+  descripcion: string;
   url_destino: string;
   pausado: boolean;
   color_fondo: string | null;
@@ -9,6 +11,7 @@ export interface Enlace {
   estilo: string | null;
   logo_url: string | null;
   creado_en: string;
+  eliminado_en?: string | null;
 }
 
 export interface Proyecto {

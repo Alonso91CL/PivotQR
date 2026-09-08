@@ -18,6 +18,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     .from("links")
     .select("id, url_destino, pausado, proyecto_id")
     .eq("slug", slug)
+    .is("eliminado_en", null)
     .single();
 
   if (!enlace) {

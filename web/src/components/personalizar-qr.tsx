@@ -2,12 +2,22 @@
 
 import { useRef } from "react";
 import { ESTILOS, type Estilo } from "@/lib/qr";
+import type { Enlace } from "@/lib/types";
 
 export interface PersonalizacionQR {
   colorFondo: string | null;
   colorPatron: string | null;
   estilo: Estilo | null;
   logoUrl: string | null;
+}
+
+export function personalizacionDe(enlace: Enlace): PersonalizacionQR {
+  return {
+    colorFondo: enlace.color_fondo ?? null,
+    colorPatron: enlace.color_patron ?? null,
+    estilo: (enlace.estilo as Estilo | null) ?? null,
+    logoUrl: enlace.logo_url ?? null,
+  };
 }
 
 const ETIQUETAS_ESTILO: Record<Estilo, string> = {
@@ -50,7 +60,7 @@ export function PersonalizarQr({
         </button>
       </div>
 
-      <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-4 grid gap-5 grid-cols-1 sm:grid-cols-2">
         <div>
           <span className="text-xs text-gray-400">Color del patrón</span>
           <div className="mt-1.5 flex items-center gap-2">

@@ -66,6 +66,7 @@ export function AppShell({
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const enInicio = pathname === "/inicio";
   const enProyectos = pathname.startsWith("/proyectos");
 
   return (
@@ -76,7 +77,7 @@ export function AppShell({
         }`}
       >
         <div className="flex h-16 items-center border-b border-gray-200 px-5 dark:border-gray-800">
-          <Link href="/proyectos" className="inline-flex items-center">
+          <Link href="/inicio" className="inline-flex items-center">
             <Image
               src="/brand/logo-bk.svg"
               alt="PivotQR"
@@ -94,6 +95,27 @@ export function AppShell({
               Menú
             </h2>
             <ul className="space-y-1">
+              <li>
+                <Link
+                  href="/inicio"
+                  className={`menu-item ${enInicio ? "menu-item-active" : "menu-item-inactive"}`}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+                  </svg>
+                  Inicio
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/proyectos"
@@ -151,7 +173,7 @@ export function AppShell({
               <path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
             </svg>
           </button>
-          <Link href="/proyectos" className="inline-flex items-center lg:hidden">
+          <Link href="/inicio" className="inline-flex items-center lg:hidden">
             <Image
               src="/brand/logo.svg"
               alt="PivotQR"

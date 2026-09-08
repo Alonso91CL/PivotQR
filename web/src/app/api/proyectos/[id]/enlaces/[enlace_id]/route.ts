@@ -101,6 +101,28 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     }
   }
 
+  if (body && "nombre" in body) {
+    const v = body.nombre;
+    if (typeof v !== "string" || v.trim().length === 0 || v.trim().length > 120) {
+      return NextResponse.json(
+        { error: "El nombre es obligatorio y debe tener hasta 120 caracteres" },
+        { status: 400 },
+      );
+    }
+    cambios.nombre = v.trim();
+  }
+
+  if (body && "descripcion" in body) {
+    const v = body.descripcion;
+    if (typeof v !== "string" || v.trim().length > 280) {
+      return NextResponse.json(
+        { error: "La descripción debe tener hasta 280 caracteres" },
+        { status: 400 },
+      );
+    }
+    cambios.descripcion = v.trim();
+  }
+
   if (Object.keys(cambios).length === 0) {
     return NextResponse.json(
       { error: "No hay campos para actualizar" },
@@ -114,7 +136,8 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     .update(cambios)
     .eq("id", enlace_id)
     .eq("proyecto_id", id)
-    .select("id, proyecto_id, slug, url_destino, pausado, color_fondo, color_patron, estilo, logo_url, creado_en")
+    .is("eliminado_en", null)
+    .select("id, proyecto_id, slug, nombre, descripcion, url_destino, pausado, color_fondo, color_patron, estilo, logo_url, creado_en, eliminado_en")
     .single<Enlace>();
 
   if (error || !data) {
@@ -125,4 +148,37 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
   }
 
   return NextResponse.json({ enlace: data });
+}
+
+// Soft delete: marca el enlace como eliminado sin borrar sus escaneos. El QR
+// deja de redirigir y desaparece de las listas.
+export async function DELETE(_request: NextRequest, { params }: RouteParams) {
+  const { id, enlace_id } = await params;
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+  }
+
+  // RLS garantiza que el enlace sea de un proyecto del usuario.
+  const { data, error } = await supabase
+    .from("links")
+    .update({ eliminado_en: new Date().toISOString() })
+    .eq("id", enlace_id)
+    .eq("proyecto_id", id)
+    .is("eliminado_en", null)
+    .select("id")
+    .single();
+
+  if (error || !data) {
+    return NextResponse.json(
+      { error: error?.message ?? "No se encontró el enlace" },
+      { status: error ? 500 : 404 },
+    );
+  }
+
+  return NextResponse.json({ ok: true });
 }

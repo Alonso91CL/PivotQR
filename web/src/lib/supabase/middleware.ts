@@ -48,7 +48,7 @@ export async function updateSession(request: NextRequest) {
 
   if (user && isLoginPage) {
     const url = request.nextUrl.clone();
-    url.pathname = "/proyectos";
+    url.pathname = "/inicio";
     return NextResponse.redirect(url);
   }
 

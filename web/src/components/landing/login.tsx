@@ -21,7 +21,7 @@ export function LoginButton({
       data: { user },
     } = await createClient().auth.getUser();
     if (user) {
-      router.push("/proyectos");
+      router.push("/inicio");
       return;
     }
     window.dispatchEvent(new CustomEvent(OPEN_LOGIN_EVENT));

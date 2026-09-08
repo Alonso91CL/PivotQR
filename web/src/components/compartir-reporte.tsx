@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Modal } from "@/components/modal";
 
 export interface CompartirProyecto {
   id: string;
@@ -9,7 +10,7 @@ export interface CompartirProyecto {
   codigo_acceso: string | null;
 }
 
-export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) {
+function ContenidoCompartir({ proyecto }: { proyecto: CompartirProyecto }) {
   const [reportePublico, setReportePublico] = useState(proyecto.reporte_publico);
   const [codigo, setCodigo] = useState(proyecto.codigo_acceso);
   const [cargando, setCargando] = useState(false);
@@ -55,33 +56,38 @@ export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) 
   }
 
   return (
-    <section className="rounded-xl border border-gray-200 bg-white p-5 shadow-theme-xs dark:border-gray-800 dark:bg-gray-900">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 className="font-semibold text-gray-800 dark:text-white/90">Reporte del cliente</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Comparte el dashboard en vivo de esta campaña.
-          </p>
-        </div>
-        <Link
-          href={`/reporte/${proyecto.id}${reportePublico ? "" : `?codigo=${encodeURIComponent(codigo ?? "")}`}`}
-          target="_blank"
-          className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
-        >
-          Ver reporte ↗
-        </Link>
-      </div>
+    <div className="space-y-4">
+      <p className="text-sm text-gray-300">
+        Comparte el dashboard en vivo de esta campaña. Quien abra el enlace verá solo el reporte,
+        sin acceso a tu cuenta.
+      </p>
 
-      <div className="mt-4 flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <span
+          className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
+            reportePublico
+              ? "bg-success-500/10 text-success-400"
+              : "bg-warning-500/10 text-warning-400"
+          }`}
+        >
+          {reportePublico ? "Público · sin código" : "Privado · con código"}
+        </span>
         <button
           type="button"
           onClick={() => void guardar({ reporte_publico: !reportePublico })}
           disabled={cargando}
-          className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 disabled:opacity-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+          className="rounded-lg border border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-200 transition hover:bg-white/5 disabled:opacity-50"
         >
           {reportePublico ? "Hacerlo privado" : "Hacerlo público"}
         </button>
-        {!reportePublico && (
+      </div>
+
+      {!reportePublico && (
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="text-gray-400">Código:</span>
+          <code className="rounded bg-gray-800 px-2 py-0.5 font-mono font-semibold text-brand-300">
+            {codigo ?? "—"}
+          </code>
           <button
             type="button"
             onClick={() => {
@@ -90,11 +96,21 @@ export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) 
               }
             }}
             disabled={cargando}
-            className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 disabled:opacity-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+            className="text-brand-400 hover:underline"
           >
             Generar nuevo código
           </button>
-        )}
+        </div>
+      )}
+
+      <div className="flex flex-wrap gap-2">
+        <Link
+          href={`/reporte/${proyecto.id}${reportePublico ? "" : `?codigo=${encodeURIComponent(codigo ?? "")}`}`}
+          target="_blank"
+          className="rounded-lg border border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-200 transition hover:bg-white/5"
+        >
+          Ver reporte ↗
+        </Link>
         <button
           type="button"
           onClick={() => void copiarInvitacion()}
@@ -104,30 +120,42 @@ export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) 
         </button>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-        <span
-          className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
-            reportePublico
-              ? "bg-success-500/10 text-success-600 dark:text-success-400"
-              : "bg-warning-500/10 text-warning-600 dark:text-warning-400"
-          }`}
-        >
-          {reportePublico ? "Público" : "Privado"}
-        </span>
-        {!reportePublico && codigo && (
-          <>
-            <span className="text-gray-500 dark:text-gray-400">Código:</span>
-            <code className="rounded bg-gray-100 px-2 py-0.5 font-mono font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-100">
-              {codigo}
-            </code>
-            <span className="text-gray-500 dark:text-gray-400">
-              — quien abra el enlace debe ingresarlo.
-            </span>
-          </>
-        )}
-      </div>
+      {error && <p role="alert" className="text-sm text-error-400">{error}</p>}
+    </div>
+  );
+}
 
-      {error && <p role="alert" className="mt-3 text-sm text-error-600 dark:text-error-400">{error}</p>}
-    </section>
+export function CompartirReporte({ proyecto }: { proyecto: CompartirProyecto }) {
+  const [abierto, setAbierto] = useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setAbierto(true)}
+        className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-brand-600"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+        >
+          <path d="M6 12a3 3 0 11-3 3 3 3 0 013-3zm0 0V7.5A1.5 1.5 0 017.5 6H12m-6 6v4.5m6-7.5a3 3 0 103 3 3 3 0 00-3-3zm0 0V6a3 3 0 013-3h4.5" />
+        </svg>
+        Compartir reporte
+      </button>
+
+      {abierto && (
+        <Modal titulo="Compartir reporte" onCerrar={() => setAbierto(false)}>
+          <ContenidoCompartir proyecto={proyecto} />
+        </Modal>
+      )}
+    </>
   );
 }

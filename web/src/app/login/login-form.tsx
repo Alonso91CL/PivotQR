@@ -117,7 +117,7 @@ export function LoginForm() {
         if (signUpError) throw signUpError;
 
         if (data.session) {
-          router.push("/proyectos");
+          router.push("/inicio");
           router.refresh();
         } else {
           setMensaje("Revisa tu correo para confirmar la cuenta y luego inicia sesión.");
@@ -129,7 +129,7 @@ export function LoginForm() {
         });
         if (signInError) throw signInError;
 
-        router.push("/proyectos");
+        router.push("/inicio");
         router.refresh();
       }
     } catch (err) {

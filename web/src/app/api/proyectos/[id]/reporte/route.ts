@@ -1,11 +1,70 @@
 import { createClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/service";
 import { randomSlug } from "@/lib/slug";
+import { MAX_SCANS, type ReporteScan } from "@/lib/reporte";
 import { NextResponse, type NextRequest } from "next/server";
-import type { Proyecto } from "@/lib/types";
+import type { Enlace, Proyecto } from "@/lib/types";
 
 type RouteParams = { params: Promise<{ id: string }> };
 
 export const dynamic = "force-dynamic";
+
+// Reporte del dueño (logueado, sin código ni comprobación de visibilidad):
+// devuelve el mismo payload que el reporte público para reutilizar el
+// dashboard y construir los resúmenes del proyecto. RLS limita a sus datos.
+export async function GET(_request: NextRequest, { params }: RouteParams) {
+  const { id } = await params;
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+  }
+
+  const { data: proyecto } = await supabase
+    .from("projects")
+    .select("id, nombre, descripcion")
+    .eq("id", id)
+    .single<Pick<Proyecto, "id" | "nombre" | "descripcion">>();
+
+  if (!proyecto || !proyecto.id) {
+    return NextResponse.json({ error: "Reporte no encontrado" }, { status: 404 });
+  }
+
+  const { data: enlaces } = await supabase
+    .from("links")
+    .select("id, slug, nombre, descripcion, url_destino, pausado, creado_en")
+    .eq("proyecto_id", id)
+    .is("eliminado_en", null)
+    .order("creado_en", { ascending: false })
+    .returns<Enlace[]>();
+
+  const ids = (enlaces ?? []).map((e) => e.id);
+  let scans: ReporteScan[] = [];
+  let totalExacto = 0;
+  if (ids.length > 0) {
+    const service = createServiceClient();
+    const [{ data }, { count }] = await Promise.all([
+      service
+        .from("scans")
+        .select("id, enlace_id, ciudad, region, pais, dispositivo, so, fecha_utc")
+        .in("enlace_id", ids)
+        .order("fecha_utc", { ascending: false })
+        .limit(MAX_SCANS)
+        .returns<ReporteScan[]>(),
+      service
+        .from("scans")
+        .select("*", { count: "exact", head: true })
+        .in("enlace_id", ids),
+    ]);
+    scans = data ?? [];
+    totalExacto = count ?? 0;
+  }
+
+  return NextResponse.json({ proyecto: { ...proyecto, enlaces }, scans, total_exacto: totalExacto });
+}
 
 // Compartir el reporte (F3): público/privado y regeneración del código de acceso.
 // RLS garantiza que solo el dueño pueda actualizar su proyecto.

@@ -3,11 +3,11 @@
   "1": "web/package.json",
   "2": "compilerOptions",
   "3": "createClient",
-  "4": "qr.ts",
+  "4": "qr-card.tsx",
   "5": "PRD — PivotQR",
   "6": "worker/package.json",
-  "7": "devDependencies",
-  "8": "dashboard.tsx",
+  "7": "ver-metricas-qr-modal.tsx",
+  "8": "[proyecto_id]/route.ts",
   "9": "app/layout.tsx",
   "10": "PivotQR — Funcionalidades del V1",
   "11": "index.ts",
@@ -32,5 +32,7 @@
   "30": "web/AGENTS.md",
   "31": "CLAUDE.md",
   "32": "public.links",
-  "34": "0002_fase4_personalizacion_qr.sql"
+  "33": "qr.ts",
+  "34": "0002_fase4_personalizacion_qr.sql",
+  "35": "proyecto-resumen.tsx"
 }
