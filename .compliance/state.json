@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "generated_at": "2026-09-08T18:27:24Z",
+  "git_commit": "e4db44c",
+  "company": {
+    "razon_social": "SOCIEDAD TECNOLÓGICA PIVOT IT SPA",
+    "rut": "78.279.306-3",
+    "domicilio": "Av. Apoquindo 6410, oficina 606, 7560903 Las Condes, Región Metropolitana",
+    "contacto": "contacto@pivotit.cl",
+    "representante_legal": "Germán Figueroa",
+    "tamano": "micro",
+    "responsable_datos": "Germán Figueroa",
+    "encargado_prevencion": "Germán Figueroa"
+  },
+  "active_packs": ["ley-21595", "ley-21719"],
+  "controls": {
+    "gov-responsable": { "status": "pass", "evidence": "declarado por el usuario (Germán Figueroa asume responsable y encargado de prevención)", "remediation": "" },
+    "gov-registro": { "status": "pass", "evidence": "docs/21719-rat.md + docs/21595-matriz-riesgos.md generados", "remediation": "" },
+    "gov-politicas": { "status": "pass", "evidence": "docs/21719-politica-privacidad.md + docs/21595-codigo-etica.md generados", "remediation": "Publicar política en la web y añadir links desde la landing" },
+    "gov-capacitacion": { "status": "partial", "evidence": "no verificable por código; requiere documento interno", "remediation": "Programar capacitación anual y dejar constancia" },
+    "gov-auditoria": { "status": "partial", "evidence": "no verificable por código", "remediation": "Supervisión externa anual del MPD por tercero independiente (obligatoria 21.595)" },
+    "gov-disciplinario": { "status": "partial", "evidence": "declarado, sin reglamento interno formal", "remediation": "Documentar régimen disciplinario" },
+    "gov-denuncias": { "status": "partial", "evidence": "docs/21595-reglamento-canal-denuncias.md (canal denuncias@pivotit.cl)", "remediation": "Crear el buzón de correo dedicado y activarlo" },
+    "data-licitud": { "status": "partial", "evidence": "sin checkbox de consentimiento en registro (login-form.tsx:175-242)", "remediation": "Añadir checkbox de consentimiento + aviso en el registro" },
+    "data-derechos": { "status": "fail", "evidence": "sin endpoints ARCO completos (export, delete cuenta, oposición)", "remediation": "Implementar export de datos, borrado de cuenta y mecanismo de derechos" },
+    "data-info": { "status": "fail", "evidence": "sin política pública ni avisos en la app", "remediation": "Publicar política de privacidad y avisos (docs generados)" },
+    "data-minimizacion": { "status": "partial", "evidence": "sin retención de escaneos (scans se acumulan)", "remediation": "Implementar retención de 24 meses + anonimización (pg_cron o job)" },
+    "data-dpa": { "status": "partial", "evidence": "docs/21719-dpa.md generado como modelo", "remediation": "Firmar/completar DPA con Supabase, Cloudflare, Vercel, Google" },
+    "data-transfer": { "status": "partial", "evidence": "docs/21719-anexo-transferencias.md documentado", "remediation": "Completar anexo con cláusulas modelo por proveedor" },
+    "data-consent-text": { "status": "partial", "evidence": "docs/21719-consentimiento.md generado", "remediation": "Integrar textos en el formulario de registro" },
+    "data-rights-channel": { "status": "partial", "evidence": "docs/21719-canal-derechos.md + canal contacto@pivotit.cl", "remediation": "Publicar 'Tus derechos' en la web" },
+    "data-eipd": { "status": "pass", "evidence": "docs/21719-eipd.md: no aplica (no hay supuestos del Art. 15 ter)", "remediation": "" },
+    "data-privacy-by-design": { "status": "partial", "evidence": "RLS y minimización presentes; falta por defecto en formularios", "remediation": "Añadir consentimiento por defecto no marcado" },
+    "data-pseudonym": { "status": "partial", "evidence": "geolocalización aproximada sin cruzar con identidad directa", "remediation": "Documentar práctica de seudonimización" },
+    "sec-tls": { "status": "pass", "evidence": "HTTPS en todos los endpoints (Vercel, Cloudflare, Supabase)", "remediation": "" },
+    "sec-rest": { "status": "pass", "evidence": "Supabase hosted cifra en reposo; contraseñas hash Argon2id", "remediation": "" },
+    "sec-passwords": { "status": "pass", "evidence": "Supabase Auth (hash Argon2id), web/.../login-form.tsx:110-128", "remediation": "" },
+    "sec-mfa": { "status": "fail", "evidence": "sin MFA en el código", "remediation": "Activar MFA en Supabase Auth (opcional, recomendado)" },
+    "sec-logs": { "status": "fail", "evidence": "sin audit log de acciones de usuario", "remediation": "Implementar audit log (actor, IP, acción, timestamp)" },
+    "sec-tenant": { "status": "pass", "evidence": "RLS por owner_id en projects/links/scans (0001_init.sql:19-38)", "remediation": "" },
+    "sec-secrets": { "status": "fail", "evidence": ".env.local versionado en el repo con secrets", "remediation": "Sacar .env.local del tracking y rotar credenciales" },
+    "sec-backups": { "status": "unknown", "evidence": "depende de plan Supabase", "remediation": "Confirmar backups y política de restauración" },
+    "inc-brechas": { "status": "partial", "evidence": "docs/21719-plan-respuesta-brechas.md + registro generado", "remediation": "Activar el plan y designar contacto" },
+    "ctrl-interno": { "status": "partial", "evidence": "segregación de funciones declarada en MPD; documental", "remediation": "Documentar autorizaciones de pagos/compras" },
+    "sec-monitoring": { "status": "fail", "evidence": "sin monitoreo de secreción/errores/brechas", "remediation": "Configurar alertas sobre logs y secret scanning" }
+  },
+  "frameworks": {
+    "ley-21719": {
+      "score": 0.52,
+      "controls_required": 21,
+      "pass": 8,
+      "partial": 10,
+      "fail": 3
+    },
+    "ley-21595": {
+      "score": 0.44,
+      "controls_required": 9,
+      "pass": 4,
+      "partial": 5,
+      "fail": 0
+    }
+  }
+}
