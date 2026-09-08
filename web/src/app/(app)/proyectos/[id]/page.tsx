@@ -24,7 +24,7 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
 
   const { data: enlaces } = await supabase
     .from("links")
-    .select("id, proyecto_id, slug, url_destino, pausado, creado_en")
+    .select("id, proyecto_id, slug, url_destino, pausado, color_fondo, color_patron, estilo, logo_url, creado_en")
     .eq("proyecto_id", id)
     .order("creado_en", { ascending: false });
 

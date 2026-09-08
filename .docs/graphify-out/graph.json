@@ -43,6 +43,19 @@
       "source_location": "L4"
     },
     {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_routeparams",
+      "label": "RouteParams",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "routeparams",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L6"
+    },
+    {
       "id": "web_src_app_api_proyectos_id_enlaces_route_routeparams",
       "label": "RouteParams",
       "_callable": true,
@@ -69,6 +82,58 @@
       "source_location": "L6"
     },
     {
+      "id": "web_src_app_api_reporte_proyecto_id_route_reportescan",
+      "label": "ReporteScan",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "reportescan",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "web_src_app_api_reporte_proyecto_id_route_routeparams",
+      "label": "RouteParams",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "routeparams",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "web_src_lib_types_enlace",
+      "label": "Enlace",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "enlace",
+      "source_file": "web/src/lib/types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_lib_types_proyecto",
+      "label": "Proyecto",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "proyecto",
+      "source_file": "web/src/lib/types.ts",
+      "source_location": "L14"
+    },
+    {
       "id": "web_src_components_compartir_reporte_compartirproyecto",
       "label": "CompartirProyecto",
       "_callable": true,
@@ -82,43 +147,30 @@
       "source_location": "L6"
     },
     {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_routeparams",
-      "label": "RouteParams",
+      "id": "web_src_components_personalizar_qr_personalizacionqr",
+      "label": "PersonalizacionQR",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "routeparams",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L5"
+      "norm_label": "personalizacionqr",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L6"
     },
     {
-      "id": "web_src_app_api_reporte_proyecto_id_route_reportescan",
-      "label": "ReporteScan",
+      "id": "web_src_lib_qr_estilo",
+      "label": "Estilo",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "reportescan",
-      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "web_src_app_api_reporte_proyecto_id_route_routeparams",
-      "label": "RouteParams",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "routeparams",
-      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L5"
+      "norm_label": "estilo",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L4"
     },
     {
       "id": "web_src_lib_qr_qrconfig",
@@ -127,37 +179,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "qrconfig",
       "source_file": "web/src/lib/qr.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "web_src_lib_types_enlace",
-      "label": "Enlace",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "enlace",
-      "source_file": "web/src/lib/types.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_lib_types_proyecto",
-      "label": "Proyecto",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "proyecto",
-      "source_file": "web/src/lib/types.ts",
-      "source_location": "L10"
+      "source_location": "L6"
     },
     {
       "id": "web_src_app_s_slug_route_routeparams",
@@ -210,6 +236,18 @@
       "norm_label": "reportescan",
       "source_file": "web/src/components/reporte/dashboard.tsx",
       "source_location": "L12"
+    },
+    {
+      "id": "web_src_app_app_layout_applayout",
+      "label": "AppLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "applayout()",
+      "source_file": "web/src/app/(app)/layout.tsx",
+      "source_location": "L5"
     },
     {
       "id": "web_src_app_app_proyectos_create_proyecto_form_createproyectoform",
@@ -306,6 +344,18 @@
       "norm_label": "loginpage()",
       "source_file": "web/src/app/login/page.tsx",
       "source_location": "L5"
+    },
+    {
+      "id": "web_src_components_app_shell_appshell",
+      "label": "AppShell()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "appshell()",
+      "source_file": "web/src/components/app-shell.tsx",
+      "source_location": "L59"
     },
     {
       "id": "web_src_components_app_shell_userdropdown",
@@ -452,6 +502,30 @@
       "source_location": "L3"
     },
     {
+      "id": "web_src_lib_supabase_middleware_updatesession",
+      "label": "updateSession()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "updatesession()",
+      "source_file": "web/src/lib/supabase/middleware.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "web_src_proxy_proxy",
+      "label": "proxy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "proxy()",
+      "source_file": "web/src/proxy.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "worker_src_index_detectdevice",
       "label": "detectDevice()",
       "_callable": true,
@@ -521,7 +595,7 @@
       "file_type": "code",
       "norm_label": "patch()",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L9"
+      "source_location": "L12"
     },
     {
       "id": "web_src_app_api_proyectos_id_enlaces_route_post",
@@ -548,16 +622,40 @@
       "source_location": "L12"
     },
     {
-      "id": "web_src_app_app_layout_applayout",
-      "label": "AppLayout()",
+      "id": "web_src_app_app_proyectos_id_crear_enlace_form_crearenlaceform",
+      "label": "CrearEnlaceForm()",
       "_callable": true,
       "_origin": "ast",
       "community": 3,
       "community_name": "createClient",
       "file_type": "code",
-      "norm_label": "applayout()",
-      "source_file": "web/src/app/(app)/layout.tsx",
-      "source_location": "L5"
+      "norm_label": "crearenlaceform()",
+      "source_file": "web/src/app/(app)/proyectos/[id]/crear-enlace-form.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "web_src_app_app_proyectos_id_crear_enlace_form_crearenlaceform_crear",
+      "label": "crear()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "crear()",
+      "source_file": "web/src/app/(app)/proyectos/[id]/crear-enlace-form.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "web_src_app_app_proyectos_id_page_proyectopage",
+      "label": "ProyectoPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "proyectopage()",
+      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
+      "source_location": "L11"
     },
     {
       "id": "web_src_app_app_proyectos_page_proyectospage",
@@ -584,18 +682,6 @@
       "source_location": "L4"
     },
     {
-      "id": "web_src_components_app_shell_appshell",
-      "label": "AppShell()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "appshell()",
-      "source_file": "web/src/components/app-shell.tsx",
-      "source_location": "L59"
-    },
-    {
       "id": "web_src_lib_slug_randomslug",
       "label": "randomSlug()",
       "_callable": true,
@@ -617,30 +703,6 @@
       "file_type": "code",
       "norm_label": "createclient()",
       "source_file": "web/src/lib/supabase/server.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "web_src_lib_supabase_middleware_updatesession",
-      "label": "updateSession()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "proxy.ts",
-      "file_type": "code",
-      "norm_label": "updatesession()",
-      "source_file": "web/src/lib/supabase/middleware.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "web_src_proxy_proxy",
-      "label": "proxy()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "proxy.ts",
-      "file_type": "code",
-      "norm_label": "proxy()",
-      "source_file": "web/src/proxy.ts",
       "source_location": "L4"
     },
     {
@@ -692,64 +754,40 @@
       "source_location": "L19"
     },
     {
-      "id": "web_src_app_api_reporte_proyecto_id_route_get",
-      "label": "GET()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "get()",
-      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_crear_enlace_form_crearenlaceform",
-      "label": "CrearEnlaceForm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "crearenlaceform()",
-      "source_file": "web/src/app/(app)/proyectos/[id]/crear-enlace-form.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_crear_enlace_form_crearenlaceform_crear",
-      "label": "crear()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "crear()",
-      "source_file": "web/src/app/(app)/proyectos/[id]/crear-enlace-form.tsx",
-      "source_location": "L14"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_page_proyectopage",
-      "label": "ProyectoPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "proyectopage()",
-      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
-      "source_location": "L11"
-    },
-    {
       "id": "web_src_app_page_landingpage",
       "label": "LandingPage()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "landingpage()",
       "source_file": "web/src/app/page.tsx",
       "source_location": "L113"
+    },
+    {
+      "id": "web_src_components_personalizar_qr_personalizarqr",
+      "label": "PersonalizarQr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "personalizarqr()",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "web_src_components_qr_panel_personalizacionde",
+      "label": "personalizacionDe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "personalizacionde()",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L11"
     },
     {
       "id": "web_src_components_qr_panel_qrpanel",
@@ -757,11 +795,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "qrpanel()",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L10"
+      "source_location": "L20"
     },
     {
       "id": "web_src_components_qr_panel_qrpanel_actualizar",
@@ -769,11 +807,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "actualizar()",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L57"
+      "source_location": "L81"
+    },
+    {
+      "id": "web_src_components_qr_panel_qrpanel_cambiarpersonalizacion",
+      "label": "cambiarPersonalizacion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "cambiarpersonalizacion()",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L155"
     },
     {
       "id": "web_src_components_qr_panel_qrpanel_contar",
@@ -781,11 +831,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "contar()",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L42"
+      "source_location": "L66"
     },
     {
       "id": "web_src_components_qr_panel_qrpanel_descargarsvg",
@@ -793,11 +843,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "descargarsvg()",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L90"
+      "source_location": "L163"
+    },
+    {
+      "id": "web_src_components_qr_panel_qrpanel_guardarconfig",
+      "label": "guardarConfig()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "guardarconfig()",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L119"
     },
     {
       "id": "web_src_components_qr_panel_qrpanel_guardarurl",
@@ -805,11 +867,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "guardarurl()",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L84"
+      "source_location": "L110"
+    },
+    {
+      "id": "web_src_components_qr_panel_qrpanel_subirlogo",
+      "label": "subirLogo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "subirlogo()",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L131"
     },
     {
       "id": "web_src_lib_qr_buildqrdataurl",
@@ -817,11 +891,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "buildqrdataurl()",
       "source_file": "web/src/lib/qr.ts",
-      "source_location": "L8"
+      "source_location": "L95"
     },
     {
       "id": "web_src_lib_qr_buildqrsvg",
@@ -829,11 +903,95 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "buildqrsvg()",
       "source_file": "web/src/lib/qr.ts",
-      "source_location": "L20"
+      "source_location": "L88"
+    },
+    {
+      "id": "web_src_lib_qr_buildsvgstring",
+      "label": "buildSvgString()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "buildsvgstring()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "web_src_lib_qr_colorefectivo",
+      "label": "colorEfectivo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "colorefectivo()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "web_src_lib_qr_escapar",
+      "label": "escapar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "escapar()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "web_src_lib_qr_estaenlocalizador",
+      "label": "estaEnLocalizador()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "estaenlocalizador()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "web_src_lib_qr_estamparlogo",
+      "label": "estamparLogo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "estamparlogo()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L128"
+    },
+    {
+      "id": "web_src_lib_qr_svgcomodataurl",
+      "label": "svgComoDataUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "svgcomodataurl()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L84"
+    },
+    {
+      "id": "web_src_app_api_reporte_proyecto_id_route_get",
+      "label": "GET()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "get()",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L24"
     },
     {
       "id": "web_src_app_reporte_id_page_reportepage",
@@ -992,6 +1150,17 @@
       "source_location": "L23"
     },
     {
+      "id": "web_src_app_app_layout",
+      "label": "(app)/layout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "(app)/layout.tsx",
+      "source_file": "web/src/app/(app)/layout.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "web_src_app_app_proyectos_create_proyecto_form",
       "label": "create-proyecto-form.tsx",
       "_origin": "ast",
@@ -1025,59 +1194,15 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_page",
-      "label": "app/page.tsx",
+      "id": "web_src_components_app_shell",
+      "label": "app-shell.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "createClient",
       "file_type": "code",
-      "norm_label": "app/page.tsx",
-      "source_file": "web/src/app/page.tsx",
+      "norm_label": "app-shell.tsx",
+      "source_file": "web/src/components/app-shell.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_page_barras",
-      "label": "barras",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "barras",
-      "source_file": "web/src/app/page.tsx",
-      "source_location": "L111"
-    },
-    {
-      "id": "web_src_app_page_chats",
-      "label": "chats",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "chats",
-      "source_file": "web/src/app/page.tsx",
-      "source_location": "L109"
-    },
-    {
-      "id": "web_src_app_page_features",
-      "label": "features",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "features",
-      "source_file": "web/src/app/page.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "web_src_app_page_pasos",
-      "label": "pasos",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "pasos",
-      "source_file": "web/src/app/page.tsx",
-      "source_location": "L7"
     },
     {
       "id": "web_src_components_landing_login",
@@ -1124,17 +1249,6 @@
       "source_location": "L17"
     },
     {
-      "id": "ref_supabase_ssr",
-      "label": "@supabase/ssr",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "concept",
-      "norm_label": "@supabase/ssr",
-      "source_file": "web/package.json",
-      "source_location": "L12"
-    },
-    {
       "id": "web_package",
       "label": "web/package.json",
       "_origin": "ast",
@@ -1146,114 +1260,92 @@
       "source_location": "L1"
     },
     {
-      "id": "web_package_devdependencies",
-      "label": "devDependencies",
+      "id": "web_package_dependencies",
+      "label": "dependencies",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "devdependencies",
+      "norm_label": "dependencies",
       "source_file": "web/package.json",
-      "source_location": "L20"
+      "source_location": "L11"
     },
     {
-      "id": "web_package_devdependencies_eslint",
-      "label": "eslint",
+      "id": "web_package_dependencies_next",
+      "label": "next",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "eslint",
+      "norm_label": "next",
       "source_file": "web/package.json",
-      "source_location": "L26"
+      "source_location": "L15"
     },
     {
-      "id": "web_package_devdependencies_eslint_config_next",
-      "label": "eslint-config-next",
+      "id": "web_package_dependencies_qrcode",
+      "label": "qrcode",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "eslint-config-next",
+      "norm_label": "qrcode",
       "source_file": "web/package.json",
-      "source_location": "L27"
+      "source_location": "L16"
     },
     {
-      "id": "web_package_devdependencies_tailwindcss",
-      "label": "tailwindcss",
+      "id": "web_package_dependencies_react",
+      "label": "react",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "tailwindcss",
+      "norm_label": "react",
       "source_file": "web/package.json",
-      "source_location": "L28"
+      "source_location": "L17"
     },
     {
-      "id": "web_package_devdependencies_tailwindcss_postcss",
-      "label": "@tailwindcss/postcss",
+      "id": "web_package_dependencies_react_dom",
+      "label": "react-dom",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "@tailwindcss/postcss",
+      "norm_label": "react-dom",
       "source_file": "web/package.json",
-      "source_location": "L21"
+      "source_location": "L18"
     },
     {
-      "id": "web_package_devdependencies_types_node",
-      "label": "@types/node",
+      "id": "web_package_dependencies_supabase_ssr",
+      "label": "@supabase/ssr",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "@types/node",
+      "norm_label": "@supabase/ssr",
       "source_file": "web/package.json",
-      "source_location": "L22"
+      "source_location": "L12"
     },
     {
-      "id": "web_package_devdependencies_types_qrcode",
-      "label": "@types/qrcode",
+      "id": "web_package_dependencies_supabase_supabase_js",
+      "label": "@supabase/supabase-js",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "@types/qrcode",
+      "norm_label": "@supabase/supabase-js",
       "source_file": "web/package.json",
-      "source_location": "L23"
+      "source_location": "L13"
     },
     {
-      "id": "web_package_devdependencies_types_react",
-      "label": "@types/react",
+      "id": "web_package_dependencies_vercel_analytics",
+      "label": "@vercel/analytics",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "@types/react",
+      "norm_label": "@vercel/analytics",
       "source_file": "web/package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "web_package_devdependencies_types_react_dom",
-      "label": "@types/react-dom",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "web/package.json",
-      "file_type": "code",
-      "norm_label": "@types/react-dom",
-      "source_file": "web/package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "web_package_devdependencies_typescript",
-      "label": "typescript",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "web/package.json",
-      "file_type": "code",
-      "norm_label": "typescript",
-      "source_file": "web/package.json",
-      "source_location": "L29"
+      "source_location": "L14"
     },
     {
       "id": "web_package_name",
@@ -1355,6 +1447,39 @@
       "source_location": "L3"
     },
     {
+      "id": "web_src_lib_supabase_middleware",
+      "label": "middleware.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "middleware.ts",
+      "source_file": "web/src/lib/supabase/middleware.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_proxy",
+      "label": "proxy.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "proxy.ts",
+      "source_file": "web/src/proxy.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_proxy_config",
+      "label": "config",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "config",
+      "source_file": "web/src/proxy.ts",
+      "source_location": "L8"
+    },
+    {
       "id": "ref_eslint",
       "label": "eslint",
       "_origin": "ast",
@@ -1377,6 +1502,17 @@
       "source_location": "L27"
     },
     {
+      "id": "ref_qrcode",
+      "label": "qrcode",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "concept",
+      "norm_label": "qrcode",
+      "source_file": "web/package.json",
+      "source_location": "L16"
+    },
+    {
       "id": "ref_react_dom",
       "label": "react-dom",
       "_origin": "ast",
@@ -1386,6 +1522,17 @@
       "norm_label": "react-dom",
       "source_file": "web/package.json",
       "source_location": "L18"
+    },
+    {
+      "id": "ref_supabase_ssr",
+      "label": "@supabase/ssr",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "concept",
+      "norm_label": "@supabase/ssr",
+      "source_file": "web/package.json",
+      "source_location": "L12"
     },
     {
       "id": "ref_tailwindcss",
@@ -3017,6 +3164,28 @@
       "source_location": "L1"
     },
     {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
+      "label": "[enlace_id]/route.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "[enlace_id]/route.ts",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L10"
+    },
+    {
       "id": "web_src_app_api_proyectos_id_enlaces_route",
       "label": "enlaces/route.ts",
       "_origin": "ast",
@@ -3061,15 +3230,59 @@
       "source_location": "L8"
     },
     {
-      "id": "web_src_app_app_layout",
-      "label": "(app)/layout.tsx",
+      "id": "web_src_app_api_reporte_proyecto_id_route",
+      "label": "[proyecto_id]/route.ts",
       "_origin": "ast",
       "community": 3,
       "community_name": "createClient",
       "file_type": "code",
-      "norm_label": "(app)/layout.tsx",
-      "source_file": "web/src/app/(app)/layout.tsx",
+      "norm_label": "[proyecto_id]/route.ts",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_api_reporte_proyecto_id_route_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "web_src_app_app_proyectos_id_crear_enlace_form",
+      "label": "crear-enlace-form.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "crear-enlace-form.tsx",
+      "source_file": "web/src/app/(app)/proyectos/[id]/crear-enlace-form.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_app_proyectos_id_page",
+      "label": "proyectos/[id]/page.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "proyectos/[id]/page.tsx",
+      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_app_proyectos_id_page_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
+      "source_location": "L9"
     },
     {
       "id": "web_src_app_app_proyectos_page",
@@ -3105,17 +3318,6 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_components_app_shell",
-      "label": "app-shell.tsx",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "app-shell.tsx",
-      "source_file": "web/src/components/app-shell.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "web_src_lib_slug",
       "label": "slug.ts",
       "_origin": "ast",
@@ -3135,6 +3337,17 @@
       "file_type": "code",
       "norm_label": "server.ts",
       "source_file": "web/src/lib/supabase/server.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_lib_types",
+      "label": "types.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "types.ts",
+      "source_file": "web/src/lib/types.ts",
       "source_location": "L1"
     },
     {
@@ -3174,37 +3387,15 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_lib_supabase_middleware",
-      "label": "middleware.ts",
+      "id": "public_links",
+      "label": "public.links",
       "_origin": "ast",
       "community": 32,
-      "community_name": "proxy.ts",
+      "community_name": "public.links",
       "file_type": "code",
-      "norm_label": "middleware.ts",
-      "source_file": "web/src/lib/supabase/middleware.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_proxy",
-      "label": "proxy.ts",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "proxy.ts",
-      "file_type": "code",
-      "norm_label": "proxy.ts",
-      "source_file": "web/src/proxy.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_proxy_config",
-      "label": "config",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "proxy.ts",
-      "file_type": "code",
-      "norm_label": "config",
-      "source_file": "web/src/proxy.ts",
-      "source_location": "L8"
+      "norm_label": "public.links",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "web_src_components_compartir_reporte",
@@ -3218,88 +3409,99 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
-      "label": "[enlace_id]/route.ts",
+      "id": "supabase_migrations_0002_fase4_personalizacion_qr",
+      "label": "0002_fase4_personalizacion_qr.sql",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "0002_fase4_personalizacion_qr.sql",
+      "file_type": "code",
+      "norm_label": "0002_fase4_personalizacion_qr.sql",
+      "source_file": "supabase/migrations/0002_fase4_personalizacion_qr.sql",
+      "source_location": null
+    },
+    {
+      "id": "web_src_app_page",
+      "label": "app/page.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "[enlace_id]/route.ts",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "norm_label": "app/page.tsx",
+      "source_file": "web/src/app/page.tsx",
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_dynamic",
-      "label": "dynamic",
+      "id": "web_src_app_page_barras",
+      "label": "barras",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "norm_label": "barras",
+      "source_file": "web/src/app/page.tsx",
+      "source_location": "L111"
+    },
+    {
+      "id": "web_src_app_page_chats",
+      "label": "chats",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "chats",
+      "source_file": "web/src/app/page.tsx",
+      "source_location": "L109"
+    },
+    {
+      "id": "web_src_app_page_features",
+      "label": "features",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "features",
+      "source_file": "web/src/app/page.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "web_src_app_page_pasos",
+      "label": "pasos",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr.ts",
+      "file_type": "code",
+      "norm_label": "pasos",
+      "source_file": "web/src/app/page.tsx",
       "source_location": "L7"
     },
     {
-      "id": "web_src_app_api_reporte_proyecto_id_route",
-      "label": "[proyecto_id]/route.ts",
+      "id": "web_src_components_personalizar_qr",
+      "label": "personalizar-qr.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "[proyecto_id]/route.ts",
-      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "norm_label": "personalizar-qr.tsx",
+      "source_file": "web/src/components/personalizar-qr.tsx",
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_api_reporte_proyecto_id_route_dynamic",
-      "label": "dynamic",
+      "id": "web_src_components_personalizar_qr_etiquetas_estilo",
+      "label": "ETIQUETAS_ESTILO",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_crear_enlace_form",
-      "label": "crear-enlace-form.tsx",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "crear-enlace-form.tsx",
-      "source_file": "web/src/app/(app)/proyectos/[id]/crear-enlace-form.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_page",
-      "label": "proyectos/[id]/page.tsx",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "proyectos/[id]/page.tsx",
-      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_page_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
-      "source_location": "L9"
+      "norm_label": "etiquetas_estilo",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L13"
     },
     {
       "id": "web_src_components_qr_panel",
       "label": "qr-panel.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "qr-panel.tsx",
       "source_file": "web/src/components/qr-panel.tsx",
@@ -3310,33 +3512,22 @@
       "label": "qr.ts",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
       "norm_label": "qr.ts",
       "source_file": "web/src/lib/qr.ts",
       "source_location": "L1"
     },
     {
-      "id": "web_src_lib_types",
-      "label": "types.ts",
+      "id": "web_src_lib_qr_estilos",
+      "label": "ESTILOS",
       "_origin": "ast",
       "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
+      "community_name": "qr.ts",
       "file_type": "code",
-      "norm_label": "types.ts",
-      "source_file": "web/src/lib/types.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_qrcode",
-      "label": "qrcode",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "proyectos/[id]/page.tsx",
-      "file_type": "concept",
-      "norm_label": "qrcode",
-      "source_file": "web/package.json",
-      "source_location": "L16"
+      "norm_label": "estilos",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L3"
     },
     {
       "id": "docs_prd",
@@ -3628,92 +3819,114 @@
       "source_location": "L9"
     },
     {
-      "id": "web_package_dependencies",
-      "label": "dependencies",
+      "id": "web_package_devdependencies",
+      "label": "devDependencies",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "dependencies",
+      "norm_label": "devdependencies",
       "source_file": "web/package.json",
-      "source_location": "L11"
+      "source_location": "L20"
     },
     {
-      "id": "web_package_dependencies_next",
-      "label": "next",
+      "id": "web_package_devdependencies_eslint",
+      "label": "eslint",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "next",
+      "norm_label": "eslint",
       "source_file": "web/package.json",
-      "source_location": "L15"
+      "source_location": "L26"
     },
     {
-      "id": "web_package_dependencies_qrcode",
-      "label": "qrcode",
+      "id": "web_package_devdependencies_eslint_config_next",
+      "label": "eslint-config-next",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "qrcode",
+      "norm_label": "eslint-config-next",
       "source_file": "web/package.json",
-      "source_location": "L16"
+      "source_location": "L27"
     },
     {
-      "id": "web_package_dependencies_react",
-      "label": "react",
+      "id": "web_package_devdependencies_tailwindcss",
+      "label": "tailwindcss",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "react",
+      "norm_label": "tailwindcss",
       "source_file": "web/package.json",
-      "source_location": "L17"
+      "source_location": "L28"
     },
     {
-      "id": "web_package_dependencies_react_dom",
-      "label": "react-dom",
+      "id": "web_package_devdependencies_tailwindcss_postcss",
+      "label": "@tailwindcss/postcss",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "react-dom",
+      "norm_label": "@tailwindcss/postcss",
       "source_file": "web/package.json",
-      "source_location": "L18"
+      "source_location": "L21"
     },
     {
-      "id": "web_package_dependencies_supabase_ssr",
-      "label": "@supabase/ssr",
+      "id": "web_package_devdependencies_types_node",
+      "label": "@types/node",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "@supabase/ssr",
+      "norm_label": "@types/node",
       "source_file": "web/package.json",
-      "source_location": "L12"
+      "source_location": "L22"
     },
     {
-      "id": "web_package_dependencies_supabase_supabase_js",
-      "label": "@supabase/supabase-js",
+      "id": "web_package_devdependencies_types_qrcode",
+      "label": "@types/qrcode",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "@supabase/supabase-js",
+      "norm_label": "@types/qrcode",
       "source_file": "web/package.json",
-      "source_location": "L13"
+      "source_location": "L23"
     },
     {
-      "id": "web_package_dependencies_vercel_analytics",
-      "label": "@vercel/analytics",
+      "id": "web_package_devdependencies_types_react",
+      "label": "@types/react",
       "_origin": "ast",
       "community": 7,
-      "community_name": "dependencies",
+      "community_name": "devDependencies",
       "file_type": "code",
-      "norm_label": "@vercel/analytics",
+      "norm_label": "@types/react",
       "source_file": "web/package.json",
-      "source_location": "L14"
+      "source_location": "L24"
+    },
+    {
+      "id": "web_package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "devDependencies",
+      "file_type": "code",
+      "norm_label": "@types/react-dom",
+      "source_file": "web/package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "web_package_devdependencies_typescript",
+      "label": "typescript",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "devDependencies",
+      "file_type": "code",
+      "norm_label": "typescript",
+      "source_file": "web/package.json",
+      "source_location": "L29"
     },
     {
       "id": "web_src_app_reporte_id_page",
@@ -3913,7 +4126,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L11",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -4194,6 +4407,18 @@
     },
     {
       "source": "web_src_components_qr_panel_qrpanel",
+      "target": "web_src_components_qr_panel_personalizacionde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel",
       "target": "web_src_lib_qr_buildqrdataurl",
       "relation": "calls",
       "_origin": "ast",
@@ -4201,7 +4426,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L29",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -4213,7 +4438,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L40",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel_actualizar",
+      "target": "web_src_components_qr_panel_personalizacionde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -4225,7 +4462,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L91",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel_guardarconfig",
+      "target": "web_src_components_qr_panel_qrpanel_actualizar",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -4237,7 +4486,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L87",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel_subirlogo",
+      "target": "web_src_lib_supabase_client_createclient",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -4262,6 +4523,102 @@
       "context": "call",
       "source_file": "web/src/components/turnstile.tsx",
       "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildqrdataurl",
+      "target": "web_src_lib_qr_svgcomodataurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildqrdataurl",
+      "target": "web_src_lib_qr_estamparlogo",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildqrdataurl",
+      "target": "web_src_lib_qr_buildsvgstring",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildqrsvg",
+      "target": "web_src_lib_qr_buildsvgstring",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildsvgstring",
+      "target": "web_src_lib_qr_colorefectivo",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildsvgstring",
+      "target": "web_src_lib_qr_escapar",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_buildsvgstring",
+      "target": "web_src_lib_qr_estaenlocalizador",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr_estamparlogo",
+      "target": "web_src_lib_qr_colorefectivo",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -4338,6 +4695,42 @@
     },
     {
       "source": "web_src_components_qr_panel_qrpanel",
+      "target": "web_src_components_qr_panel_qrpanel_guardarconfig",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel",
+      "target": "web_src_components_qr_panel_qrpanel_subirlogo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel",
+      "target": "web_src_components_qr_panel_qrpanel_descargarsvg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel_qrpanel",
       "target": "web_src_components_qr_panel_qrpanel_contar",
       "relation": "contains",
       "_origin": "ast",
@@ -4345,7 +4738,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L42",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -4357,7 +4750,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L57",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_personalizar_qr_personalizacionqr",
+      "target": "web_src_lib_qr_estilo",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -4566,6 +4971,30 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
+      "target": "web_src_lib_qr_estilo",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
+      "target": "web_src_lib_qr_estilos",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
       "target": "web_src_lib_types_enlace",
       "relation": "imports",
       "_origin": "ast",
@@ -4573,7 +5002,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -5021,6 +5450,30 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_components_personalizar_qr",
+      "target": "web_src_lib_qr_estilo",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_personalizar_qr",
+      "target": "web_src_lib_qr_estilos",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_components_qr_panel",
       "target": "web_src_lib_qr_buildqrdataurl",
       "relation": "imports",
@@ -5046,6 +5499,18 @@
     },
     {
       "source": "web_src_components_qr_panel",
+      "target": "web_src_lib_qr_estilo",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel",
       "target": "web_src_lib_supabase_client_createclient",
       "relation": "imports",
       "_origin": "ast",
@@ -5058,7 +5523,7 @@
     },
     {
       "source": "web_src_components_qr_panel",
-      "target": "web_src_lib_types_enlace",
+      "target": "web_src_components_personalizar_qr_personalizacionqr",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5066,6 +5531,30 @@
       "context": "import",
       "source_file": "web/src/components/qr-panel.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel",
+      "target": "web_src_components_personalizar_qr_personalizarqr",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel",
+      "target": "web_src_lib_types_enlace",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -5119,6 +5608,18 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
+      "target": "web_src_lib_qr",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
       "target": "web_src_lib_types",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5126,7 +5627,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "type_only": true,
       "weight": 1.0
     },
@@ -5616,6 +6117,30 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_components_personalizar_qr",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_personalizar_qr",
+      "target": "web_src_lib_qr",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_components_qr_panel",
       "target": "ref_react",
       "relation": "imports_from",
@@ -5653,7 +6178,7 @@
     },
     {
       "source": "web_src_components_qr_panel",
-      "target": "web_src_lib_types",
+      "target": "web_src_components_personalizar_qr",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5661,6 +6186,18 @@
       "context": "import",
       "source_file": "web/src/components/qr-panel.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel",
+      "target": "web_src_lib_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L7",
       "type_only": true,
       "weight": 1.0
     },
@@ -7237,24 +7774,13 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
-      "target": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_routeparams",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
       "target": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_dynamic",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -7265,7 +7791,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
-      "source_location": "L9",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
+      "target": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_routeparams",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/route.ts",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -7819,6 +8356,50 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_components_personalizar_qr",
+      "target": "web_src_components_personalizar_qr_etiquetas_estilo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_personalizar_qr",
+      "target": "web_src_components_personalizar_qr_personalizarqr",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_personalizar_qr",
+      "target": "web_src_components_personalizar_qr_personalizacionqr",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/personalizar-qr.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_panel",
+      "target": "web_src_components_qr_panel_personalizacionde",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/qr-panel.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_components_qr_panel",
       "target": "web_src_components_qr_panel_qrpanel",
       "relation": "contains",
@@ -7826,7 +8407,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L10",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -7837,18 +8418,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L84",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
       "source": "web_src_components_qr_panel_qrpanel",
-      "target": "web_src_components_qr_panel_qrpanel_descargarsvg",
+      "target": "web_src_components_qr_panel_qrpanel_cambiarpersonalizacion",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/qr-panel.tsx",
-      "source_location": "L90",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -8018,18 +8599,51 @@
     },
     {
       "source": "web_src_lib_qr",
-      "target": "web_src_lib_qr_buildqrsvg",
+      "target": "web_src_lib_qr_estamparlogo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/qr.ts",
-      "source_location": "L20",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
       "source": "web_src_lib_qr",
-      "target": "web_src_lib_qr_qrconfig",
+      "target": "web_src_lib_qr_escapar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_colorefectivo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_estaenlocalizador",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_estilos",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8040,13 +8654,68 @@
     },
     {
       "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_buildsvgstring",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_estilo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_qrconfig",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_svgcomodataurl",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
+      "target": "web_src_lib_qr_buildqrsvg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_qr",
       "target": "web_src_lib_qr_buildqrdataurl",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/qr.ts",
-      "source_location": "L8",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -8123,7 +8792,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/types.ts",
-      "source_location": "L10",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -8604,5 +9273,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "814ae23e3e4e4512b48707f55909c00de0a9887a"
+  "built_at_commit": "a07e07acfb50d7d9373cc337c8ab47c42a79d328"
 }

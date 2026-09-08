@@ -134,11 +134,7 @@ export function AppShell({
           </div>
         </nav>
 
-        <div className="absolute inset-x-4 bottom-5">
-          <div className="rounded-xl border border-brand-100 bg-brand-50 p-3 text-xs text-brand-700 dark:border-brand-500/20 dark:bg-brand-500/[0.12] dark:text-brand-300">
-            Cada escaneo de tu QR suma en vivo en el panel.
-          </div>
-        </div>
+
       </aside>
 
       {mobileOpen && (

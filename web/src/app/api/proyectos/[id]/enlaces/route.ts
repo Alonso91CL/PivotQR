@@ -42,7 +42,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
         slug,
         url_destino: parsed.toString(),
       })
-      .select("id, slug, url_destino, pausado, creado_en")
+      .select("id, slug, url_destino, pausado, color_fondo, color_patron, estilo, logo_url, creado_en")
       .single();
 
     if (!error && data) {

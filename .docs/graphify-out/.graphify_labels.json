@@ -3,10 +3,10 @@
   "1": "web/package.json",
   "2": "compilerOptions",
   "3": "createClient",
-  "4": "proyectos/[id]/page.tsx",
+  "4": "qr.ts",
   "5": "PRD — PivotQR",
   "6": "worker/package.json",
-  "7": "dependencies",
+  "7": "devDependencies",
   "8": "dashboard.tsx",
   "9": "app/layout.tsx",
   "10": "PivotQR — Funcionalidades del V1",
@@ -31,6 +31,7 @@
   "29": "PivotQR",
   "30": "web/AGENTS.md",
   "31": "CLAUDE.md",
-  "32": "proxy.ts",
-  "33": "CompartirReporte"
+  "32": "public.links",
+  "33": "CompartirReporte",
+  "34": "0002_fase4_personalizacion_qr.sql"
 }
