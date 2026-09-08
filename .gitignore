@@ -16,6 +16,7 @@ build/
 # Framework de definición opencode (no se trackea)
 .opencode/
 .docs/design
+.docs/company
 
 # Grafo de conocimiento Graphify: artefactos volátiles
 .docs/graphify-out/cache/

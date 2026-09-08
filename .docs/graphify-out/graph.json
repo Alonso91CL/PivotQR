@@ -43,19 +43,6 @@
       "source_location": "L4"
     },
     {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_routeparams",
-      "label": "RouteParams",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "routeparams",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_routeparams",
       "label": "RouteParams",
       "_callable": true,
@@ -93,32 +80,6 @@
       "norm_label": "qrconfig",
       "source_file": "web/src/lib/qr.ts",
       "source_location": "L6"
-    },
-    {
-      "id": "web_src_components_compartir_reporte_compartirproyecto",
-      "label": "CompartirProyecto",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
-      "file_type": "code",
-      "norm_label": "compartirproyecto",
-      "source_file": "web/src/components/compartir-reporte.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "web_src_components_proyecto_resumen_payloadproyecto",
-      "label": "PayloadProyecto",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
-      "file_type": "code",
-      "norm_label": "payloadproyecto",
-      "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L8"
     },
     {
       "id": "web_src_components_personalizar_qr_personalizacionqr",
@@ -160,17 +121,30 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_api_proyectos_id_reporte_route_routeparams",
-      "label": "RouteParams",
+      "id": "web_src_lib_types_proyecto",
+      "label": "Proyecto",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "proyecto",
+      "source_file": "web/src/lib/types.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "web_src_components_compartir_reporte_compartirproyecto",
+      "label": "CompartirProyecto",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
       "community_name": "ver-metricas-qr-modal.tsx",
       "file_type": "code",
-      "norm_label": "routeparams",
-      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L8"
+      "norm_label": "compartirproyecto",
+      "source_file": "web/src/components/compartir-reporte.tsx",
+      "source_location": "L7"
     },
     {
       "id": "web_src_components_inicio_dashboard_payloadinicio",
@@ -183,7 +157,7 @@
       "file_type": "code",
       "norm_label": "payloadinicio",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "web_src_components_inicio_dashboard_proyectometrica",
@@ -196,7 +170,7 @@
       "file_type": "code",
       "norm_label": "proyectometrica",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
       "id": "web_src_components_inicio_dashboard_qrmetrica",
@@ -209,7 +183,7 @@
       "file_type": "code",
       "norm_label": "qrmetrica",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "web_src_components_metricas_agregacion_item",
@@ -225,6 +199,19 @@
       "source_location": "L3"
     },
     {
+      "id": "web_src_components_metricas_agregacion_puntomapa",
+      "label": "PuntoMapa",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "puntomapa",
+      "source_file": "web/src/components/metricas/agregacion.ts",
+      "source_location": "L8"
+    },
+    {
       "id": "web_src_components_metricas_agregacion_resumenmetricas",
       "label": "ResumenMetricas",
       "_callable": true,
@@ -235,7 +222,20 @@
       "file_type": "code",
       "norm_label": "resumenmetricas",
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L8"
+      "source_location": "L16"
+    },
+    {
+      "id": "web_src_components_proyecto_resumen_payloadproyecto",
+      "label": "PayloadProyecto",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "payloadproyecto",
+      "source_file": "web/src/components/proyecto-resumen.tsx",
+      "source_location": "L9"
     },
     {
       "id": "web_src_components_reporte_dashboard_enlacereporte",
@@ -248,7 +248,7 @@
       "file_type": "code",
       "norm_label": "enlacereporte",
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "web_src_components_reporte_dashboard_payload",
@@ -261,7 +261,7 @@
       "file_type": "code",
       "norm_label": "payload",
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "web_src_components_ver_metricas_qr_modal_payloadmetricasqr",
@@ -290,17 +290,43 @@
       "source_location": "L1"
     },
     {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_routeparams",
+      "label": "RouteParams",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "routeparams",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_reporte_route_routeparams",
+      "label": "RouteParams",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "routeparams",
+      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
+      "source_location": "L9"
+    },
+    {
       "id": "web_src_app_api_reporte_proyecto_id_route_routeparams",
       "label": "RouteParams",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "routeparams",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "web_src_app_s_slug_route_routeparams",
@@ -309,24 +335,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "routeparams",
       "source_file": "web/src/app/s/[slug]/route.ts",
       "source_location": "L5"
     },
     {
-      "id": "web_src_lib_types_proyecto",
-      "label": "Proyecto",
+      "id": "web_src_lib_rango_fechas_rangofechas",
+      "label": "RangoFechas",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
-      "norm_label": "proyecto",
-      "source_file": "web/src/lib/types.ts",
-      "source_location": "L17"
+      "norm_label": "rangofechas",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L7"
     },
     {
       "id": "web_src_app_app_proyectos_create_proyecto_form_createproyectoform",
@@ -334,7 +360,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "createproyectoform()",
       "source_file": "web/src/app/(app)/proyectos/create-proyecto-form.tsx",
@@ -346,7 +372,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "crear()",
       "source_file": "web/src/app/(app)/proyectos/create-proyecto-form.tsx",
@@ -358,7 +384,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "googleicon()",
       "source_file": "web/src/app/login/login-form.tsx",
@@ -370,7 +396,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "loginform()",
       "source_file": "web/src/app/login/login-form.tsx",
@@ -382,7 +408,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "entrarcongoogle()",
       "source_file": "web/src/app/login/login-form.tsx",
@@ -394,7 +420,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "enviar()",
       "source_file": "web/src/app/login/login-form.tsx",
@@ -406,7 +432,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "verificarturnstile()",
       "source_file": "web/src/app/login/login-form.tsx",
@@ -418,7 +444,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "loginpage()",
       "source_file": "web/src/app/login/page.tsx",
@@ -430,7 +456,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "userdropdown()",
       "source_file": "web/src/components/app-shell.tsx",
@@ -442,7 +468,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "cerrarsesion()",
       "source_file": "web/src/components/app-shell.tsx",
@@ -454,7 +480,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "fuera()",
       "source_file": "web/src/components/app-shell.tsx",
@@ -466,7 +492,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "loginbutton()",
       "source_file": "web/src/components/landing/login.tsx",
@@ -478,7 +504,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "onclick()",
       "source_file": "web/src/components/landing/login.tsx",
@@ -490,7 +516,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "getturnstiletoken()",
       "source_file": "web/src/components/turnstile.tsx",
@@ -502,7 +528,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "isturnstileactive()",
       "source_file": "web/src/components/turnstile.tsx",
@@ -514,7 +540,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "turnstile()",
       "source_file": "web/src/components/turnstile.tsx",
@@ -526,35 +552,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "createclient()",
       "source_file": "web/src/lib/supabase/client.ts",
       "source_location": "L3"
     },
     {
-      "id": "web_src_lib_supabase_middleware_updatesession",
-      "label": "updateSession()",
+      "id": "web_src_app_layout_rootlayout",
+      "label": "RootLayout()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
+      "community": 1,
+      "community_name": "web/package.json",
       "file_type": "code",
-      "norm_label": "updatesession()",
-      "source_file": "web/src/lib/supabase/middleware.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "web_src_proxy_proxy",
-      "label": "proxy()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "proxy()",
-      "source_file": "web/src/proxy.ts",
-      "source_location": "L4"
+      "norm_label": "rootlayout()",
+      "source_file": "web/src/app/layout.tsx",
+      "source_location": "L22"
     },
     {
       "id": "worker_src_index_detectdevice",
@@ -566,7 +580,7 @@
       "file_type": "code",
       "norm_label": "detectdevice()",
       "source_file": "worker/src/index.ts",
-      "source_location": "L92"
+      "source_location": "L103"
     },
     {
       "id": "worker_src_index_fetch",
@@ -590,7 +604,19 @@
       "file_type": "code",
       "norm_label": "getlink()",
       "source_file": "worker/src/index.ts",
-      "source_location": "L54"
+      "source_location": "L57"
+    },
+    {
+      "id": "worker_src_index_parsecoordenada",
+      "label": "parseCoordenada()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "index.ts",
+      "file_type": "code",
+      "norm_label": "parsecoordenada()",
+      "source_file": "worker/src/index.ts",
+      "source_location": "L97"
     },
     {
       "id": "worker_src_index_recordscan",
@@ -602,7 +628,7 @@
       "file_type": "code",
       "norm_label": "recordscan()",
       "source_file": "worker/src/index.ts",
-      "source_location": "L69"
+      "source_location": "L72"
     },
     {
       "id": "web_src_app_api_turnstile_route_post",
@@ -615,30 +641,6 @@
       "norm_label": "post()",
       "source_file": "web/src/app/api/turnstile/route.ts",
       "source_location": "L5"
-    },
-    {
-      "id": "web_src_app_api_metricas_route_get",
-      "label": "GET()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "get()",
-      "source_file": "web/src/app/api/metricas/route.ts",
-      "source_location": "L11"
-    },
-    {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_get",
-      "label": "GET()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "get()",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L12"
     },
     {
       "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route_delete",
@@ -686,7 +688,7 @@
       "file_type": "code",
       "norm_label": "patch()",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L71"
+      "source_location": "L80"
     },
     {
       "id": "web_src_app_app_layout_applayout",
@@ -749,30 +751,6 @@
       "source_location": "L59"
     },
     {
-      "id": "web_src_components_crear_enlace_modal_crearenlacemodal",
-      "label": "CrearEnlaceModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "crearenlacemodal()",
-      "source_file": "web/src/components/crear-enlace-modal.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "web_src_components_crear_enlace_modal_crearenlacemodal_crear",
-      "label": "crear()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "crear()",
-      "source_file": "web/src/components/crear-enlace-modal.tsx",
-      "source_location": "L24"
-    },
-    {
       "id": "web_src_lib_slug_randomslug",
       "label": "randomSlug()",
       "_callable": true,
@@ -783,6 +761,18 @@
       "norm_label": "randomslug()",
       "source_file": "web/src/lib/slug.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "web_src_lib_supabase_middleware_updatesession",
+      "label": "updateSession()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "updatesession()",
+      "source_file": "web/src/lib/supabase/middleware.ts",
+      "source_location": "L4"
     },
     {
       "id": "web_src_lib_supabase_server_createclient",
@@ -797,6 +787,18 @@
       "source_location": "L4"
     },
     {
+      "id": "web_src_proxy_proxy",
+      "label": "proxy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "proxy()",
+      "source_file": "web/src/proxy.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "web_src_app_page_landingpage",
       "label": "LandingPage()",
       "_callable": true,
@@ -807,66 +809,6 @@
       "norm_label": "landingpage()",
       "source_file": "web/src/app/page.tsx",
       "source_location": "L113"
-    },
-    {
-      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar",
-      "label": "ContenidoPersonalizar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "qr.ts",
-      "file_type": "code",
-      "norm_label": "contenidopersonalizar()",
-      "source_file": "web/src/components/configurar-qr-modal.tsx",
-      "source_location": "L37"
-    },
-    {
-      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_cambiar",
-      "label": "cambiar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "qr.ts",
-      "file_type": "code",
-      "norm_label": "cambiar()",
-      "source_file": "web/src/components/configurar-qr-modal.tsx",
-      "source_location": "L72"
-    },
-    {
-      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_descargarsvg",
-      "label": "descargarSvg()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "qr.ts",
-      "file_type": "code",
-      "norm_label": "descargarsvg()",
-      "source_file": "web/src/components/configurar-qr-modal.tsx",
-      "source_location": "L134"
-    },
-    {
-      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_guardar",
-      "label": "guardar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "qr.ts",
-      "file_type": "code",
-      "norm_label": "guardar()",
-      "source_file": "web/src/components/configurar-qr-modal.tsx",
-      "source_location": "L101"
-    },
-    {
-      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_subirlogo",
-      "label": "subirLogo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "qr.ts",
-      "file_type": "code",
-      "norm_label": "subirlogo()",
-      "source_file": "web/src/components/configurar-qr-modal.tsx",
-      "source_location": "L77"
     },
     {
       "id": "web_src_components_landing_login_loginmodal",
@@ -915,18 +857,6 @@
       "norm_label": "buildqrdataurl()",
       "source_file": "web/src/lib/qr.ts",
       "source_location": "L95"
-    },
-    {
-      "id": "web_src_lib_qr_buildqrsvg",
-      "label": "buildQRSvg()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "qr.ts",
-      "file_type": "code",
-      "norm_label": "buildqrsvg()",
-      "source_file": "web/src/lib/qr.ts",
-      "source_location": "L88"
     },
     {
       "id": "web_src_lib_qr_buildsvgstring",
@@ -1001,24 +931,12 @@
       "source_location": "L84"
     },
     {
-      "id": "web_src_components_compartir_reporte_compartirreporte",
-      "label": "CompartirReporte()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
-      "file_type": "code",
-      "norm_label": "compartirreporte()",
-      "source_file": "web/src/components/compartir-reporte.tsx",
-      "source_location": "L128"
-    },
-    {
       "id": "web_src_components_compartir_reporte_contenidocompartir",
       "label": "ContenidoCompartir()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "proyecto-resumen.tsx",
+      "community_name": "ContenidoCompartir",
       "file_type": "code",
       "norm_label": "contenidocompartir()",
       "source_file": "web/src/components/compartir-reporte.tsx",
@@ -1030,7 +948,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "proyecto-resumen.tsx",
+      "community_name": "ContenidoCompartir",
       "file_type": "code",
       "norm_label": "copiarinvitacion()",
       "source_file": "web/src/components/compartir-reporte.tsx",
@@ -1042,7 +960,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "proyecto-resumen.tsx",
+      "community_name": "ContenidoCompartir",
       "file_type": "code",
       "norm_label": "guardar()",
       "source_file": "web/src/components/compartir-reporte.tsx",
@@ -1054,35 +972,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": "proyecto-resumen.tsx",
+      "community_name": "ContenidoCompartir",
       "file_type": "code",
       "norm_label": "linkreporte()",
       "source_file": "web/src/components/compartir-reporte.tsx",
       "source_location": "L20"
-    },
-    {
-      "id": "web_src_components_proyecto_resumen_formatonumero",
-      "label": "formatoNumero()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
-      "file_type": "code",
-      "norm_label": "formatonumero()",
-      "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "web_src_components_proyecto_resumen_proyectoresumen",
-      "label": "ProyectoResumen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
-      "file_type": "code",
-      "norm_label": "proyectoresumen()",
-      "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L24"
     },
     {
       "id": "web_src_components_configurar_qr_modal_configurarqrmodal",
@@ -1095,6 +989,90 @@
       "norm_label": "configurarqrmodal()",
       "source_file": "web/src/components/configurar-qr-modal.tsx",
       "source_location": "L13"
+    },
+    {
+      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar",
+      "label": "ContenidoPersonalizar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "contenidopersonalizar()",
+      "source_file": "web/src/components/configurar-qr-modal.tsx",
+      "source_location": "L37"
+    },
+    {
+      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_cambiar",
+      "label": "cambiar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "cambiar()",
+      "source_file": "web/src/components/configurar-qr-modal.tsx",
+      "source_location": "L72"
+    },
+    {
+      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_descargarsvg",
+      "label": "descargarSvg()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "descargarsvg()",
+      "source_file": "web/src/components/configurar-qr-modal.tsx",
+      "source_location": "L134"
+    },
+    {
+      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_guardar",
+      "label": "guardar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "guardar()",
+      "source_file": "web/src/components/configurar-qr-modal.tsx",
+      "source_location": "L101"
+    },
+    {
+      "id": "web_src_components_configurar_qr_modal_contenidopersonalizar_subirlogo",
+      "label": "subirLogo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "subirlogo()",
+      "source_file": "web/src/components/configurar-qr-modal.tsx",
+      "source_location": "L77"
+    },
+    {
+      "id": "web_src_components_crear_enlace_modal_crearenlacemodal",
+      "label": "CrearEnlaceModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "crearenlacemodal()",
+      "source_file": "web/src/components/crear-enlace-modal.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "web_src_components_crear_enlace_modal_crearenlacemodal_crear",
+      "label": "crear()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "crear()",
+      "source_file": "web/src/components/crear-enlace-modal.tsx",
+      "source_location": "L24"
     },
     {
       "id": "web_src_components_editar_enlace_modal_editarenlacemodal",
@@ -1229,6 +1207,18 @@
       "source_location": "L82"
     },
     {
+      "id": "web_src_components_qr_card_qrcard_descargarsvg",
+      "label": "descargarSvg()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "qr-card.tsx",
+      "file_type": "code",
+      "norm_label": "descargarsvg()",
+      "source_file": "web/src/components/qr-card.tsx",
+      "source_location": "L141"
+    },
+    {
       "id": "web_src_components_qr_card_qrcard_eliminar",
       "label": "eliminar()",
       "_callable": true,
@@ -1238,7 +1228,7 @@
       "file_type": "code",
       "norm_label": "eliminar()",
       "source_file": "web/src/components/qr-card.tsx",
-      "source_location": "L141"
+      "source_location": "L152"
     },
     {
       "id": "web_src_components_qr_card_qrcard_fuera",
@@ -1277,16 +1267,16 @@
       "source_location": "L48"
     },
     {
-      "id": "web_src_components_ver_metricas_qr_modal_vermetricasqrmodal",
-      "label": "VerMetricasQrModal()",
+      "id": "web_src_lib_qr_buildqrsvg",
+      "label": "buildQRSvg()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
       "community_name": "qr-card.tsx",
       "file_type": "code",
-      "norm_label": "vermetricasqrmodal()",
-      "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
-      "source_location": "L85"
+      "norm_label": "buildqrsvg()",
+      "source_file": "web/src/lib/qr.ts",
+      "source_location": "L88"
     },
     {
       "id": "web_src_lib_short_url_shorturlde",
@@ -1313,6 +1303,18 @@
       "source_location": "L5"
     },
     {
+      "id": "web_src_components_compartir_reporte_compartirreporte",
+      "label": "CompartirReporte()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "compartirreporte()",
+      "source_file": "web/src/components/compartir-reporte.tsx",
+      "source_location": "L128"
+    },
+    {
       "id": "web_src_components_inicio_dashboard_formatonumero",
       "label": "formatoNumero()",
       "_callable": true,
@@ -1322,7 +1324,7 @@
       "file_type": "code",
       "norm_label": "formatonumero()",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "web_src_components_inicio_dashboard_iniciodashboard",
@@ -1334,7 +1336,7 @@
       "file_type": "code",
       "norm_label": "iniciodashboard()",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L41"
+      "source_location": "L42"
     },
     {
       "id": "web_src_components_metricas_agregacion_agregarscans",
@@ -1346,7 +1348,7 @@
       "file_type": "code",
       "norm_label": "agregarscans()",
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L25"
+      "source_location": "L34"
     },
     {
       "id": "web_src_components_metricas_agregacion_keylocal",
@@ -1358,7 +1360,19 @@
       "file_type": "code",
       "norm_label": "keylocal()",
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L19"
+      "source_location": "L28"
+    },
+    {
+      "id": "web_src_components_metricas_charts_bot\u00f3ncsv",
+      "label": "Bot\u00f3nCsv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "botoncsv()",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L137"
     },
     {
       "id": "web_src_components_metricas_charts_card",
@@ -1370,7 +1384,7 @@
       "file_type": "code",
       "norm_label": "card()",
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L63"
+      "source_location": "L150"
     },
     {
       "id": "web_src_components_metricas_charts_columnas",
@@ -1382,7 +1396,7 @@
       "file_type": "code",
       "norm_label": "columnas()",
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L4"
+      "source_location": "L6"
     },
     {
       "id": "web_src_components_metricas_charts_listabarras",
@@ -1394,7 +1408,19 @@
       "file_type": "code",
       "norm_label": "listabarras()",
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L44"
+      "source_location": "L46"
+    },
+    {
+      "id": "web_src_components_metricas_charts_mapaciudades",
+      "label": "MapaCiudades()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "mapaciudades()",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L68"
     },
     {
       "id": "web_src_components_metricas_charts_vac\u00edo",
@@ -1406,19 +1432,43 @@
       "file_type": "code",
       "norm_label": "vacio()",
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L80"
+      "source_location": "L167"
     },
     {
-      "id": "web_src_components_reporte_dashboard_reportedashboard",
-      "label": "ReporteDashboard()",
+      "id": "web_src_components_metricas_rango_fechas_rangodefechas",
+      "label": "RangoDeFechas()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
       "community_name": "ver-metricas-qr-modal.tsx",
       "file_type": "code",
-      "norm_label": "reportedashboard()",
-      "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L24"
+      "norm_label": "rangodefechas()",
+      "source_file": "web/src/components/metricas/rango-fechas.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "web_src_components_proyecto_resumen_formatonumero",
+      "label": "formatoNumero()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "formatonumero()",
+      "source_file": "web/src/components/proyecto-resumen.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "web_src_components_proyecto_resumen_proyectoresumen",
+      "label": "ProyectoResumen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "proyectoresumen()",
+      "source_file": "web/src/components/proyecto-resumen.tsx",
+      "source_location": "L25"
     },
     {
       "id": "web_src_components_ver_metricas_qr_modal_contenidometricas",
@@ -1445,16 +1495,76 @@
       "source_location": "L15"
     },
     {
+      "id": "web_src_components_ver_metricas_qr_modal_vermetricasqrmodal",
+      "label": "VerMetricasQrModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "vermetricasqrmodal()",
+      "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
+      "source_location": "L128"
+    },
+    {
+      "id": "web_src_lib_csv_descargarscanscsv",
+      "label": "descargarScansCsv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "descargarscanscsv()",
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "web_src_lib_csv_escapar",
+      "label": "escapar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "escapar()",
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "web_src_app_api_metricas_route_get",
+      "label": "GET()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "get()",
+      "source_file": "web/src/app/api/metricas/route.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_get",
+      "label": "GET()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "get()",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L14"
+    },
+    {
       "id": "web_src_app_api_proyectos_id_reporte_route_get",
       "label": "GET()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "get()",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L15"
+      "source_location": "L17"
     },
     {
       "id": "web_src_app_api_reporte_proyecto_id_route_get",
@@ -1462,11 +1572,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "get()",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "web_src_app_reporte_id_page_reportepage",
@@ -1474,7 +1584,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "reportepage()",
       "source_file": "web/src/app/reporte/[id]/page.tsx",
@@ -1486,11 +1596,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "get()",
       "source_file": "web/src/app/s/[slug]/route.ts",
-      "source_location": "L13"
+      "source_location": "L20"
+    },
+    {
+      "id": "web_src_app_s_slug_route_parsecoordenada",
+      "label": "parseCoordenada()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "parsecoordenada()",
+      "source_file": "web/src/app/s/[slug]/route.ts",
+      "source_location": "L9"
     },
     {
       "id": "web_src_components_reporte_acceso_form_accesoreporte",
@@ -1498,7 +1620,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "accesoreporte()",
       "source_file": "web/src/components/reporte/acceso-form.tsx",
@@ -1510,11 +1632,71 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "entrar()",
       "source_file": "web/src/components/reporte/acceso-form.tsx",
       "source_location": "L19"
+    },
+    {
+      "id": "web_src_components_reporte_dashboard_reportedashboard",
+      "label": "ReporteDashboard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "reportedashboard()",
+      "source_file": "web/src/components/reporte/dashboard.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "web_src_lib_rango_fechas_aiso",
+      "label": "aIso()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "aiso()",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "web_src_lib_rango_fechas_diasiguiente",
+      "label": "diaSiguiente()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "diasiguiente()",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "web_src_lib_rango_fechas_esvalida",
+      "label": "esValida()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "esvalida()",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "web_src_lib_rango_fechas_rangofechasde",
+      "label": "rangoFechasDe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "rangofechasde()",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L15"
     },
     {
       "id": "web_src_lib_supabase_service_createserviceclient",
@@ -1522,7 +1704,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "createserviceclient()",
       "source_file": "web/src/lib/supabase/service.ts",
@@ -1534,30 +1716,18 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "detectdevice()",
       "source_file": "web/src/lib/ua.ts",
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_layout_rootlayout",
-      "label": "RootLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "rootlayout()",
-      "source_file": "web/src/app/layout.tsx",
-      "source_location": "L22"
-    },
-    {
       "id": "web_src_app_app_proyectos_create_proyecto_form",
       "label": "create-proyecto-form.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "create-proyecto-form.tsx",
       "source_file": "web/src/app/(app)/proyectos/create-proyecto-form.tsx",
@@ -1568,7 +1738,7 @@
       "label": "login-form.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "login-form.tsx",
       "source_file": "web/src/app/login/login-form.tsx",
@@ -1579,10 +1749,21 @@
       "label": "login/page.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "login/page.tsx",
       "source_file": "web/src/app/login/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_components_app_shell",
+      "label": "app-shell.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "app-shell.tsx",
+      "source_file": "web/src/components/app-shell.tsx",
       "source_location": "L1"
     },
     {
@@ -1590,7 +1771,7 @@
       "label": "login.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "login.tsx",
       "source_file": "web/src/components/landing/login.tsx",
@@ -1601,7 +1782,7 @@
       "label": "turnstile.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "turnstile.tsx",
       "source_file": "web/src/components/turnstile.tsx",
@@ -1612,55 +1793,44 @@
       "label": "client.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "client.ts",
       "source_file": "web/src/lib/supabase/client.ts",
       "source_location": "L1"
     },
     {
-      "id": "web_src_lib_supabase_middleware",
-      "label": "middleware.ts",
+      "id": "ref_react",
+      "label": "react",
       "_origin": "ast",
       "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "middleware.ts",
-      "source_file": "web/src/lib/supabase/middleware.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_proxy",
-      "label": "proxy.ts",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "proxy.ts",
-      "source_file": "web/src/proxy.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_proxy_config",
-      "label": "config",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "config",
-      "source_file": "web/src/proxy.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "ref_supabase_ssr",
-      "label": "@supabase/ssr",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "createClient",
+      "community_name": "react",
       "file_type": "concept",
-      "norm_label": "@supabase/ssr",
+      "norm_label": "react",
       "source_file": "web/package.json",
-      "source_location": "L12"
+      "source_location": "L17"
+    },
+    {
+      "id": "web_next_config",
+      "label": "next.config.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "next.config.ts",
+      "source_file": "web/next.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_next_config_nextconfig",
+      "label": "nextConfig",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "nextconfig",
+      "source_file": "web/next.config.ts",
+      "source_location": "L3"
     },
     {
       "id": "web_package",
@@ -1971,6 +2141,50 @@
       "source_location": "L3"
     },
     {
+      "id": "web_src_app_layout",
+      "label": "app/layout.tsx",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "app/layout.tsx",
+      "source_file": "web/src/app/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_layout_metadata",
+      "label": "metadata",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "metadata",
+      "source_file": "web/src/app/layout.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "web_src_app_layout_opensans",
+      "label": "openSans",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "opensans",
+      "source_file": "web/src/app/layout.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "web_src_app_layout_outfit",
+      "label": "outfit",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "code",
+      "norm_label": "outfit",
+      "source_file": "web/src/app/layout.tsx",
+      "source_location": "L6"
+    },
+    {
       "id": "ref_eslint",
       "label": "eslint",
       "_origin": "ast",
@@ -1993,15 +2207,15 @@
       "source_location": "L27"
     },
     {
-      "id": "ref_qrcode",
-      "label": "qrcode",
+      "id": "ref_next",
+      "label": "next",
       "_origin": "ast",
       "community": 1,
       "community_name": "web/package.json",
       "file_type": "concept",
-      "norm_label": "qrcode",
+      "norm_label": "next",
       "source_file": "web/package.json",
-      "source_location": "L16"
+      "source_location": "L15"
     },
     {
       "id": "ref_react_dom",
@@ -2013,6 +2227,17 @@
       "norm_label": "react-dom",
       "source_file": "web/package.json",
       "source_location": "L18"
+    },
+    {
+      "id": "ref_supabase_supabase_js",
+      "label": "@supabase/supabase-js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "web/package.json",
+      "file_type": "concept",
+      "norm_label": "@supabase/supabase-js",
+      "source_file": "web/package.json",
+      "source_location": "L13"
     },
     {
       "id": "ref_tailwindcss",
@@ -3656,28 +3881,6 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
-      "label": "[enlace_id]/metricas/route.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "[enlace_id]/metricas/route.ts",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_route",
       "label": "[enlace_id]/route.ts",
       "_origin": "ast",
@@ -3733,28 +3936,6 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_app_app_proyectos_id_page",
-      "label": "proyectos/[id]/page.tsx",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "proyectos/[id]/page.tsx",
-      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_app_proyectos_id_page_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
-      "source_location": "L9"
-    },
-    {
       "id": "web_src_app_app_proyectos_page",
       "label": "proyectos/page.tsx",
       "_origin": "ast",
@@ -3788,17 +3969,6 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_components_app_shell",
-      "label": "app-shell.tsx",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "createClient",
-      "file_type": "code",
-      "norm_label": "app-shell.tsx",
-      "source_file": "web/src/components/app-shell.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "web_src_lib_qr_estilos",
       "label": "ESTILOS",
       "_origin": "ast",
@@ -3821,6 +3991,17 @@
       "source_location": "L1"
     },
     {
+      "id": "web_src_lib_supabase_middleware",
+      "label": "middleware.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "middleware.ts",
+      "source_file": "web/src/lib/supabase/middleware.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "web_src_lib_supabase_server",
       "label": "server.ts",
       "_origin": "ast",
@@ -3830,6 +4011,39 @@
       "norm_label": "server.ts",
       "source_file": "web/src/lib/supabase/server.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "web_src_proxy",
+      "label": "proxy.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "proxy.ts",
+      "source_file": "web/src/proxy.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_proxy_config",
+      "label": "config",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "code",
+      "norm_label": "config",
+      "source_file": "web/src/proxy.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "ref_supabase_ssr",
+      "label": "@supabase/ssr",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "createClient",
+      "file_type": "concept",
+      "norm_label": "@supabase/ssr",
+      "source_file": "web/package.json",
+      "source_location": "L12"
     },
     {
       "id": "web_agents",
@@ -3945,6 +4159,17 @@
       "source_location": "L1"
     },
     {
+      "id": "ref_qrcode",
+      "label": "qrcode",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "qr.ts",
+      "file_type": "concept",
+      "norm_label": "qrcode",
+      "source_file": "web/package.json",
+      "source_location": "L16"
+    },
+    {
       "id": "supabase_migrations_0002_fase4_personalizacion_qr",
       "label": "0002_fase4_personalizacion_qr.sql",
       "_origin": "ast",
@@ -3956,26 +4181,26 @@
       "source_location": null
     },
     {
-      "id": "web_src_components_compartir_reporte",
-      "label": "compartir-reporte.tsx",
+      "id": "web_src_app_app_proyectos_id_page",
+      "label": "proyectos/[id]/page.tsx",
       "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
+      "community": 4,
+      "community_name": "qr-card.tsx",
       "file_type": "code",
-      "norm_label": "compartir-reporte.tsx",
-      "source_file": "web/src/components/compartir-reporte.tsx",
+      "norm_label": "proyectos/[id]/page.tsx",
+      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
       "source_location": "L1"
     },
     {
-      "id": "web_src_components_proyecto_resumen",
-      "label": "proyecto-resumen.tsx",
+      "id": "web_src_app_app_proyectos_id_page_dynamic",
+      "label": "dynamic",
       "_origin": "ast",
-      "community": 35,
-      "community_name": "proyecto-resumen.tsx",
+      "community": 4,
+      "community_name": "qr-card.tsx",
       "file_type": "code",
-      "norm_label": "proyecto-resumen.tsx",
-      "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L1"
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/(app)/proyectos/[id]/page.tsx",
+      "source_location": "L9"
     },
     {
       "id": "web_src_components_configurar_qr_modal",
@@ -4075,17 +4300,6 @@
       "norm_label": "types.ts",
       "source_file": "web/src/lib/types.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "ref_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "qr-card.tsx",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": "web/package.json",
-      "source_location": "L17"
     },
     {
       "id": "docs_prd",
@@ -4377,50 +4591,6 @@
       "source_location": "L9"
     },
     {
-      "id": "web_src_app_api_metricas_route",
-      "label": "api/metricas/route.ts",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "ver-metricas-qr-modal.tsx",
-      "file_type": "code",
-      "norm_label": "api/metricas/route.ts",
-      "source_file": "web/src/app/api/metricas/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_api_metricas_route_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "ver-metricas-qr-modal.tsx",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/api/metricas/route.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "web_src_app_api_proyectos_id_reporte_route",
-      "label": "reporte/route.ts",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "ver-metricas-qr-modal.tsx",
-      "file_type": "code",
-      "norm_label": "reporte/route.ts",
-      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_api_proyectos_id_reporte_route_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "ver-metricas-qr-modal.tsx",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L10"
-    },
-    {
       "id": "web_src_app_app_inicio_page",
       "label": "inicio/page.tsx",
       "_origin": "ast",
@@ -4441,6 +4611,17 @@
       "norm_label": "metadata",
       "source_file": "web/src/app/(app)/inicio/page.tsx",
       "source_location": "L3"
+    },
+    {
+      "id": "web_src_components_compartir_reporte",
+      "label": "compartir-reporte.tsx",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "compartir-reporte.tsx",
+      "source_file": "web/src/components/compartir-reporte.tsx",
+      "source_location": "L1"
     },
     {
       "id": "web_src_components_inicio_dashboard",
@@ -4473,7 +4654,7 @@
       "file_type": "code",
       "norm_label": "dias_corta",
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L17"
+      "source_location": "L26"
     },
     {
       "id": "web_src_components_metricas_charts",
@@ -4484,6 +4665,28 @@
       "file_type": "code",
       "norm_label": "charts.tsx",
       "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_components_metricas_rango_fechas",
+      "label": "rango-fechas.tsx",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "rango-fechas.tsx",
+      "source_file": "web/src/components/metricas/rango-fechas.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_components_proyecto_resumen",
+      "label": "proyecto-resumen.tsx",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "ver-metricas-qr-modal.tsx",
+      "file_type": "code",
+      "norm_label": "proyecto-resumen.tsx",
+      "source_file": "web/src/components/proyecto-resumen.tsx",
       "source_location": "L1"
     },
     {
@@ -4509,33 +4712,88 @@
       "source_location": "L1"
     },
     {
-      "id": "web_src_lib_reporte",
-      "label": "reporte.ts",
+      "id": "web_src_lib_csv",
+      "label": "csv.ts",
       "_origin": "ast",
       "community": 7,
       "community_name": "ver-metricas-qr-modal.tsx",
       "file_type": "code",
-      "norm_label": "reporte.ts",
-      "source_file": "web/src/lib/reporte.ts",
+      "norm_label": "csv.ts",
+      "source_file": "web/src/lib/csv.ts",
       "source_location": "L1"
     },
     {
-      "id": "web_src_lib_reporte_max_scans",
-      "label": "MAX_SCANS",
+      "id": "web_src_app_api_metricas_route",
+      "label": "api/metricas/route.ts",
       "_origin": "ast",
-      "community": 7,
-      "community_name": "ver-metricas-qr-modal.tsx",
+      "community": 8,
+      "community_name": "reporte/route.ts",
       "file_type": "code",
-      "norm_label": "max_scans",
-      "source_file": "web/src/lib/reporte.ts",
-      "source_location": "L14"
+      "norm_label": "api/metricas/route.ts",
+      "source_file": "web/src/app/api/metricas/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_api_metricas_route_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/api/metricas/route.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
+      "label": "[enlace_id]/metricas/route.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "[enlace_id]/metricas/route.ts",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_reporte_route",
+      "label": "reporte/route.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "reporte/route.ts",
+      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_app_api_proyectos_id_reporte_route_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
+      "source_location": "L11"
     },
     {
       "id": "web_src_app_api_reporte_proyecto_id_route",
       "label": "[proyecto_id]/route.ts",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "[proyecto_id]/route.ts",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
@@ -4546,18 +4804,18 @@
       "label": "dynamic",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "dynamic",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "web_src_app_reporte_id_page",
       "label": "reporte/[id]/page.tsx",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "reporte/[id]/page.tsx",
       "source_file": "web/src/app/reporte/[id]/page.tsx",
@@ -4568,7 +4826,7 @@
       "label": "dynamic",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "dynamic",
       "source_file": "web/src/app/reporte/[id]/page.tsx",
@@ -4579,7 +4837,7 @@
       "label": "[slug]/route.ts",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "[slug]/route.ts",
       "source_file": "web/src/app/s/[slug]/route.ts",
@@ -4590,7 +4848,7 @@
       "label": "dynamic",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "dynamic",
       "source_file": "web/src/app/s/[slug]/route.ts",
@@ -4601,18 +4859,51 @@
       "label": "acceso-form.tsx",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "acceso-form.tsx",
       "source_file": "web/src/components/reporte/acceso-form.tsx",
       "source_location": "L1"
     },
     {
+      "id": "web_src_lib_rango_fechas",
+      "label": "rango-fechas.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "rango-fechas.ts",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_lib_reporte",
+      "label": "reporte.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "reporte.ts",
+      "source_file": "web/src/lib/reporte.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_src_lib_reporte_max_scans",
+      "label": "MAX_SCANS",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "reporte/route.ts",
+      "file_type": "code",
+      "norm_label": "max_scans",
+      "source_file": "web/src/lib/reporte.ts",
+      "source_location": "L16"
+    },
+    {
       "id": "web_src_lib_supabase_service",
       "label": "service.ts",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "service.ts",
       "source_file": "web/src/lib/supabase/service.ts",
@@ -4623,99 +4914,11 @@
       "label": "ua.ts",
       "_origin": "ast",
       "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
+      "community_name": "reporte/route.ts",
       "file_type": "code",
       "norm_label": "ua.ts",
       "source_file": "web/src/lib/ua.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "ref_supabase_supabase_js",
-      "label": "@supabase/supabase-js",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "[proyecto_id]/route.ts",
-      "file_type": "concept",
-      "norm_label": "@supabase/supabase-js",
-      "source_file": "web/package.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "web_next_config",
-      "label": "next.config.ts",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "next.config.ts",
-      "source_file": "web/next.config.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_next_config_nextconfig",
-      "label": "nextConfig",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "nextconfig",
-      "source_file": "web/next.config.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "web_src_app_layout",
-      "label": "app/layout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "app/layout.tsx",
-      "source_file": "web/src/app/layout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "web_src_app_layout_metadata",
-      "label": "metadata",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "metadata",
-      "source_file": "web/src/app/layout.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "web_src_app_layout_opensans",
-      "label": "openSans",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "opensans",
-      "source_file": "web/src/app/layout.tsx",
-      "source_location": "L11"
-    },
-    {
-      "id": "web_src_app_layout_outfit",
-      "label": "outfit",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "outfit",
-      "source_file": "web/src/app/layout.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "ref_next",
-      "label": "next",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "app/layout.tsx",
-      "file_type": "concept",
-      "norm_label": "next",
-      "source_file": "web/package.json",
-      "source_location": "L15"
     }
   ],
   "links": [
@@ -4728,7 +4931,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/metricas/route.ts",
-      "source_location": "L12",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_metricas_route_get",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/app/api/metricas/route.ts",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -4740,7 +4955,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L14",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route_get",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -4800,7 +5027,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L17",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_reporte_route_get",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -4812,7 +5051,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -4824,7 +5063,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L101",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -4836,7 +5075,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L73",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -4848,7 +5087,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L15",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_reporte_proyecto_id_route_get",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -5004,7 +5255,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/s/[slug]/route.ts",
-      "source_location": "L15",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -5016,7 +5267,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/app/s/[slug]/route.ts",
-      "source_location": "L28",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_s_slug_route_get",
+      "target": "web_src_app_s_slug_route_parsecoordenada",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/app/s/[slug]/route.ts",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -5153,18 +5416,6 @@
     },
     {
       "source": "web_src_components_inicio_dashboard_iniciodashboard",
-      "target": "web_src_components_metricas_agregacion_agregarscans",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L68",
-      "weight": 1.0
-    },
-    {
-      "source": "web_src_components_inicio_dashboard_iniciodashboard",
       "target": "web_src_components_inicio_dashboard_formatonumero",
       "relation": "calls",
       "_origin": "ast",
@@ -5172,7 +5423,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L91",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_inicio_dashboard_iniciodashboard",
+      "target": "web_src_components_metricas_agregacion_agregarscans",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/inicio/dashboard.tsx",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -5196,7 +5459,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L30",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts_bot\u00f3ncsv",
+      "target": "web_src_lib_csv_descargarscanscsv",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -5208,7 +5483,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -5220,7 +5495,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L66",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -5296,6 +5571,18 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_components_qr_card_qrcard_descargarsvg",
+      "target": "web_src_lib_qr_buildqrsvg",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-card.tsx",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_components_qr_card_qrcard_onguardadomodal",
       "target": "web_src_components_qr_card_qrcard_aplicarenlace",
       "relation": "calls",
@@ -5316,7 +5603,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L63",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -5352,7 +5639,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
-      "source_location": "L49",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -5452,6 +5739,42 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_lib_rango_fechas_rangofechasde",
+      "target": "web_src_lib_rango_fechas_aiso",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_rango_fechas_rangofechasde",
+      "target": "web_src_lib_rango_fechas_esvalida",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_rango_fechas_rangofechasde",
+      "target": "web_src_lib_rango_fechas_diasiguiente",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_proxy_proxy",
       "target": "web_src_lib_supabase_middleware_updatesession",
       "relation": "calls",
@@ -5496,7 +5819,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "worker/src/index.ts",
-      "source_location": "L34",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "worker_src_index_fetch",
+      "target": "worker_src_index_parsecoordenada",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "worker/src/index.ts",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -5585,7 +5920,7 @@
     },
     {
       "source": "web_src_components_qr_card_qrcard",
-      "target": "web_src_components_qr_card_qrcard_eliminar",
+      "target": "web_src_components_qr_card_qrcard_descargarsvg",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5593,6 +5928,18 @@
       "context": "call",
       "source_file": "web/src/components/qr-card.tsx",
       "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_card_qrcard",
+      "target": "web_src_components_qr_card_qrcard_eliminar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "web/src/components/qr-card.tsx",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -5616,7 +5963,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -5640,7 +5987,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -5652,7 +5999,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -5908,6 +6255,18 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_app_api_metricas_route",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/metricas/route.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
       "target": "web_src_lib_supabase_server_createclient",
       "relation": "imports",
@@ -5945,6 +6304,18 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
       "target": "web_src_lib_types_enlace",
       "relation": "imports",
       "_origin": "ast",
@@ -5952,7 +6323,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -6089,6 +6460,18 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_reporte_route",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_reporte_route",
       "target": "web_src_lib_types_enlace",
       "relation": "imports",
       "_origin": "ast",
@@ -6096,7 +6479,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -6108,7 +6491,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -6149,6 +6532,18 @@
     },
     {
       "source": "web_src_app_api_reporte_proyecto_id_route",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_reporte_proyecto_id_route",
       "target": "web_src_lib_types_enlace",
       "relation": "imports",
       "_origin": "ast",
@@ -6156,7 +6551,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -6168,7 +6563,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -6701,6 +7096,18 @@
     },
     {
       "source": "web_src_components_inicio_dashboard",
+      "target": "web_src_components_metricas_charts_bot\u00f3ncsv",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/inicio/dashboard.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_inicio_dashboard",
       "target": "web_src_components_metricas_charts_card",
       "relation": "imports",
       "_origin": "ast",
@@ -6749,7 +7156,7 @@
     },
     {
       "source": "web_src_components_inicio_dashboard",
-      "target": "web_src_lib_reporte_reportescan",
+      "target": "web_src_components_metricas_rango_fechas_rangodefechas",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6757,6 +7164,18 @@
       "context": "import",
       "source_file": "web/src/components/inicio/dashboard.tsx",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_inicio_dashboard",
+      "target": "web_src_lib_reporte_reportescan",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/inicio/dashboard.tsx",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -6805,6 +7224,42 @@
       "context": "import",
       "source_file": "web/src/components/metricas/charts.tsx",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_components_metricas_agregacion_puntomapa",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_lib_reporte_reportescan",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_lib_csv_descargarscanscsv",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -6857,7 +7312,7 @@
     },
     {
       "source": "web_src_components_proyecto_resumen",
-      "target": "web_src_components_compartir_reporte_compartirproyecto",
+      "target": "web_src_components_metricas_charts_bot\u00f3ncsv",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6865,6 +7320,18 @@
       "context": "import",
       "source_file": "web/src/components/proyecto-resumen.tsx",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_proyecto_resumen",
+      "target": "web_src_components_compartir_reporte_compartirproyecto",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/proyecto-resumen.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -6876,7 +7343,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -6888,7 +7355,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -6942,6 +7409,18 @@
     {
       "source": "web_src_components_qr_card",
       "target": "web_src_lib_qr_buildqrdataurl",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/qr-card.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_qr_card",
+      "target": "web_src_lib_qr_buildqrsvg",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7013,6 +7492,18 @@
     },
     {
       "source": "web_src_components_reporte_dashboard",
+      "target": "web_src_components_metricas_charts_bot\u00f3ncsv",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/reporte/dashboard.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_reporte_dashboard",
       "target": "web_src_components_metricas_charts_card",
       "relation": "imports",
       "_origin": "ast",
@@ -7061,7 +7552,7 @@
     },
     {
       "source": "web_src_components_reporte_dashboard",
-      "target": "web_src_lib_reporte_reportescan",
+      "target": "web_src_components_metricas_rango_fechas_rangodefechas",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7069,6 +7560,18 @@
       "context": "import",
       "source_file": "web/src/components/reporte/dashboard.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_reporte_dashboard",
+      "target": "web_src_lib_reporte_reportescan",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/reporte/dashboard.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -7093,6 +7596,18 @@
       "context": "import",
       "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_ver_metricas_qr_modal",
+      "target": "web_src_components_metricas_charts_bot\u00f3ncsv",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -7168,6 +7683,18 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_lib_csv",
+      "target": "web_src_lib_reporte_reportescan",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_proxy",
       "target": "web_src_lib_supabase_middleware_updatesession",
       "relation": "imports",
@@ -7229,6 +7756,18 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_app_api_metricas_route",
+      "target": "web_src_lib_rango_fechas",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/metricas/route.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
       "target": "web_src_lib_supabase_server",
       "relation": "imports_from",
@@ -7254,6 +7793,18 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
+      "target": "web_src_lib_rango_fechas",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_enlaces_enlace_id_metricas_route",
       "target": "web_src_lib_types",
       "relation": "imports_from",
       "_origin": "ast",
@@ -7261,7 +7812,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "type_only": true,
       "weight": 1.0
     },
@@ -7376,6 +7927,18 @@
     },
     {
       "source": "web_src_app_api_proyectos_id_reporte_route",
+      "target": "web_src_lib_rango_fechas",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_proyectos_id_reporte_route",
       "target": "web_src_lib_types",
       "relation": "imports_from",
       "_origin": "ast",
@@ -7383,7 +7946,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "type_only": true,
       "weight": 1.0
     },
@@ -7413,6 +7976,18 @@
     },
     {
       "source": "web_src_app_api_reporte_proyecto_id_route",
+      "target": "web_src_lib_rango_fechas",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_api_reporte_proyecto_id_route",
       "target": "web_src_lib_types",
       "relation": "imports_from",
       "_origin": "ast",
@@ -7420,7 +7995,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "type_only": true,
       "weight": 1.0
     },
@@ -7997,7 +8572,7 @@
     },
     {
       "source": "web_src_components_inicio_dashboard",
-      "target": "web_src_lib_reporte",
+      "target": "web_src_components_metricas_rango_fechas",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8005,6 +8580,18 @@
       "context": "import",
       "source_file": "web/src/components/inicio/dashboard.tsx",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_inicio_dashboard",
+      "target": "web_src_lib_reporte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/inicio/dashboard.tsx",
+      "source_location": "L8",
       "type_only": true,
       "weight": 1.0
     },
@@ -8084,6 +8671,31 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_lib_reporte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L3",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_lib_csv",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_components_modal",
       "target": "ref_react",
       "relation": "imports_from",
@@ -8158,7 +8770,7 @@
     },
     {
       "source": "web_src_components_proyecto_resumen",
-      "target": "web_src_components_compartir_reporte",
+      "target": "web_src_components_metricas_charts",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8170,7 +8782,7 @@
     },
     {
       "source": "web_src_components_proyecto_resumen",
-      "target": "web_src_lib_reporte",
+      "target": "web_src_components_compartir_reporte",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8178,6 +8790,18 @@
       "context": "import",
       "source_file": "web/src/components/proyecto-resumen.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_proyecto_resumen",
+      "target": "web_src_lib_reporte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/proyecto-resumen.tsx",
+      "source_location": "L7",
       "type_only": true,
       "weight": 1.0
     },
@@ -8352,7 +8976,7 @@
     },
     {
       "source": "web_src_components_reporte_dashboard",
-      "target": "web_src_lib_reporte",
+      "target": "web_src_components_metricas_rango_fechas",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8360,6 +8984,18 @@
       "context": "import",
       "source_file": "web/src/components/reporte/dashboard.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_reporte_dashboard",
+      "target": "web_src_lib_reporte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/components/reporte/dashboard.tsx",
+      "source_location": "L7",
       "type_only": true,
       "weight": 1.0
     },
@@ -8446,6 +9082,19 @@
       "context": "import",
       "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
       "source_location": "L8",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_csv",
+      "target": "web_src_lib_reporte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L1",
       "type_only": true,
       "weight": 1.0
     },
@@ -10003,7 +10652,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/metricas/route.ts",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -10014,7 +10663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/metricas/route.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -10025,7 +10674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10036,7 +10685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -10047,7 +10696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/enlaces/[enlace_id]/metricas/route.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -10135,7 +10784,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -10146,7 +10795,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -10157,7 +10806,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L71",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -10168,7 +10817,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/proyectos/[id]/reporte/route.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -10179,7 +10828,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10190,7 +10839,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -10201,7 +10850,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/api/reporte/[proyecto_id]/route.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -10520,7 +11169,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/s/[slug]/route.ts",
-      "source_location": "L13",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10543,6 +11192,17 @@
       "confidence_score": 1.0,
       "source_file": "web/src/app/s/[slug]/route.ts",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_app_s_slug_route",
+      "target": "web_src_app_s_slug_route_parsecoordenada",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/s/[slug]/route.ts",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -10712,13 +11372,24 @@
     },
     {
       "source": "web_src_components_inicio_dashboard",
+      "target": "web_src_components_inicio_dashboard_proyectometrica",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/inicio/dashboard.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_inicio_dashboard",
       "target": "web_src_components_inicio_dashboard_qrmetrica",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -10729,7 +11400,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -10740,7 +11411,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -10751,18 +11422,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "web_src_components_inicio_dashboard",
-      "target": "web_src_components_inicio_dashboard_proyectometrica",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/inicio/dashboard.tsx",
-      "source_location": "L9",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -10800,13 +11460,24 @@
     },
     {
       "source": "web_src_components_metricas_agregacion",
+      "target": "web_src_components_metricas_agregacion_resumenmetricas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/metricas/agregacion.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_agregacion",
       "target": "web_src_components_metricas_agregacion_dias_corta",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L17",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -10817,18 +11488,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "web_src_components_metricas_agregacion",
-      "target": "web_src_components_metricas_agregacion_agregarscans",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/metricas/agregacion.ts",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -10844,7 +11504,18 @@
     },
     {
       "source": "web_src_components_metricas_agregacion",
-      "target": "web_src_components_metricas_agregacion_resumenmetricas",
+      "target": "web_src_components_metricas_agregacion_agregarscans",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/metricas/agregacion.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_agregacion",
+      "target": "web_src_components_metricas_agregacion_puntomapa",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10855,24 +11526,13 @@
     },
     {
       "source": "web_src_components_metricas_charts",
-      "target": "web_src_components_metricas_charts_columnas",
+      "target": "web_src_components_metricas_charts_bot\u00f3ncsv",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "web_src_components_metricas_charts",
-      "target": "web_src_components_metricas_charts_listabarras",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L44",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -10883,7 +11543,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L63",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -10894,7 +11554,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/metricas/charts.tsx",
-      "source_location": "L80",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_components_metricas_charts_listabarras",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_components_metricas_charts_columnas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_charts",
+      "target": "web_src_components_metricas_charts_mapaciudades",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/metricas/charts.tsx",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_metricas_rango_fechas",
+      "target": "web_src_components_metricas_rango_fechas_rangodefechas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/metricas/rango-fechas.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10960,7 +11664,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10971,7 +11675,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -10982,7 +11686,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/proyecto-resumen.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11037,7 +11741,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11048,7 +11752,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -11059,7 +11763,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/reporte/dashboard.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11108,6 +11812,17 @@
     },
     {
       "source": "web_src_components_ver_metricas_qr_modal",
+      "target": "web_src_components_ver_metricas_qr_modal_vermetricasqrmodal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_components_ver_metricas_qr_modal",
       "target": "web_src_components_ver_metricas_qr_modal_formatonumero",
       "relation": "contains",
       "_origin": "ast",
@@ -11129,14 +11844,25 @@
       "weight": 1.0
     },
     {
-      "source": "web_src_components_ver_metricas_qr_modal",
-      "target": "web_src_components_ver_metricas_qr_modal_vermetricasqrmodal",
+      "source": "web_src_lib_csv",
+      "target": "web_src_lib_csv_escapar",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "web/src/components/ver-metricas-qr-modal.tsx",
-      "source_location": "L85",
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_csv",
+      "target": "web_src_lib_csv_descargarscanscsv",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -11261,6 +11987,61 @@
       "weight": 1.0
     },
     {
+      "source": "web_src_lib_rango_fechas",
+      "target": "web_src_lib_rango_fechas_rangofechasde",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_rango_fechas",
+      "target": "web_src_lib_rango_fechas_esvalida",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_rango_fechas",
+      "target": "web_src_lib_rango_fechas_aiso",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_rango_fechas",
+      "target": "web_src_lib_rango_fechas_diasiguiente",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_rango_fechas",
+      "target": "web_src_lib_rango_fechas_rangofechas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/rango-fechas.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "web_src_lib_reporte",
       "target": "web_src_lib_reporte_reportescan",
       "relation": "contains",
@@ -11279,7 +12060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/reporte.ts",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -11724,6 +12505,17 @@
     },
     {
       "source": "worker_src_index",
+      "target": "worker_src_index_detectdevice",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "worker/src/index.ts",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "worker_src_index",
       "target": "worker_src_index_fetch",
       "relation": "contains",
       "_origin": "ast",
@@ -11741,7 +12533,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "worker/src/index.ts",
-      "source_location": "L54",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -11763,18 +12555,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "worker/src/index.ts",
-      "source_location": "L69",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
       "source": "worker_src_index",
-      "target": "worker_src_index_detectdevice",
+      "target": "worker_src_index_parsecoordenada",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "worker/src/index.ts",
-      "source_location": "L92",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -11881,8 +12673,20 @@
       "source_file": "web/src/components/qr-card.tsx",
       "source_location": "L52",
       "weight": 1.0
+    },
+    {
+      "source": "web_src_lib_csv_descargarscanscsv",
+      "target": "web_src_lib_csv_escapar",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "web/src/lib/csv.ts",
+      "source_location": "L21",
+      "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e9f0c851f917be5edfb8f220d798419a082a2015"
+  "built_at_commit": "e4db44cf576bd120a5a7a41ec6bc8bf6c4322ae9"
 }

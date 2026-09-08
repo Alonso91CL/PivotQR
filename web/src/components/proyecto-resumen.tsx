@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { agregarScans } from "@/components/metricas/agregacion";
+import { BotónCsv } from "@/components/metricas/charts";
 import { CompartirReporte, type CompartirProyecto } from "@/components/compartir-reporte";
 import type { ReporteScan } from "@/lib/reporte";
 
@@ -56,7 +57,10 @@ export function ProyectoResumen({ proyecto }: { proyecto: CompartirProyecto }) {
         <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-400">
           Resumen de la campaña
         </h2>
-        <CompartirReporte proyecto={proyecto} />
+        <div className="flex flex-wrap items-center gap-2">
+          {data && <BotónCsv scans={data.scans} nombreArchivo={`reporte-${proyecto.id}.csv`} />}
+          <CompartirReporte proyecto={proyecto} />
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">

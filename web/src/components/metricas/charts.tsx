@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
-import type { Item } from "@/components/metricas/agregacion";
+import type { Item, PuntoMapa } from "@/components/metricas/agregacion";
+import type { ReporteScan } from "@/lib/reporte";
+import { descargarScansCsv } from "@/lib/csv";
 
 export function Columnas({ items, step = 1 }: { items: Item[]; step?: number }) {
   const max = Math.max(1, ...items.map((i) => i.valor));
@@ -57,6 +59,91 @@ export function ListaBarras({ items }: { items: Item[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+// Mapa de burbujas por ciudad: proyecta las coordenadas al lienzo con una
+// escala lineal corregida por latitud (para que las burbujas sean circulares)
+// y conserva el listado rankeado como respaldo accesible.
+export function MapaCiudades({ puntos }: { puntos: PuntoMapa[] }) {
+  if (puntos.length === 0) return <Vacío />;
+
+  const W = 320;
+  const H = 200;
+  const PAD = 18;
+
+  const lats = puntos.map((p) => p.latitud);
+  const lngs = puntos.map((p) => p.longitud);
+  let minLat = Math.min(...lats);
+  let maxLat = Math.max(...lats);
+  let minLng = Math.min(...lngs);
+  let maxLng = Math.max(...lngs);
+  if (maxLat - minLat < 0.001) {
+    minLat -= 0.5;
+    maxLat += 0.5;
+  }
+  if (maxLng - minLng < 0.001) {
+    minLng -= 0.5;
+    maxLng += 0.5;
+  }
+
+  const midLat = (minLat + maxLat) / 2;
+  const cosMid = Math.max(0.3, Math.abs(Math.cos((midLat * Math.PI) / 180)));
+  const spanX = (maxLng - minLng) * cosMid;
+  const spanY = maxLat - minLat;
+  const scale = Math.min((W - PAD * 2) / spanX, (H - PAD * 2) / spanY);
+  const x = (lng: number) => PAD + (lng - minLng) * cosMid * scale;
+  const y = (lat: number) => H - PAD - (lat - minLat) * scale;
+
+  const maxCant = Math.max(...puntos.map((p) => p.cantidad));
+  const radio = (n: number) => Math.max(4, 12 * Math.sqrt(n / maxCant));
+
+  return (
+    <svg
+      role="img"
+      aria-label={`Mapa de ciudades: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
+      viewBox={`0 0 ${W} ${H}`}
+      className="h-auto w-full"
+    >
+      <title>Mapa de ciudades con escaneos</title>
+      {puntos.map((p) => {
+        const px = x(p.longitud);
+        const py = y(p.latitud);
+        const r = radio(p.cantidad);
+        const anchoTexto = p.ciudad.length * 5;
+        const aLaDerecha = px + r + 6 + anchoTexto <= W - 4;
+        const lx = aLaDerecha ? px + r + 6 : px - r - 6;
+        return (
+          <g key={`${p.ciudad} ${p.pais ?? ""}`}>
+            <circle cx={px} cy={py} r={r} className="fill-brand-500/25 stroke-brand-500" strokeWidth={1.5}>
+              <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
+            </circle>
+            <text
+              x={lx}
+              y={py + 3}
+              fontSize={9}
+              textAnchor={aLaDerecha ? "start" : "end"}
+              className="fill-gray-300"
+            >
+              {p.ciudad}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+export function BotónCsv({ scans, nombreArchivo }: { scans: ReporteScan[]; nombreArchivo: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => descargarScansCsv(scans, nombreArchivo)}
+      disabled={scans.length === 0}
+      className="rounded-lg border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-200 transition hover:border-gray-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+    >
+      Descargar CSV
+    </button>
   );
 }
 

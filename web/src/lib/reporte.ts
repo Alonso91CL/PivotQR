@@ -4,6 +4,8 @@ export interface ReporteScan {
   ciudad: string | null;
   region: string | null;
   pais: string | null;
+  latitud: number | null;
+  longitud: number | null;
   dispositivo: string;
   so: string;
   fecha_utc: string;

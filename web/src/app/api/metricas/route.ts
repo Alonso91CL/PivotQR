@@ -1,14 +1,15 @@
 import { createClient } from "@/lib/supabase/server";
 import { MAX_SCANS, type ReporteScan } from "@/lib/reporte";
-import { NextResponse } from "next/server";
+import { rangoFechasDe } from "@/lib/rango-fechas";
+import { NextResponse, type NextRequest } from "next/server";
 
 export const dynamic = "force-dynamic";
 
 // Métricas a nivel cuenta: agrega los escaneos de todos los proyectos del
 // usuario (RLS). Los conteos usan la muestra de los MAX_SCANS más recientes,
 // la misma semántica que el reporte; los contadores en vivo por QR usan el
-// conteo exacto en su propia consulta.
-export async function GET() {
+// conteo exacto en su propia consulta. Acepta `desde`/`hasta` (YYYY-MM-DD).
+export async function GET(request: NextRequest) {
   const supabase = await createClient();
 
   const {
@@ -38,18 +39,25 @@ export async function GET() {
 
     const enlaceIds = enlaces.map((e) => e.id);
     if (enlaceIds.length > 0) {
+      const { desde, hastaExclusiva } = rangoFechasDe(request);
+
+      let scansQuery = supabase
+        .from("scans")
+        .select("id, enlace_id, ciudad, region, pais, latitud, longitud, dispositivo, so, fecha_utc")
+        .in("enlace_id", enlaceIds);
+      let countQuery = supabase.from("scans").select("*", { count: "exact", head: true }).in("enlace_id", enlaceIds);
+      if (desde) {
+        scansQuery = scansQuery.gte("fecha_utc", desde);
+        countQuery = countQuery.gte("fecha_utc", desde);
+      }
+      if (hastaExclusiva) {
+        scansQuery = scansQuery.lt("fecha_utc", hastaExclusiva);
+        countQuery = countQuery.lt("fecha_utc", hastaExclusiva);
+      }
+
       const [{ data }, { count }] = await Promise.all([
-        supabase
-          .from("scans")
-          .select("id, enlace_id, ciudad, region, pais, dispositivo, so, fecha_utc")
-          .in("enlace_id", enlaceIds)
-          .order("fecha_utc", { ascending: false })
-          .limit(MAX_SCANS)
-          .returns<ReporteScan[]>(),
-        supabase
-          .from("scans")
-          .select("*", { count: "exact", head: true })
-          .in("enlace_id", enlaceIds),
+        scansQuery.order("fecha_utc", { ascending: false }).limit(MAX_SCANS).returns<ReporteScan[]>(),
+        countQuery,
       ]);
       scans = data ?? [];
       totalExacto = count ?? 0;

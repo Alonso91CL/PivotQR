@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { agregarScans } from "@/components/metricas/agregacion";
-import { Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { BotónCsv, Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { RangoDeFechas } from "@/components/metricas/rango-fechas";
 import type { ReporteScan } from "@/lib/reporte";
 
 interface ProyectoMetrica {
@@ -41,10 +42,16 @@ function formatoNumero(n: number): string {
 export function InicioDashboard() {
   const [data, setData] = useState<PayloadInicio | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [desde, setDesde] = useState("");
+  const [hasta, setHasta] = useState("");
 
   const cargar = useCallback(async () => {
     try {
-      const res = await fetch("/api/metricas", { cache: "no-store" });
+      const params = new URLSearchParams();
+      if (desde) params.set("desde", desde);
+      if (hasta) params.set("hasta", hasta);
+      const query = params.toString();
+      const res = await fetch(`/api/metricas${query ? `?${query}` : ""}`, { cache: "no-store" });
       if (!res.ok) {
         setError("No se pudo cargar el resumen de tu cuenta.");
         return;
@@ -54,7 +61,7 @@ export function InicioDashboard() {
     } catch {
       setError("No se pudo cargar el resumen de tu cuenta.");
     }
-  }, []);
+  }, [desde, hasta]);
 
   useEffect(() => {
     const timer = setTimeout(() => void cargar(), 0);
@@ -76,6 +83,11 @@ export function InicioDashboard() {
         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
           Resumen de escaneos en todos tus proyectos. Se actualiza en vivo.
         </p>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <RangoDeFechas desde={desde} hasta={hasta} onChange={(d, h) => { setDesde(d); setHasta(h); }} />
+        {data && <BotónCsv scans={data.scans} nombreArchivo="metricas-cuenta.csv" />}
       </div>
 
       {error && (

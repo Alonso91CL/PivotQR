@@ -5,6 +5,14 @@ export interface Item {
   valor: number;
 }
 
+export interface PuntoMapa {
+  ciudad: string;
+  pais: string | null;
+  latitud: number;
+  longitud: number;
+  cantidad: number;
+}
+
 export interface ResumenMetricas {
   total: number;
   dias: Item[];
@@ -12,6 +20,7 @@ export interface ResumenMetricas {
   dispositivos: Item[];
   sistemas: Item[];
   ubicaciones: Item[];
+  puntos: PuntoMapa[];
 }
 
 const DIAS_CORTA = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
@@ -51,13 +60,38 @@ export function agregarScans(scans: ReporteScan[], diasHorizonte = 14): ResumenM
   const porDispositivo = new Map<string, number>();
   const porSO = new Map<string, number>();
   const porUbicacion = new Map<string, number>();
+  const porPunto = new Map<string, { lat: number; lon: number; n: number }>();
   for (const s of scans) {
     porDispositivo.set(s.dispositivo, (porDispositivo.get(s.dispositivo) ?? 0) + 1);
     const so = s.so || "desconocido";
     porSO.set(so, (porSO.get(so) ?? 0) + 1);
-    const ubicacion = `${s.ciudad ?? "Ubicación desconocida"}${s.pais ? ` · ${s.pais}` : ""}`;
+    const ubicacion = s.ciudad
+      ? `${s.ciudad}${s.pais ? ` · ${s.pais}` : ""}`
+      : (s.pais ?? "Ubicación desconocida");
     porUbicacion.set(ubicacion, (porUbicacion.get(ubicacion) ?? 0) + 1);
+
+    if (s.ciudad && typeof s.latitud === "number" && typeof s.longitud === "number") {
+      const clave = `${s.ciudad}\u0000${s.pais ?? ""}`;
+      const p = porPunto.get(clave) ?? { lat: 0, lon: 0, n: 0 };
+      p.lat += s.latitud;
+      p.lon += s.longitud;
+      p.n += 1;
+      porPunto.set(clave, p);
+    }
   }
+
+  const puntos: PuntoMapa[] = [...porPunto.entries()]
+    .map(([clave, p]) => {
+      const [ciudad, pais] = clave.split("\u0000");
+      return {
+        ciudad,
+        pais: pais || null,
+        latitud: p.lat / p.n,
+        longitud: p.lon / p.n,
+        cantidad: p.n,
+      };
+    })
+    .sort((a, b) => b.cantidad - a.cantidad);
 
   const ordenarValor = (m: Map<string, number>) =>
     [...m.entries()].sort((a, b) => b[1] - a[1]).map(([label, valor]) => ({ label, valor }));
@@ -69,5 +103,6 @@ export function agregarScans(scans: ReporteScan[], diasHorizonte = 14): ResumenM
     dispositivos: ordenarValor(porDispositivo),
     sistemas: ordenarValor(porSO).slice(0, 5),
     ubicaciones: ordenarValor(porUbicacion).slice(0, 8),
+    puntos,
   };
 }

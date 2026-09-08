@@ -1,5 +1,6 @@
 import { createServiceClient } from "@/lib/supabase/service";
 import { MAX_SCANS, type ReporteScan } from "@/lib/reporte";
+import { rangoFechasDe } from "@/lib/rango-fechas";
 import { NextResponse, type NextRequest } from "next/server";
 import type { Enlace, Proyecto } from "@/lib/types";
 
@@ -41,10 +42,16 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   const ids = (enlaces ?? []).map((e) => e.id);
   let scans: ReporteScan[] = [];
   if (ids.length > 0) {
-    const { data } = await supabase
+    const { desde, hastaExclusiva } = rangoFechasDe(request);
+
+    let scansQuery = supabase
       .from("scans")
-      .select("id, enlace_id, ciudad, region, pais, dispositivo, so, fecha_utc")
-      .in("enlace_id", ids)
+      .select("id, enlace_id, ciudad, region, pais, latitud, longitud, dispositivo, so, fecha_utc")
+      .in("enlace_id", ids);
+    if (desde) scansQuery = scansQuery.gte("fecha_utc", desde);
+    if (hastaExclusiva) scansQuery = scansQuery.lt("fecha_utc", hastaExclusiva);
+
+    const { data } = await scansQuery
       .order("fecha_utc", { ascending: false })
       .limit(MAX_SCANS)
       .returns<ReporteScan[]>();

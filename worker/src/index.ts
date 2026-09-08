@@ -30,12 +30,15 @@ export default {
     }
 
     // Registro el escaneo con service_role (respeta el esquema; el insert
-    // "service insert scans" permite la escritura desde el servidor).
+    // "service insert scans" permite la escritura desde el servidor). La
+    // ubicación llega del Managed Transform "Add visitor location headers".
     await recordScan(env, {
       enlace_id: enlace.id,
       ciudad: request.headers.get("cf-ipcity"),
       region: request.headers.get("cf-region-code"),
       pais: request.headers.get("cf-ipcountry"),
+      latitud: parseCoordenada(request.headers.get("cf-iplatitude")),
+      longitud: parseCoordenada(request.headers.get("cf-iplongitude")),
       dispositivo,
       so,
     });
@@ -73,6 +76,8 @@ async function recordScan(
     ciudad: string | null;
     region: string | null;
     pais: string | null;
+    latitud: number | null;
+    longitud: number | null;
     dispositivo: string;
     so: string;
   },
@@ -87,6 +92,12 @@ async function recordScan(
     },
     body: JSON.stringify(scan),
   });
+}
+
+function parseCoordenada(valor: string | null): number | null {
+  if (!valor) return null;
+  const n = Number.parseFloat(valor);
+  return Number.isFinite(n) ? n : null;
 }
 
 function detectDevice(userAgent: string): { dispositivo: string; so: string } {

@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { agregarScans } from "@/components/metricas/agregacion";
-import { Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { BotónCsv, Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { RangoDeFechas } from "@/components/metricas/rango-fechas";
 import type { ReporteScan } from "@/lib/reporte";
 
 interface EnlaceReporte {
@@ -34,9 +35,16 @@ export function ReporteDashboard({
   const [desacceso, setDesacceso] = useState(false);
   const [error, setError] = useState(false);
   const [actualizadoEn, setActualizadoEn] = useState<Date | null>(null);
+  const [desde, setDesde] = useState("");
+  const [hasta, setHasta] = useState("");
 
   const cargar = useCallback(async () => {
-    const url = `/api/reporte/${proyectoId}${codigo ? `?codigo=${encodeURIComponent(codigo)}` : ""}`;
+    const params = new URLSearchParams();
+    if (codigo) params.set("codigo", codigo);
+    if (desde) params.set("desde", desde);
+    if (hasta) params.set("hasta", hasta);
+    const query = params.toString();
+    const url = `/api/reporte/${proyectoId}${query ? `?${query}` : ""}`;
     const res = await fetch(url);
     if (res.status === 403) {
       setDesacceso(true);
@@ -49,7 +57,7 @@ export function ReporteDashboard({
     const json = (await res.json()) as Payload;
     setData(json);
     setActualizadoEn(new Date());
-  }, [proyectoId, codigo]);
+  }, [proyectoId, codigo, desde, hasta]);
 
   useEffect(() => {
     const timer = setTimeout(() => void cargar(), 0);
@@ -118,6 +126,11 @@ export function ReporteDashboard({
             {enlaces.length} enlace{enlaces.length === 1 ? "" : "s"} en la campaña
           </p>
         </div>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <RangoDeFechas desde={desde} hasta={hasta} onChange={(d, h) => { setDesde(d); setHasta(h); }} />
+        {data && <BotónCsv scans={data.scans} nombreArchivo={`reporte-${proyectoId}.csv`} />}
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
