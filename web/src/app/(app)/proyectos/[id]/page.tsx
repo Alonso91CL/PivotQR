@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CrearEnlaceModal } from "@/components/crear-enlace-modal";
 import { ProyectoResumen } from "@/components/proyecto-resumen";
 import { QrCard } from "@/components/qr-card";
 import { createClient } from "@/lib/supabase/server";
@@ -24,7 +23,7 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
 
   const { data: enlaces } = await supabase
     .from("links")
-    .select("id, proyecto_id, slug, nombre, descripcion, url_destino, pausado, color_fondo, color_patron, estilo, logo_url, creado_en")
+    .select("id, proyecto_id, slug, nombre, descripcion, url_destino, pausado, tipo, contenido, color_fondo, color_patron, estilo, logo_url, creado_en")
     .eq("proyecto_id", id)
     .is("eliminado_en", null)
     .order("creado_en", { ascending: false });
@@ -41,7 +40,24 @@ export default async function ProyectoPage({ params }: { params: Promise<{ id: s
             <p className="text-sm text-gray-500 dark:text-gray-400">{proyecto.descripcion}</p>
           )}
         </div>
-        <CrearEnlaceModal proyectoId={proyecto.id} />
+        <Link
+          href={`/proyectos/${proyecto.id}/nuevo`}
+          className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            aria-hidden
+          >
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          Nuevo QR
+        </Link>
       </div>
 
       <ProyectoResumen

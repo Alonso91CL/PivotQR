@@ -1,11 +1,17 @@
+import type { VCardContenido } from "@/lib/vcard";
+
+export type TipoEnlace = "url" | "vcard";
+
 export interface Enlace {
   id: string;
   proyecto_id: string;
   slug: string;
   nombre: string;
   descripcion: string;
-  url_destino: string;
+  url_destino: string | null;
   pausado: boolean;
+  tipo: TipoEnlace;
+  contenido: VCardContenido | null;
   color_fondo: string | null;
   color_patron: string | null;
   estilo: string | null;

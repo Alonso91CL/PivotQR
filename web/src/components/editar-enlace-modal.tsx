@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { Modal } from "@/components/modal";
+import { VCardForm } from "@/components/vcard-form";
 import { shortUrlDe } from "@/lib/short-url";
 import type { Enlace } from "@/lib/types";
+import type { VCardContenido } from "@/lib/vcard";
 
 export function EditarEnlaceModal({
   enlace,
@@ -19,7 +21,7 @@ export function EditarEnlaceModal({
   if (!abierto) return null;
 
   return (
-    <Modal titulo="Editar QR" onCerrar={onCerrar}>
+    <Modal titulo="Editar QR" onCerrar={onCerrar} ancho={enlace.tipo === "vcard" ? "max-w-2xl" : undefined}>
       <FormularioEditar
         key={enlace.id}
         enlace={enlace}
@@ -39,15 +41,29 @@ function FormularioEditar({
   onCerrar: () => void;
   onGuardado: (enlace: Enlace, mensaje: string) => void;
 }) {
-  const [url, setUrl] = useState(enlace.url_destino);
+  const [url, setUrl] = useState(enlace.url_destino ?? "");
+  const [contenido, setContenido] = useState<VCardContenido>(
+    enlace.contenido ?? ({} as VCardContenido),
+  );
   const [pausado, setPausado] = useState(enlace.pausado);
   const [nombre, setNombre] = useState(enlace.nombre);
   const [descripcion, setDescripcion] = useState(enlace.descripcion);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const esVCard = enlace.tipo === "vcard";
+
+  const contenidoSinCambios =
+    esVCard && enlace.contenido
+      ? Object.entries(contenido).every(
+          ([k, v]) => (enlace.contenido?.[k as keyof VCardContenido] ?? "") === (v ?? ""),
+        )
+      : false;
+
   const sinCambios =
-    url.trim() === enlace.url_destino &&
+    (esVCard
+      ? contenidoSinCambios
+      : url.trim() === (enlace.url_destino ?? "")) &&
     pausado === enlace.pausado &&
     nombre.trim() === enlace.nombre &&
     descripcion.trim() === enlace.descripcion;
@@ -63,7 +79,7 @@ function FormularioEditar({
       onCerrar();
       return;
     }
-    const cambios: Record<string, string | boolean> = {};
+    const cambios: Record<string, string | boolean | VCardContenido> = {};
     const mensajes: string[] = [];
     if (nombre.trim() !== enlace.nombre) {
       cambios.nombre = nombre.trim();
@@ -73,7 +89,10 @@ function FormularioEditar({
       cambios.descripcion = descripcion.trim();
       mensajes.push("Descripción actualizada.");
     }
-    if (url.trim() !== enlace.url_destino) {
+    if (esVCard) {
+      cambios.contenido = contenido;
+      mensajes.push("Datos de contacto actualizados: el mismo QR ya guarda la nueva tarjeta.");
+    } else if (url.trim() !== (enlace.url_destino ?? "")) {
       cambios.url_destino = url;
       mensajes.push("Destino actualizado: el mismo QR ya redirige a la nueva URL.");
     }
@@ -137,25 +156,32 @@ function FormularioEditar({
           />
         </div>
 
-        <div>
-          <label
-            htmlFor={`editar-url-${enlace.id}`}
-            className="mb-1.5 block text-sm font-medium text-gray-300"
-          >
-            URL de destino
-          </label>
-          <input
-            id={`editar-url-${enlace.id}`}
-            type="url"
-            required
-            value={url}
-            onChange={(e) => {
-              setUrl(e.target.value);
-              setError(null);
-            }}
-            className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
-          />
-        </div>
+        {esVCard ? (
+          <div>
+            <p className="mb-2 text-sm font-medium text-gray-300">Datos de contacto</p>
+            <VCardForm contenido={contenido} onCambio={setContenido} />
+          </div>
+        ) : (
+          <div>
+            <label
+              htmlFor={`editar-url-${enlace.id}`}
+              className="mb-1.5 block text-sm font-medium text-gray-300"
+            >
+              URL de destino
+            </label>
+            <input
+              id={`editar-url-${enlace.id}`}
+              type="url"
+              required
+              value={url}
+              onChange={(e) => {
+                setUrl(e.target.value);
+                setError(null);
+              }}
+              className="w-full rounded-lg border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10"
+            />
+          </div>
+        )}
 
         <div>
           <label

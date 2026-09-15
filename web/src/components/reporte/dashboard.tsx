@@ -11,8 +11,9 @@ interface EnlaceReporte {
   slug: string;
   nombre: string;
   descripcion: string;
-  url_destino: string;
+  url_destino: string | null;
   pausado: boolean;
+  tipo: string | null;
 }
 
 interface Payload {
@@ -193,7 +194,13 @@ export function ReporteDashboard({
                 {e.descripcion && (
                   <span className="min-w-0 truncate text-xs text-gray-400">{e.descripcion}</span>
                 )}
-                <span className="min-w-0 truncate text-sm text-gray-400">{e.url_destino}</span>
+                {e.tipo === "vcard" ? (
+                  <span className="min-w-0 truncate text-sm text-gray-400">
+                    Tarjeta de contacto (vCard)
+                  </span>
+                ) : (
+                  <span className="min-w-0 truncate text-sm text-gray-400">{e.url_destino}</span>
+                )}
               </li>
             ))}
           </ul>

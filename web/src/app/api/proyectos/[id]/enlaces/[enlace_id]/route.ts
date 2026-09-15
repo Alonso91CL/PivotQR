@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { ESTILOS, type Estilo } from "@/lib/qr";
+import { CAMPOS_VCARD, type VCardContenido } from "@/lib/vcard";
 import { NextResponse, type NextRequest } from "next/server";
 import type { Enlace } from "@/lib/types";
 
@@ -22,7 +23,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
 
   // Validación en el servidor: nunca confiar solo en lo que llega del cliente.
   const body = await request.json().catch(() => null);
-  const cambios: Record<string, string | boolean | null> = {};
+  const cambios: Record<string, string | boolean | VCardContenido | null> = {};
 
   if (body && typeof body.url_destino === "string") {
     const url = body.url_destino.trim();
@@ -123,6 +124,30 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     cambios.descripcion = v.trim();
   }
 
+  if (body && "contenido" in body) {
+    if (body.contenido === null) {
+      cambios.contenido = null;
+    } else if (body.contenido && typeof body.contenido === "object") {
+      const contenido: Record<string, string> = {};
+      for (const campo of CAMPOS_VCARD) {
+        const valor = body.contenido[campo];
+        contenido[campo] = typeof valor === "string" ? valor.trim().slice(0, 200) : "";
+      }
+      if (!contenido.nombre && !contenido.apellido) {
+        return NextResponse.json(
+          { error: "Ingresa al menos el nombre o el apellido del contacto" },
+          { status: 400 },
+        );
+      }
+      cambios.contenido = contenido as VCardContenido;
+    } else {
+      return NextResponse.json(
+        { error: "Los datos de contacto no son válidos" },
+        { status: 400 },
+      );
+    }
+  }
+
   if (Object.keys(cambios).length === 0) {
     return NextResponse.json(
       { error: "No hay campos para actualizar" },
@@ -137,7 +162,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     .eq("id", enlace_id)
     .eq("proyecto_id", id)
     .is("eliminado_en", null)
-    .select("id, proyecto_id, slug, nombre, descripcion, url_destino, pausado, color_fondo, color_patron, estilo, logo_url, creado_en, eliminado_en")
+    .select("id, proyecto_id, slug, nombre, descripcion, url_destino, pausado, tipo, contenido, color_fondo, color_patron, estilo, logo_url, creado_en, eliminado_en")
     .single<Enlace>();
 
   if (error || !data) {

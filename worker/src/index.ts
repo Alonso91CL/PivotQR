@@ -3,10 +3,28 @@ interface Env {
   SUPABASE_SERVICE_ROLE_KEY: string;
 }
 
+interface VCardContenido {
+  nombre?: string;
+  apellido?: string;
+  telefono?: string;
+  movil?: string;
+  email?: string;
+  web?: string;
+  empresa?: string;
+  cargo?: string;
+  fax?: string;
+  direccion?: string;
+  ciudad?: string;
+  codigo_postal?: string;
+  pais?: string;
+}
+
 interface LinkRow {
   id: string;
-  url_destino: string;
+  url_destino: string | null;
   pausado: boolean;
+  tipo: string | null;
+  contenido: VCardContenido | null;
 }
 
 export default {
@@ -50,13 +68,32 @@ export default {
       );
     }
 
+    // v-card: en vez de redirigir, se sirve el archivo .vcf al escanear.
+    if (enlace.tipo === "vcard") {
+      const vcf = construirVcf(enlace.contenido ?? {});
+      const nombre = enlace.contenido?.nombre?.trim() || enlace.contenido?.apellido?.trim() || "contacto";
+      const base = nombre.replace(/[^a-zA-Z0-9._-]+/g, "_");
+      return new Response(vcf, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/vcard; charset=utf-8",
+          "Content-Disposition": `attachment; filename="pivotqr-${base || "contacto"}.vcf"`,
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
+    if (!enlace.url_destino) {
+      return new Response("Enlace sin destino", { status: 404 });
+    }
+
     return Response.redirect(enlace.url_destino, 302);
   },
 };
 
 async function getLink(env: Env, slug: string): Promise<LinkRow | null> {
   const res = await fetch(
-    `${env.SUPABASE_URL}/rest/v1/links?select=id,url_destino,pausado&slug=eq.${slug}`,
+    `${env.SUPABASE_URL}/rest/v1/links?select=id,url_destino,pausado,tipo,contenido&slug=eq.${slug}`,
     {
       headers: {
         apikey: env.SUPABASE_SERVICE_ROLE_KEY,
@@ -98,6 +135,47 @@ function parseCoordenada(valor: string | null): number | null {
   if (!valor) return null;
   const n = Number.parseFloat(valor);
   return Number.isFinite(n) ? n : null;
+}
+
+function escaparVcf(valor: string): string {
+  return valor.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/[\r\n]+/g, " ");
+}
+
+function construirVcf(c: VCardContenido): string {
+  const lineas: string[] = ["BEGIN:VCARD", "VERSION:3.0"];
+  const nombre = (c.nombre ?? "").trim();
+  const apellido = (c.apellido ?? "").trim();
+  const nombreCompleto = [nombre, apellido].filter(Boolean).join(" ") || "Contacto";
+
+  lineas.push(`N:${escaparVcf(apellido)};${escaparVcf(nombre)};;;`);
+  lineas.push(`FN:${escaparVcf(nombreCompleto)}`);
+
+  if (c.empresa) lineas.push(`ORG:${escaparVcf(c.empresa)}`);
+  if (c.cargo) lineas.push(`TITLE:${escaparVcf(c.cargo)}`);
+  if (c.telefono) lineas.push(`TEL;TYPE=VOICE:${escaparVcf(c.telefono)}`);
+  if (c.movil) lineas.push(`TEL;TYPE=CELL:${escaparVcf(c.movil)}`);
+  if (c.fax) lineas.push(`TEL;TYPE=FAX:${escaparVcf(c.fax)}`);
+  if (c.email) lineas.push(`EMAIL:${escaparVcf(c.email)}`);
+  if (c.web) lineas.push(`URL:${escaparVcf(c.web)}`);
+
+  const tieneDireccion = c.direccion || c.ciudad || c.codigo_postal || c.pais;
+  if (tieneDireccion) {
+    const adr = [
+      "",
+      "",
+      c.direccion ?? "",
+      c.ciudad ?? "",
+      "",
+      c.codigo_postal ?? "",
+      c.pais ?? "",
+    ]
+      .map((v) => escaparVcf(v))
+      .join(";");
+    lineas.push(`ADR;TYPE=HOME:${adr}`);
+  }
+
+  lineas.push("END:VCARD");
+  return lineas.join("\r\n");
 }
 
 function detectDevice(userAgent: string): { dispositivo: string; so: string } {

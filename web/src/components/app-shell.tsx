@@ -175,7 +175,7 @@ export function AppShell({
           </button>
           <Link href="/inicio" className="inline-flex items-center lg:hidden">
             <Image
-              src="/brand/logo.svg"
+              src="/brand/logo-bk.svg"
               alt="PivotQR"
               width={150}
               height={55}

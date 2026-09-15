@@ -17,6 +17,7 @@ build/
 .opencode/
 .docs/design
 .docs/company
+.docs/tmp
 
 # Grafo de conocimiento Graphify: artefactos volátiles
 .docs/graphify-out/cache/

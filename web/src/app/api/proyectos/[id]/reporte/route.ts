@@ -37,7 +37,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
   const { data: enlaces } = await supabase
     .from("links")
-    .select("id, slug, nombre, descripcion, url_destino, pausado, creado_en")
+    .select("id, slug, nombre, descripcion, url_destino, pausado, tipo, creado_en")
     .eq("proyecto_id", id)
     .is("eliminado_en", null)
     .order("creado_en", { ascending: false })

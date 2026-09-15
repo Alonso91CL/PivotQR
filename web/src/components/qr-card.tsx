@@ -10,6 +10,7 @@ import { EditarEnlaceModal } from "@/components/editar-enlace-modal";
 import { ConfigurarQrModal } from "@/components/configurar-qr-modal";
 import { VerMetricasQrModal } from "@/components/ver-metricas-qr-modal";
 import { Modal } from "@/components/modal";
+import { EtiquetaTipo } from "@/components/tipo-selector";
 import type { Enlace } from "@/lib/types";
 
 export function QrCard({ enlace }: { enlace: Enlace }) {
@@ -423,6 +424,7 @@ export function QrCard({ enlace }: { enlace: Enlace }) {
             <p className="line-clamp-2 text-sm text-gray-400">{descripcion}</p>
           )}
           <div className="flex flex-wrap items-center gap-2">
+            <EtiquetaTipo tipo={enlaceActual.tipo} />
             <span
               className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                 pausado
