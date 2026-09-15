@@ -192,6 +192,7 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [dragging, setDragging] = useState(false);
   const dragStart = useRef<{ px: number; py: number; cLng: number; cLat: number } | null>(null);
+  const pinchRef = useRef<{ dist: number; scale: number; cLng: number; cLat: number; mx: number; my: number } | null>(null);
   const [hover, setHover] = useState<{ ciudad: string; pais?: string; cantidad: number; mx: number; my: number } | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -289,27 +290,57 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   const handleMouseUp = useCallback(() => { setDragging(false); dragStart.current = null; }, []);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    if (e.touches.length !== 1) return;
-    const t = e.touches[0];
-    setDragging(true);
-    dragStart.current = { px: t.clientX, py: t.clientY, cLng: centerRef.current[0], cLat: centerRef.current[1] };
+    if (e.touches.length === 2 && svgRef.current) {
+      const [a, b] = [e.touches[0], e.touches[1]];
+      const rect = svgRef.current.getBoundingClientRect();
+      const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+      const mx = ((a.clientX + b.clientX) / 2 - rect.left) / rect.width * W;
+      const my = ((a.clientY + b.clientY) / 2 - rect.top) / rect.height * H;
+      pinchRef.current = { dist, scale: scaleRef.current, cLng: centerRef.current[0], cLat: centerRef.current[1], mx, my };
+      setDragging(false);
+      dragStart.current = null;
+    } else if (e.touches.length === 1) {
+      const t = e.touches[0];
+      setDragging(true);
+      dragStart.current = { px: t.clientX, py: t.clientY, cLng: centerRef.current[0], cLat: centerRef.current[1] };
+      pinchRef.current = null;
+    }
   }, []);
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!dragging || !dragStart.current || !svgRef.current || e.touches.length !== 1) return;
     e.preventDefault();
-    const t = e.touches[0];
-    const rect = svgRef.current.getBoundingClientRect();
-    const dxPx = t.clientX - dragStart.current.px;
-    const dyPx = t.clientY - dragStart.current.py;
-    const geoPerPx = 1 / scaleRef.current * (W / rect.width) * 50;
-    const nc: [number, number] = [
-      dragStart.current.cLng - dxPx * geoPerPx,
-      dragStart.current.cLat + dyPx * geoPerPx,
-    ];
-    centerRef.current = nc;
-    setCenter(nc);
+    if (e.touches.length === 2 && pinchRef.current && svgRef.current) {
+      const [a, b] = [e.touches[0], e.touches[1]];
+      const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+      const ratio = dist / pinchRef.current.dist;
+      const newScale = Math.max(30, Math.min(3000, pinchRef.current.scale * ratio));
+      const geo = inv(pinchRef.current.mx, pinchRef.current.my);
+      if (geo) {
+        const [gLng, gLat] = geo;
+        const t = 1 - pinchRef.current.scale / newScale;
+        const nc: [number, number] = [
+          pinchRef.current.cLng + (gLng - pinchRef.current.cLng) * t,
+          pinchRef.current.cLat + (gLat - pinchRef.current.cLat) * t,
+        ];
+        centerRef.current = nc;
+        setCenter(nc);
+      }
+      scaleRef.current = newScale;
+      setScale(newScale);
+    } else if (e.touches.length === 1 && dragging && dragStart.current && svgRef.current) {
+      const t = e.touches[0];
+      const rect = svgRef.current.getBoundingClientRect();
+      const dxPx = t.clientX - dragStart.current.px;
+      const dyPx = t.clientY - dragStart.current.py;
+      const geoPerPx = 1 / scaleRef.current * (W / rect.width) * 50;
+      const nc: [number, number] = [
+        dragStart.current.cLng - dxPx * geoPerPx,
+        dragStart.current.cLat + dyPx * geoPerPx,
+      ];
+      centerRef.current = nc;
+      setCenter(nc);
+    }
   }, [dragging]);
-  const handleTouchEnd = useCallback(() => { setDragging(false); dragStart.current = null; }, []);
+  const handleTouchEnd = useCallback(() => { setDragging(false); dragStart.current = null; pinchRef.current = null; }, []);
 
   const reset = useCallback(() => {
     centerRef.current = init.center;
