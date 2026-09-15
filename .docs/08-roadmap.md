@@ -3,7 +3,7 @@
 ## Fase 1 — "El puente y el momento ajá" ✅ (2026-09-05, commits `4212069`→`bb69304`)
 - **Entregable:** un QR que escaneas y el contador pasa de 0 a 1.
 - **Incluye:** cuentas (correo + Google, con anti-bots Turnstile), proyectos, generador de `qr.pivotit.cl/XXXX` + QR simple con descarga PNG/SVG, Worker que mide y redirige, contador en vivo.
-- **Estado:** desplegada en producción (`qrapp.pivotit.cl` en Vercel, `qr.pivotit.cl` en Cloudflare). Pendiente la prueba física del "momento ajá" con teléfono.
+- **Estado:** desplegada en producción (`qrapp.pivotit.cl` en Vercel, `qr.pivotit.cl` en Cloudflare). **Prueba del "momento ajá" con teléfono realizado (2026-09-15):** contador 0→1 con ciudad/dispositivo y QR v-card descargando el `.vcf`.
 
 ## Fase 2 — "Control de campaña" ✅ (commit `814ae23`)
 - **Entregable:** un QR impreso que sigue funcionando aunque cambie su destino.
@@ -28,6 +28,5 @@
 **Fase 5 — "Tipos de QR y cumplimiento en la app"**. Habilitar los tipos "próximamente" (texto, email, llamada, SMS, wifi, evento) y llevar la documentación de cumplimiento a la aplicación (consentimiento en registro, política de privacidad, migración `0004_consentimiento` para la vigencia de la Ley 21.719 en dic-2026).
 
 ## Primeros pasos concretos
-1. Probar el "momento ajá" con un teléfono real (contador 0→1 + ciudad/dispositivo) y un QR v-card (que descargue el `.vcf`).
-2. Habilitar los tipos de QR restantes (texto, email, llamada, SMS, wifi, evento) en el selector y en el worker.
-3. Implementar compliance en la app: consentimiento de datos personales en registro, política de privacidad, canal de derechos (RDAT) y migración `0004_consentimiento`.
+1. Habilitar los tipos de QR restantes (texto, email, llamada, SMS, wifi, evento) en el selector y en el worker.
+2. Implementar compliance en la app: consentimiento de datos personales en registro, política de privacidad, canal de derechos (RDAT) y migración `0004_consentimiento`.

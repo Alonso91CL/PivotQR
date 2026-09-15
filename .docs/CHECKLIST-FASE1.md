@@ -19,11 +19,11 @@ Pasos en orden para poner en línea el "momento ajá". Verificar siempre los lí
 - ✔ Fase 4 (marca y lanzamiento): personalización de colores/estilos/logo, fundamentos UI/UX, galería con menú kebab, edición/eliminación suave y métricas en tres niveles (`b8aa40c`, `e9f0c85`, `e4db44c`).
 - ✔ Tipos de QR: página de creación dedicada `/proyectos/[id]/nuevo` + selector de tipos (url/vcard activos; texto, email, llamada, SMS, wifi, evento "próximamente") + popup de confirmación con descarga PNG/SVG (`dd3b5f3`).
 - ✔ Compliance: documentación Ley 21.719/21.595 generada (`97d5a8b`, `467cb6e`); pendiente implementación en la app (migración `0004_...`).
-- ✖ Falta: la **prueba del "momento ajá" con teléfono** (contador 0→1 + ciudad/dispositivo) y del QR v-card (descarga del `.vcf`).
+- ✔ **Prueba del "momento ajá" con teléfono real realizada (2026-09-15)**: contador 0→1 con ciudad/dispositivo funcionando, y QR v-card descarga el `.vcf` correctamente.
 
 ## Tutorial: pasos manuales (bloqueantes)
 
-Dominios definidos: **`qr.pivotit.cl`** = enlaces cortos (worker, listo y en vivo, con soporte vcard) y **`qrapp.pivotit.cl`** = panel (Vercel, en vivo). No quedan pasos manuales de infraestructura; falta solo la **prueba del "momento ajá"** (sección 4). La **Production Branch** de Vercel quedó validada como `master` — ver sección 3. Las fases 2-4 y los tipos de QR ya están implementados (ver `08-roadmap.md`).
+Dominios definidos: **`qr.pivotit.cl`** = enlaces cortos (worker, listo y en vivo, con soporte vcard) y **`qrapp.pivotit.cl`** = panel (Vercel, en vivo). No quedan pasos manuales de infraestructura; la prueba del "momento ajá" ya está realizada (sección 4). La **Production Branch** de Vercel quedó validada como `master` — ver sección 3. Las fases 2-4 y los tipos de QR ya están implementados (ver `08-roadmap.md`).
 
 ## 1. Supabase (base + login + almacenamiento)
 
@@ -59,9 +59,10 @@ Dominios definidos: **`qr.pivotit.cl`** = enlaces cortos (worker, listo y en viv
 
 ## 4. Prueba del "momento ajá"
 
-- [ ] Crear cuenta, crear proyecto, pegar URL, generar.
-- [ ] Descargar el QR (PNG o SVG) y escanearlo con el teléfono.
-- [ ] Confirmar que el contador en el panel pasa de 0 a 1 y muestra ciudad/dispositivo.
+- [x] Crear cuenta, crear proyecto, pegar URL, generar.
+- [x] Descargar el QR (PNG o SVG) y escanearlo con el teléfono.
+- [x] Confirmar que el contador en el panel pasa de 0 a 1 y muestra ciudad/dispositivo.
+- [x] Escanear un QR v-card y confirmar la descarga del `.vcf`.
 
 ## Verificar en los sitios oficiales
 
