@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 import type { Item, PuntoMapa } from "@/components/metricas/agregacion";
 import type { ReporteScan } from "@/lib/reporte";
 import { descargarScansCsv } from "@/lib/csv";
+import { MAPAMUNDI_PATH } from "@/components/metricas/mapamundi";
 
 export function Columnas({ items, step = 1 }: { items: Item[]; step?: number }) {
   const max = Math.max(1, ...items.map((i) => i.valor));
@@ -63,73 +64,50 @@ export function ListaBarras({ items }: { items: Item[] }) {
 }
 
 // Mapa de calor de escaneos: proyecta las ciudades agregadas (promedio de
-// lat/long por ciudad, nunca coordenadas exactas) al lienzo y las difumina con
-// un desenfoque gaussiano para que se vea una mancha de densidad, no un punto
-// de ubicación precisa. Conserva el listado rankeado como respaldo accesible.
+// lat/long por ciudad, nunca coordenadas exactas) sobre un mapamundi real
+// (proyección equirectangular) y las difumina con un desenfoque gaussiano
+// para que se vea una mancha de densidad, no un punto de ubicación precisa.
+// Conserva el listado rankeado como respaldo accesible.
 export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
+  const filtro = useId();
+
   if (puntos.length === 0) return <Vacío />;
 
-  const W = 320;
-  const H = 200;
-  const PAD = 22;
+  const W = 720;
+  const H = 360;
 
-  const lats = puntos.map((p) => p.latitud);
-  const lngs = puntos.map((p) => p.longitud);
-  let minLat = Math.min(...lats);
-  let maxLat = Math.max(...lats);
-  let minLng = Math.min(...lngs);
-  let maxLng = Math.max(...lngs);
-  if (maxLat - minLat < 0.001) {
-    minLat -= 0.5;
-    maxLat += 0.5;
-  }
-  if (maxLng - minLng < 0.001) {
-    minLng -= 0.5;
-    maxLng += 0.5;
-  }
-
-  const midLat = (minLat + maxLat) / 2;
-  const cosMid = Math.max(0.3, Math.abs(Math.cos((midLat * Math.PI) / 180)));
-  const spanX = (maxLng - minLng) * cosMid;
-  const spanY = maxLat - minLat;
-  const scale = Math.min((W - PAD * 2) / spanX, (H - PAD * 2) / spanY);
-  const x = (lng: number) => PAD + (lng - minLng) * cosMid * scale;
-  const y = (lat: number) => H - PAD - (lat - minLat) * scale;
+  const x = (lng: number) => ((lng + 180) / 360) * W;
+  const y = (lat: number) => ((90 - lat) / 180) * H;
 
   const maxCant = Math.max(1, ...puntos.map((p) => p.cantidad));
-  const radio = (n: number) => Math.max(14, 30 * Math.sqrt(n / maxCant));
+  const radio = (n: number) => Math.max(10, 26 * Math.sqrt(n / maxCant));
 
   return (
     <svg
       role="img"
       aria-label={`Mapa de calor de escaneos: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
       viewBox={`0 0 ${W} ${H}`}
-      className="h-auto w-full"
+      className="h-auto w-full rounded-xl border border-gray-800 bg-gray-950"
     >
       <title>Mapa de calor de escaneos</title>
       <defs>
-        <filter id="calor-difuso" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="7" />
+        <filter id={filtro} x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="11" />
         </filter>
-        <radialGradient id="calor-grad">
+        <radialGradient id="calor-grad" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#465fff" stopOpacity="0.85" />
           <stop offset="45%" stopColor="#ff6d3b" stopOpacity="0.6" />
           <stop offset="100%" stopColor="#ff6d3b" stopOpacity="0" />
         </radialGradient>
       </defs>
 
-      {/* Rejilla de fondo abstracto (sin geografía real) para dar contexto de plano */}
-      <g stroke="#1f2937" strokeWidth="0.5" aria-hidden>
-        {Array.from({ length: 6 }, (_, i) => (
-          <line key={`v${i}`} x1={PAD + i * ((W - PAD * 2) / 5)} y1={PAD} x2={PAD + i * ((W - PAD * 2) / 5)} y2={H - PAD} />
-        ))}
-        {Array.from({ length: 4 }, (_, i) => (
-          <line key={`h${i}`} x1={PAD} y1={PAD + i * ((H - PAD * 2) / 3)} x2={W - PAD} y2={PAD + i * ((H - PAD * 2) / 3)} />
-        ))}
-      </g>
+      {/* Mapamundi base (Natural Earth 110m, dominio público, equirectangular) */}
+      <circle cx={180} cy={180} r={178} fill="#0f172a" />
+      <circle cx={540} cy={180} r={178} fill="#0f172a" />
+      <path d={MAPAMUNDI_PATH} fill="#1f2937" stroke="#374151" strokeWidth="0.5" aria-hidden />
 
       {/* Manchas difuminadas: cada ciudad es una zona de densidad, sin coordenadas exactas */}
-      <g filter="url(#calor-difuso)">
+      <g filter={`url(#${filtro})`}>
         {puntos.map((p) => (
           <circle
             key={`${p.ciudad} ${p.pais ?? ""}`}
