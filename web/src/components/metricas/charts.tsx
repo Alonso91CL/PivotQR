@@ -212,10 +212,10 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
     const p = proyeccion([lng, lat]);
     return p && Number.isFinite(p[0]) && Number.isFinite(p[1]) ? p : null;
   };
-  const inv = (px: number, py: number): [number, number] | null => {
+  const inv = useCallback((px: number, py: number): [number, number] | null => {
     const r = proyeccion.invert?.([px, py]);
     return r && Number.isFinite(r[0]) && Number.isFinite(r[1]) ? r : null;
-  };
+  }, [proyeccion]);
 
   const invTL = inv(PAD, PAD), invBR = inv(W - PAD, H - PAD);
   const visMinLng = invTL ? invTL[0] : -180, visMinLat = invBR ? invBR[1] : -90;
@@ -265,7 +265,7 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [proyeccion]);
 
-  const handleWheel = useCallback((_e: React.WheelEvent) => {
+  const handleWheel = useCallback(() => {
     // zoom con rueda desactivado — solo controles +/−
   }, []);
 
@@ -339,7 +339,7 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
       centerRef.current = nc;
       setCenter(nc);
     }
-  }, [dragging]);
+  }, [dragging, inv]);
   const handleTouchEnd = useCallback(() => { setDragging(false); dragStart.current = null; pinchRef.current = null; }, []);
 
   const reset = useCallback(() => {
