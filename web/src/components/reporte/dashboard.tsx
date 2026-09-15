@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { agregarScans } from "@/components/metricas/agregacion";
-import { BotónCsv, Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { BotónCsv, Card, Columnas, ListaBarras, MapaCalor, Vacío } from "@/components/metricas/charts";
 import { RangoDeFechas } from "@/components/metricas/rango-fechas";
 import type { ReporteScan } from "@/lib/reporte";
 
@@ -166,6 +166,14 @@ export function ReporteDashboard({
         </Card>
 
         <Card titulo="Ubicaciones">
+          {resumen.puntos.length > 0 ? (
+            <div className="mb-4">
+              <MapaCalor puntos={resumen.puntos} />
+              <p className="mt-1 text-xs text-gray-500">
+                Zonas de concentración de escaneos (sin ubicaciones exactas).
+              </p>
+            </div>
+          ) : null}
           {resumen.ubicaciones.length > 0 ? (
             <ListaBarras items={resumen.ubicaciones} />
           ) : (

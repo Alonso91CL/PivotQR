@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Modal } from "@/components/modal";
 import { agregarScans } from "@/components/metricas/agregacion";
-import { BotónCsv, Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { BotónCsv, Card, Columnas, ListaBarras, MapaCalor, Vacío } from "@/components/metricas/charts";
 import type { ReporteScan } from "@/lib/reporte";
 import type { Enlace } from "@/lib/types";
 
@@ -76,6 +76,11 @@ function ContenidoMetricas({ enlace }: { enlace: Enlace }) {
           )}
         </Card>
         <Card titulo="Ubicaciones">
+          {resumen.puntos.length > 0 ? (
+            <div className="mb-4">
+              <MapaCalor puntos={resumen.puntos} />
+            </div>
+          ) : null}
           {resumen.ubicaciones.length > 0 ? (
             <ListaBarras items={resumen.ubicaciones} />
           ) : (

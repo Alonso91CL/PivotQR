@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { agregarScans } from "@/components/metricas/agregacion";
-import { BotónCsv, Card, Columnas, ListaBarras, Vacío } from "@/components/metricas/charts";
+import { BotónCsv, Card, Columnas, ListaBarras, MapaCalor, Vacío } from "@/components/metricas/charts";
 import { RangoDeFechas } from "@/components/metricas/rango-fechas";
 import type { ReporteScan } from "@/lib/reporte";
 
@@ -139,6 +139,11 @@ export function InicioDashboard() {
             )}
           </Card>
           <Card titulo="Ubicaciones">
+            {resumen.puntos.length > 0 ? (
+              <div className="mb-4">
+                <MapaCalor puntos={resumen.puntos} />
+              </div>
+            ) : null}
             {resumen.ubicaciones.length > 0 ? (
               <ListaBarras items={resumen.ubicaciones} />
             ) : (

@@ -62,15 +62,16 @@ export function ListaBarras({ items }: { items: Item[] }) {
   );
 }
 
-// Mapa de burbujas por ciudad: proyecta las coordenadas al lienzo con una
-// escala lineal corregida por latitud (para que las burbujas sean circulares)
-// y conserva el listado rankeado como respaldo accesible.
-export function MapaCiudades({ puntos }: { puntos: PuntoMapa[] }) {
+// Mapa de calor de escaneos: proyecta las ciudades agregadas (promedio de
+// lat/long por ciudad, nunca coordenadas exactas) al lienzo y las difumina con
+// un desenfoque gaussiano para que se vea una mancha de densidad, no un punto
+// de ubicación precisa. Conserva el listado rankeado como respaldo accesible.
+export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   if (puntos.length === 0) return <Vacío />;
 
   const W = 320;
   const H = 200;
-  const PAD = 18;
+  const PAD = 22;
 
   const lats = puntos.map((p) => p.latitud);
   const lngs = puntos.map((p) => p.longitud);
@@ -95,41 +96,53 @@ export function MapaCiudades({ puntos }: { puntos: PuntoMapa[] }) {
   const x = (lng: number) => PAD + (lng - minLng) * cosMid * scale;
   const y = (lat: number) => H - PAD - (lat - minLat) * scale;
 
-  const maxCant = Math.max(...puntos.map((p) => p.cantidad));
-  const radio = (n: number) => Math.max(4, 12 * Math.sqrt(n / maxCant));
+  const maxCant = Math.max(1, ...puntos.map((p) => p.cantidad));
+  const radio = (n: number) => Math.max(14, 30 * Math.sqrt(n / maxCant));
 
   return (
     <svg
       role="img"
-      aria-label={`Mapa de ciudades: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
+      aria-label={`Mapa de calor de escaneos: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
       viewBox={`0 0 ${W} ${H}`}
       className="h-auto w-full"
     >
-      <title>Mapa de ciudades con escaneos</title>
-      {puntos.map((p) => {
-        const px = x(p.longitud);
-        const py = y(p.latitud);
-        const r = radio(p.cantidad);
-        const anchoTexto = p.ciudad.length * 5;
-        const aLaDerecha = px + r + 6 + anchoTexto <= W - 4;
-        const lx = aLaDerecha ? px + r + 6 : px - r - 6;
-        return (
-          <g key={`${p.ciudad} ${p.pais ?? ""}`}>
-            <circle cx={px} cy={py} r={r} className="fill-brand-500/25 stroke-brand-500" strokeWidth={1.5}>
-              <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
-            </circle>
-            <text
-              x={lx}
-              y={py + 3}
-              fontSize={9}
-              textAnchor={aLaDerecha ? "start" : "end"}
-              className="fill-gray-300"
-            >
-              {p.ciudad}
-            </text>
-          </g>
-        );
-      })}
+      <title>Mapa de calor de escaneos</title>
+      <defs>
+        <filter id="calor-difuso" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" />
+        </filter>
+        <radialGradient id="calor-grad">
+          <stop offset="0%" stopColor="#465fff" stopOpacity="0.85" />
+          <stop offset="45%" stopColor="#ff6d3b" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#ff6d3b" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      {/* Rejilla de fondo abstracto (sin geografía real) para dar contexto de plano */}
+      <g stroke="#1f2937" strokeWidth="0.5" aria-hidden>
+        {Array.from({ length: 6 }, (_, i) => (
+          <line key={`v${i}`} x1={PAD + i * ((W - PAD * 2) / 5)} y1={PAD} x2={PAD + i * ((W - PAD * 2) / 5)} y2={H - PAD} />
+        ))}
+        {Array.from({ length: 4 }, (_, i) => (
+          <line key={`h${i}`} x1={PAD} y1={PAD + i * ((H - PAD * 2) / 3)} x2={W - PAD} y2={PAD + i * ((H - PAD * 2) / 3)} />
+        ))}
+      </g>
+
+      {/* Manchas difuminadas: cada ciudad es una zona de densidad, sin coordenadas exactas */}
+      <g filter="url(#calor-difuso)">
+        {puntos.map((p) => (
+          <circle
+            key={`${p.ciudad} ${p.pais ?? ""}`}
+            cx={x(p.longitud)}
+            cy={y(p.latitud)}
+            r={radio(p.cantidad)}
+            fill="url(#calor-grad)"
+            opacity={0.45 + 0.55 * (p.cantidad / maxCant)}
+          >
+            <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
+          </circle>
+        ))}
+      </g>
     </svg>
   );
 }
