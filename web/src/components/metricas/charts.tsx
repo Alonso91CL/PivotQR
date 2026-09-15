@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { geoMercator, geoPath } from "d3-geo";
 import type { FeatureCollection, MultiPolygon } from "geojson";
 
@@ -193,6 +193,13 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   const [dragging, setDragging] = useState(false);
   const dragStart = useRef<{ px: number; py: number; cLng: number; cLat: number } | null>(null);
   const [hover, setHover] = useState<{ ciudad: string; pais?: string; cantidad: number; mx: number; my: number } | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const proyeccion = useMemo(
     () => geoMercator().center(center).scale(scale).translate([W / 2, H / 2]).clipExtent([[PAD, PAD], [W - PAD, H - PAD]]),
@@ -291,8 +298,9 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   if (puntos.length === 0) return <Vacío />;
 
   const showCiudades = scale >= 200;
-  const fsPais = scale > 400 ? 13 : scale > 150 ? 11 : 9;
-  const fsCiudad = scale > 400 ? 11 : 10;
+  const mobileMult = isMobile ? 1.6 : 1;
+  const fsPais = (scale > 400 ? 13 : scale > 150 ? 11 : 9) * mobileMult;
+  const fsCiudad = (scale > 400 ? 11 : 10) * mobileMult;
 
   const colorIntensidad = (ratio: number) => {
     // RGB: azul #1a5fff → naranja #f59e0b → rojo #ef4444
