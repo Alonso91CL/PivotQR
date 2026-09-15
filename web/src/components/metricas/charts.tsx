@@ -1,8 +1,10 @@
 import { useId, type ReactNode } from "react";
+import { geoMercator, geoPath } from "d3-geo";
+import type { MultiPolygon, Polygon } from "geojson";
 import type { Item, PuntoMapa } from "@/components/metricas/agregacion";
 import type { ReporteScan } from "@/lib/reporte";
 import { descargarScansCsv } from "@/lib/csv";
-import { MAPAMUNDI_PATH } from "@/components/metricas/mapamundi";
+import { MUNDO } from "@/components/metricas/mundo";
 
 export function Columnas({ items, step = 1 }: { items: Item[]; step?: number }) {
   const max = Math.max(1, ...items.map((i) => i.valor));
@@ -64,23 +66,68 @@ export function ListaBarras({ items }: { items: Item[] }) {
 }
 
 // Mapa de calor de escaneos: proyecta las ciudades agregadas (promedio de
-// lat/long por ciudad, nunca coordenadas exactas) sobre un mapamundi real
-// (proyección equirectangular) y las difumina con un desenfoque gaussiano
-// para que se vea una mancha de densidad, no un punto de ubicación precisa.
+// lat/long por ciudad, nunca coordenadas exactas) sobre un mapamundi real y
+// las difumina con un desenfoque gaussiano para que se vea una mancha de
+// densidad, no un punto de ubicación precisa. La proyección (Mercator, vía
+// d3-geo) se ajusta con fitExtent a la caja que contienen los datos: si la
+// zona es acotada, el mapa hace zoom a esa zona en vez de mostrar el planeta.
 // Conserva el listado rankeado como respaldo accesible.
 export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   const filtro = useId();
+  const gradiente = useId();
 
   if (puntos.length === 0) return <Vacío />;
 
   const W = 720;
-  const H = 360;
+  const H = 400;
+  const PAD = 10;
 
-  const x = (lng: number) => ((lng + 180) / 360) * W;
-  const y = (lat: number) => ((90 - lat) / 180) * H;
+  const lats = puntos.map((p) => p.latitud);
+  const lngs = puntos.map((p) => p.longitud);
+  const spanY = Math.max(...lats) - Math.min(...lats);
+  const spanX = Math.max(...lngs) - Math.min(...lngs);
+  const padY = Math.max(spanY * 0.5, 2);
+  const padX = Math.max(spanX * 0.5, 2);
+  const minLat = Math.max(-85, Math.min(...lats) - padY);
+  const maxLat = Math.min(85, Math.max(...lats) + padY);
+  const minLng = Math.max(-180, Math.min(...lngs) - padX);
+  const maxLng = Math.min(180, Math.max(...lngs) + padX);
 
+  const zona: Polygon = {
+    type: "Polygon",
+    coordinates: [
+      [
+        [minLng, minLat],
+        [maxLng, minLat],
+        [maxLng, maxLat],
+        [minLng, maxLat],
+        [minLng, minLat],
+      ],
+    ],
+  };
+
+  const proyeccion = geoMercator()
+    .fitExtent(
+      [
+        [PAD, PAD],
+        [W - PAD, H - PAD],
+      ],
+      zona
+    )
+    .clipExtent([
+      [PAD, PAD],
+      [W - PAD, H - PAD],
+    ]);
+  const trazo = geoPath(proyeccion);
+  const mundo: MultiPolygon = { type: "MultiPolygon", coordinates: MUNDO };
+  const dMundo = trazo(mundo) ?? "";
+
+  const pos = (lng: number, lat: number): [number, number] | null => {
+    const p = proyeccion([lng, lat]);
+    return p && Number.isFinite(p[0]) && Number.isFinite(p[1]) ? [p[0], p[1]] : null;
+  };
   const maxCant = Math.max(1, ...puntos.map((p) => p.cantidad));
-  const radio = (n: number) => Math.max(10, 26 * Math.sqrt(n / maxCant));
+  const radio = (n: number) => Math.max(8, 18 * Math.sqrt(n / maxCant));
 
   return (
     <svg
@@ -92,34 +139,36 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
       <title>Mapa de calor de escaneos</title>
       <defs>
         <filter id={filtro} x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="11" />
+          <feGaussianBlur stdDeviation="9" />
         </filter>
-        <radialGradient id="calor-grad" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="50%">
+        <radialGradient id={gradiente} gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#465fff" stopOpacity="0.85" />
           <stop offset="45%" stopColor="#ff6d3b" stopOpacity="0.6" />
           <stop offset="100%" stopColor="#ff6d3b" stopOpacity="0" />
         </radialGradient>
       </defs>
 
-      {/* Mapamundi base (Natural Earth 110m, dominio público, equirectangular) */}
-      <circle cx={180} cy={180} r={178} fill="#0f172a" />
-      <circle cx={540} cy={180} r={178} fill="#0f172a" />
-      <path d={MAPAMUNDI_PATH} fill="#1f2937" stroke="#374151" strokeWidth="0.5" aria-hidden />
+      {/* Mapamundi base (Natural Earth 110m, dominio público, proyectado con d3-geo) */}
+      <path d={dMundo} fill="#1f2937" stroke="#374151" strokeWidth="0.5" aria-hidden />
 
       {/* Manchas difuminadas: cada ciudad es una zona de densidad, sin coordenadas exactas */}
       <g filter={`url(#${filtro})`}>
-        {puntos.map((p) => (
-          <circle
-            key={`${p.ciudad} ${p.pais ?? ""}`}
-            cx={x(p.longitud)}
-            cy={y(p.latitud)}
-            r={radio(p.cantidad)}
-            fill="url(#calor-grad)"
-            opacity={0.45 + 0.55 * (p.cantidad / maxCant)}
-          >
-            <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
-          </circle>
-        ))}
+        {puntos.map((p) => {
+          const c = pos(p.longitud, p.latitud);
+          if (!c) return null;
+          return (
+            <circle
+              key={`${p.ciudad} ${p.pais ?? ""}`}
+              cx={c[0]}
+              cy={c[1]}
+              r={radio(p.cantidad)}
+              fill={`url(#${gradiente})`}
+              opacity={0.45 + 0.55 * (p.cantidad / maxCant)}
+            >
+              <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
+            </circle>
+          );
+        })}
       </g>
     </svg>
   );

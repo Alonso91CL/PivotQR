@@ -131,6 +131,13 @@ export function InicioDashboard() {
           <Card titulo="Por hora">
             <Columnas items={resumen.horas} step={3} />
           </Card>
+          <Card titulo="Mapa de calor de escaneos" className="lg:col-span-2">
+            {resumen.puntos.length > 0 ? (
+              <MapaCalor puntos={resumen.puntos} />
+            ) : (
+              <Vacío />
+            )}
+          </Card>
           <Card titulo="Dispositivos">
             {resumen.dispositivos.length > 0 ? (
               <ListaBarras items={resumen.dispositivos} />
@@ -139,11 +146,6 @@ export function InicioDashboard() {
             )}
           </Card>
           <Card titulo="Ubicaciones">
-            {resumen.puntos.length > 0 ? (
-              <div className="mb-4">
-                <MapaCalor puntos={resumen.puntos} />
-              </div>
-            ) : null}
             {resumen.ubicaciones.length > 0 ? (
               <ListaBarras items={resumen.ubicaciones} />
             ) : (

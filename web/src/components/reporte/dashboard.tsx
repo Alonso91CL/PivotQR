@@ -143,6 +143,19 @@ export function ReporteDashboard({
           <Columnas items={resumen.horas} step={3} />
         </Card>
 
+        <Card titulo="Mapa de calor de escaneos" className="lg:col-span-2">
+          {resumen.puntos.length > 0 ? (
+            <>
+              <MapaCalor puntos={resumen.puntos} />
+              <p className="mt-1 text-xs text-gray-500">
+                Zonas de concentración de escaneos (sin ubicaciones exactas). El mapa se ajusta a la zona con datos.
+              </p>
+            </>
+          ) : (
+            <Vacío />
+          )}
+        </Card>
+
         <Card titulo="Dispositivos">
           {resumen.dispositivos.length > 0 ? (
             <ListaBarras items={resumen.dispositivos} />
@@ -166,14 +179,6 @@ export function ReporteDashboard({
         </Card>
 
         <Card titulo="Ubicaciones">
-          {resumen.puntos.length > 0 ? (
-            <div className="mb-4">
-              <MapaCalor puntos={resumen.puntos} />
-              <p className="mt-1 text-xs text-gray-500">
-                Zonas de concentración de escaneos (sin ubicaciones exactas).
-              </p>
-            </div>
-          ) : null}
           {resumen.ubicaciones.length > 0 ? (
             <ListaBarras items={resumen.ubicaciones} />
           ) : (
