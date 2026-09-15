@@ -288,6 +288,29 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   }, [dragging]);
   const handleMouseUp = useCallback(() => { setDragging(false); dragStart.current = null; }, []);
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    setDragging(true);
+    dragStart.current = { px: t.clientX, py: t.clientY, cLng: centerRef.current[0], cLat: centerRef.current[1] };
+  }, []);
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!dragging || !dragStart.current || !svgRef.current || e.touches.length !== 1) return;
+    e.preventDefault();
+    const t = e.touches[0];
+    const rect = svgRef.current.getBoundingClientRect();
+    const dxPx = t.clientX - dragStart.current.px;
+    const dyPx = t.clientY - dragStart.current.py;
+    const geoPerPx = 1 / scaleRef.current * (W / rect.width) * 50;
+    const nc: [number, number] = [
+      dragStart.current.cLng - dxPx * geoPerPx,
+      dragStart.current.cLat + dyPx * geoPerPx,
+    ];
+    centerRef.current = nc;
+    setCenter(nc);
+  }, [dragging]);
+  const handleTouchEnd = useCallback(() => { setDragging(false); dragStart.current = null; }, []);
+
   const reset = useCallback(() => {
     centerRef.current = init.center;
     scaleRef.current = init.scale;
@@ -328,11 +351,15 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
         aria-label={`Mapa de escaneos por intensidad: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
         viewBox={`0 0 ${W} ${H}`}
         className={`h-auto w-full rounded-xl border border-gray-800 bg-gray-950 ${dragging ? "cursor-grabbing" : "cursor-grab"}`}
+        style={{ touchAction: "none" }}
         onWheel={handleWheel}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <title>Mapa de escaneos por intensidad</title>
         <path d={dMundo} fill="#1f2937" stroke="none" aria-hidden />
