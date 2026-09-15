@@ -148,7 +148,8 @@ export function ReporteDashboard({
             <>
               <MapaCalor puntos={resumen.puntos} />
               <p className="mt-1 text-xs text-gray-500">
-                Zonas de concentración de escaneos (sin ubicaciones exactas). El mapa se ajusta a la zona con datos.
+                Color más intenso = más escaneos por ciudad (sin ubicaciones exactas). El mapa se ajusta a los
+                continentes con datos.
               </p>
             </>
           ) : (

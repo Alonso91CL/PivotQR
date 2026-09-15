@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { geoMercator, geoPath } from "d3-geo";
 import type { MultiPolygon, Polygon } from "geojson";
 import type { Item, PuntoMapa } from "@/components/metricas/agregacion";
@@ -65,46 +65,87 @@ export function ListaBarras({ items }: { items: Item[] }) {
   );
 }
 
-// Mapa de calor de escaneos: proyecta las ciudades agregadas (promedio de
-// lat/long por ciudad, nunca coordenadas exactas) sobre un mapamundi real y
-// las difumina con un desenfoque gaussiano para que se vea una mancha de
-// densidad, no un punto de ubicación precisa. La proyección (Mercator, vía
-// d3-geo) se ajusta con fitExtent a la caja que contienen los datos: si la
-// zona es acotada, el mapa hace zoom a esa zona en vez de mostrar el planeta.
-// Conserva el listado rankeado como respaldo accesible.
-export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
-  const filtro = useId();
-  const gradiente = useId();
+// Cajas aproximadas por continente (lng/lat) para elegir la vista. La
+// proyección (Mercator, vía d3-geo) se ajusta con fitExtent a la unión de los
+// continentes que tienen datos: si solo hay escaneos en Sudamérica, el mapa
+// centra Sudamérica; si aparecen en Norteamérica, muestra América; y así va
+// ajustándose a lo necesario sin mostrar todo el planeta.
+const CONTINENTES = [
+  { nombre: "Norteamérica", lng: [-170, -20], lat: [5, 84] },
+  { nombre: "Sudamérica", lng: [-95, -30], lat: [-60, 15] },
+  { nombre: "Europa", lng: [-12, 45], lat: [35, 72] },
+  { nombre: "África", lng: [-18, 52], lat: [-37, 38] },
+  { nombre: "Asia", lng: [26, 180], lat: [0, 84] },
+  { nombre: "Oceanía", lng: [110, 180], lat: [-50, 0] },
+];
 
+function continenteDe(p: PuntoMapa): typeof CONTINENTES[number] | null {
+  for (const c of CONTINENTES) {
+    const enLng = p.longitud >= c.lng[0] && p.longitud <= c.lng[1];
+    const enLat = p.latitud >= c.lat[0] && p.latitud <= c.lat[1];
+    if (enLng && enLat) return c;
+  }
+  return null;
+}
+
+// Mapa de escaneos por intensidad: cada ciudad agregada (promedio de lat/long,
+// nunca coordenadas exactas) se marca con un punto de color que va de tenue a
+// intenso según la cantidad de escaneos. La vista se ajusta a los continentes
+// con datos. Conserva el listado rankeado como respaldo accesible.
+export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
   if (puntos.length === 0) return <Vacío />;
 
   const W = 720;
   const H = 400;
   const PAD = 10;
 
-  const lats = puntos.map((p) => p.latitud);
-  const lngs = puntos.map((p) => p.longitud);
-  const spanY = Math.max(...lats) - Math.min(...lats);
-  const spanX = Math.max(...lngs) - Math.min(...lngs);
-  const padY = Math.max(spanY * 0.5, 2);
-  const padX = Math.max(spanX * 0.5, 2);
-  const minLat = Math.max(-85, Math.min(...lats) - padY);
-  const maxLat = Math.min(85, Math.max(...lats) + padY);
-  const minLng = Math.max(-180, Math.min(...lngs) - padX);
-  const maxLng = Math.min(180, Math.max(...lngs) + padX);
+  const presentes = new Map<string, typeof CONTINENTES[number]>();
+  for (const p of puntos) {
+    const c = continenteDe(p);
+    if (c && !presentes.has(c.nombre)) presentes.set(c.nombre, c);
+  }
+  const cajas = [...presentes.values()];
 
-  const zona: Polygon = {
-    type: "Polygon",
-    coordinates: [
-      [
-        [minLng, minLat],
-        [maxLng, minLat],
-        [maxLng, maxLat],
-        [minLng, maxLat],
-        [minLng, minLat],
+  let zona: Polygon;
+  if (cajas.length > 0) {
+    const minLng = Math.min(...cajas.map((c) => c.lng[0]));
+    const maxLng = Math.max(...cajas.map((c) => c.lng[1]));
+    const minLat = Math.min(...cajas.map((c) => c.lat[0]));
+    const maxLat = Math.max(...cajas.map((c) => c.lat[1]));
+    const inflaLng = Math.min((maxLng - minLng) * 0.08, 8);
+    const inflaLat = Math.min((maxLat - minLat) * 0.08, 8);
+    zona = {
+      type: "Polygon",
+      coordinates: [
+        [
+          [Math.max(-180, minLng - inflaLng), Math.max(-60, minLat - inflaLat)],
+          [Math.min(180, maxLng + inflaLng), Math.max(-60, minLat - inflaLat)],
+          [Math.min(180, maxLng + inflaLng), Math.min(84, maxLat + inflaLat)],
+          [Math.max(-180, minLng - inflaLng), Math.min(84, maxLat + inflaLat)],
+          [Math.max(-180, minLng - inflaLng), Math.max(-60, minLat - inflaLat)],
+        ],
       ],
-    ],
-  };
+    };
+  } else {
+    const lats = puntos.map((p) => p.latitud);
+    const lngs = puntos.map((p) => p.longitud);
+    const spanY = Math.max(...lats) - Math.min(...lats);
+    const spanX = Math.max(...lngs) - Math.min(...lngs);
+    const padY = Math.max(spanY * 0.5, 2);
+    const padX = Math.max(spanX * 0.5, 2);
+    zona = {
+      type: "Polygon",
+      coordinates: [
+        [
+          [Math.max(-180, Math.min(...lngs) - padX), Math.max(-60, Math.min(...lats) - padY)],
+          [Math.min(180, Math.max(...lngs) + padX), Math.max(-60, Math.min(...lats) - padY)],
+          [Math.min(180, Math.max(...lngs) + padX), Math.min(84, Math.max(...lats) + padY)],
+          [Math.max(-180, Math.min(...lngs) - padX), Math.min(84, Math.max(...lats) + padY)],
+          [Math.max(-180, Math.min(...lngs) - padX), Math.max(-60, Math.min(...lats) - padY)],
+        ],
+      ],
+    };
+  }
 
   const proyeccion = geoMercator()
     .fitExtent(
@@ -127,50 +168,63 @@ export function MapaCalor({ puntos }: { puntos: PuntoMapa[] }) {
     return p && Number.isFinite(p[0]) && Number.isFinite(p[1]) ? [p[0], p[1]] : null;
   };
   const maxCant = Math.max(1, ...puntos.map((p) => p.cantidad));
-  const radio = (n: number) => Math.max(8, 18 * Math.sqrt(n / maxCant));
+
+  const colorIntensidad = (ratio: number) => {
+    const hue = 220 - 210 * ratio;
+    const light = 52 + 10 * ratio;
+    const opacity = 0.45 + 0.55 * ratio;
+    return `hsl(${hue} 95% ${light}% / ${opacity})`;
+  };
 
   return (
-    <svg
-      role="img"
-      aria-label={`Mapa de calor de escaneos: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
-      viewBox={`0 0 ${W} ${H}`}
-      className="h-auto w-full rounded-xl border border-gray-800 bg-gray-950"
-    >
-      <title>Mapa de calor de escaneos</title>
-      <defs>
-        <filter id={filtro} x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="9" />
-        </filter>
-        <radialGradient id={gradiente} gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#465fff" stopOpacity="0.85" />
-          <stop offset="45%" stopColor="#ff6d3b" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#ff6d3b" stopOpacity="0" />
-        </radialGradient>
-      </defs>
+    <div>
+      <svg
+        role="img"
+        aria-label={`Mapa de escaneos por intensidad: ${puntos.map((p) => `${p.ciudad} (${p.cantidad})`).join(", ")}`}
+        viewBox={`0 0 ${W} ${H}`}
+        className="h-auto w-full rounded-xl border border-gray-800 bg-gray-950"
+      >
+        <title>Mapa de escaneos por intensidad</title>
 
-      {/* Mapamundi base (Natural Earth 110m, dominio público, proyectado con d3-geo) */}
-      <path d={dMundo} fill="#1f2937" stroke="#374151" strokeWidth="0.5" aria-hidden />
+        {/* Mapamundi base (Natural Earth 110m, dominio público, proyectado con d3-geo) */}
+        <path d={dMundo} fill="#1f2937" stroke="#374151" strokeWidth="0.5" aria-hidden />
 
-      {/* Manchas difuminadas: cada ciudad es una zona de densidad, sin coordenadas exactas */}
-      <g filter={`url(#${filtro})`}>
-        {puntos.map((p) => {
-          const c = pos(p.longitud, p.latitud);
-          if (!c) return null;
-          return (
-            <circle
-              key={`${p.ciudad} ${p.pais ?? ""}`}
-              cx={c[0]}
-              cy={c[1]}
-              r={radio(p.cantidad)}
-              fill={`url(#${gradiente})`}
-              opacity={0.45 + 0.55 * (p.cantidad / maxCant)}
-            >
-              <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
-            </circle>
-          );
-        })}
-      </g>
-    </svg>
+        {/* Ciudades según cantidad: color tenue (pocos) a intenso (muchos) */}
+        <g>
+          {puntos.map((p) => {
+            const c = pos(p.longitud, p.latitud);
+            if (!c) return null;
+            const ratio = p.cantidad / maxCant;
+            return (
+              <circle
+                key={`${p.ciudad} ${p.pais ?? ""}`}
+                cx={c[0]}
+                cy={c[1]}
+                r={5}
+                fill={colorIntensidad(ratio)}
+                stroke="#0f172a"
+                strokeWidth="0.5"
+              >
+                <title>{`${p.ciudad}${p.pais ? ` (${p.pais})` : ""}: ${p.cantidad} escaneos`}</title>
+              </circle>
+            );
+          })}
+        </g>
+      </svg>
+
+      {/* Leyenda de intensidad */}
+      <div className="mt-2 flex items-center justify-end gap-2 text-[11px] text-gray-400">
+        <span>menos</span>
+        <div
+          aria-hidden
+          className="h-2 w-24 rounded-full"
+          style={{
+            background: `linear-gradient(to right, hsl(220 95% 52%), hsl(10 95% 62%))`,
+          }}
+        />
+        <span>más escaneos</span>
+      </div>
+    </div>
   );
 }
 
