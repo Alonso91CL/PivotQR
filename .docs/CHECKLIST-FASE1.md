@@ -2,24 +2,28 @@
 
 Pasos en orden para poner en línea el "momento ajá". Verificar siempre los límites vigentes de los planes gratuitos en los sitios oficiales.
 
-## Estado actual (2026-09-05)
+## Estado actual (2026-09-15)
 
 - ✔ Proyecto Supabase creado (`mnjaelkdejlpjwtjzgpt`), MCP conectado (supabase, cloudflare, vercel en `.opencode/opencode.json`).
-- ✔ Migración `0001_init.sql` aplicada y advisors de seguridad/rendimiento en verde (solo INFO de índices sin uso, por tablas vacías).
-- ✔ `.env.local` con URL + publishable key + `SUPABASE_SERVICE_ROLE_KEY` (validada, HTTP 200) + `NEXT_PUBLIC_SHORT_URL=https://qr.pivotit.cl`.
-- ✔ Worker `pivotqr-worker` desplegado por API (módulos, binding `SUPABASE_URL`, secreto `SUPABASE_SERVICE_ROLE_KEY`). En vivo: `https://qr.pivotit.cl/` → `{"ok":true,"servicio":"pivotqr-worker"}`; slug desconocido → 404.
+- ✔ Migración `0001_init.sql` aplicada; también `0002_fase4_personalizacion_qr.sql` y `0003_tipos_qr.sql` (tipos url/vcard) aplicadas al remoto.
+- ✔ `.env.local` con URL + publishable key + `SUPABASE_SERVICE_ROLE_KEY` (validada, HTTP 200) + `NEXT_PUBLIC_SHORT_URL=https://qr.pivotit.cl`; `SUPABASE_SERVICE_ROLE_KEY` nunca en git (compliance pass) y `web/.env.local.example` versionable.
+- ✔ Worker `pivotqr-worker` desplegado (vcard incluida, 2026-09-15): sirve `.vcf` para tipo vcard, redirige `302` para url, registra escaneos y `404` si el enlace no tiene destino. En vivo: `https://qr.pivotit.cl/` → `{"ok":true,...}`.
 - ✔ Registro DNS `qr.pivotit.cl` (A proxied) + ruta `qr.pivotit.cl/*` → worker.
-- ✔ Turnstile: sitio creado con hostname `qrapp.pivotit.cl` y keys completadas en `web/.env.local` (secret validada con `siteverify`).
-- ✔ Supabase Auth: proveedores **Email** y **Google** activados (Google Client ID configurado; `authorize` responde 302 a `accounts.google.com` con `redirect_uri` = callback de Supabase).
-- ✔ Supabase URL Configuration: Site URL `https://qrapp.pivotit.cl` y redirect autorizado `https://qrapp.pivotit.cl/auth/confirmado`. Ojo: aun con el frontend ya corregido, la config hosteada seguía con `site_url=http://localhost:3000` y `uri_allow_list` vacía, por lo que GoTrue caía a `localhost:3000/?code=` en el callback. El 2026-09-05 se leyó `config/auth` vía Management API (PAT) y se corrigió con `PATCH` → `site_url=https://qrapp.pivotit.cl` y `uri_allow_list=https://qrapp.pivotit.cl,http://localhost:3000`. Además, el frontend fija `NEXT_PUBLIC_SITE_URL=https://qrapp.pivotit.cl` y lo usa como `redirectTo` de OAuth/registro (desplegado en producción; el bundle de `/login` embebe la URL de producción).
-- ✔ Fase 1 codificada y mergeada a `develop` (`4212069`, `c2af0f7`, `05daf50`): login (correo + Google con Turnstile), proyectos, generador de `qr.pivotit.cl/XXXX` + QR descargable, contador en vivo y restyling del panel + landing pública. Ramas: `develop` por defecto, `master` como mirror estable. **Producción = `master`** (deploy por git). Commits posteriores en `develop` == `master`: `bb69304`, `0e2ae0f` (checklist OAuth corregido), `67f4996` (fix branding login), `3586499` (logo 3000×1000 + variante `bk`, marca restaurada en login). El alias `qrapp.pivotit.cl` había quedado apuntando a un redeploy viejo de `master` (`05daf50`) que no tenía branding, analytics ni el redirect de OAuth; se reposicionó con el build corregido y `master` quedó sincronizado.
-- ✔ Vercel: proyecto `pivot-qr` en `alonso-figueroas-projects`, root `web`, 6 variables de entorno en Production/Preview/Development, dominio `qrapp.pivotit.cl` asignado y deployment en vivo (lo levantó el dashboard; verificado el flujo de rutas).
-- ✔ Vercel Analytics: paquete `@vercel/analytics@2.0.1` instalado y componente `<Analytics/>` en `web/src/app/layout.tsx`; desplegado a producción y **activo/receiving datos** (el usuario lo habilitó en el dashboard).
-- ✖ Falta: la **prueba del "momento ajá" con teléfono** (contador 0→1 + ciudad/dispositivo). El login de Google ya se probó en producción y funciona (2026-09-05/06). Queda pendiente de commit el icono de Google agregado al botón de login (`web/src/app/login/login-form.tsx`).
+- ✔ Turnstile: sitio con hostname `qrapp.pivotit.cl` y keys en `web/.env.local` (secret validada con `siteverify`).
+- ✔ Supabase Auth: Email + Google activos; URL Configuration con Site URL `https://qrapp.pivotit.cl` y redirect autorizado.
+- ✔ Fase 1 codificada y mergeada a `develop`: login (correo + Google con Turnstile), proyectos, generador de `qr.pivotit.cl/XXXX` + QR descargable, contador en vivo y restyling del panel + landing pública. **Producción = `master`** (deploy por git). Commits: `4212069`, `c2af0f7`, `05daf50`, `bb69304`, `67f4996`, `3586499` (logo 3000×1000 + variante `bk`), `30a8ce9` (fix Turnstile + icono de Google).
+- ✔ Vercel: proyecto `pivot-qr` en `alonso-figueroas-projects`, root `web`, variables de entorno en Production/Preview/Development, dominio `qrapp.pivotit.cl` y deployment en vivo; **Production Branch = `master`** (push a master → deploy Production).
+- ✔ Vercel Analytics: `@vercel/analytics@2.0.1` + `<Analytics/>` en `web/src/app/layout.tsx`, desplegado y activo.
+- ✔ Fase 2 (control de campaña): editar URL destino y pausar/activar sin reimprimir (`814ae23`).
+- ✔ Fase 3 (reporte ejecutivo): dashboard público/privado con código, gráficos, polling y compartir; ampliado con filtros por rango de fechas, export CSV y log de escaneos (`a07e07a`, `e16a2e9`).
+- ✔ Fase 4 (marca y lanzamiento): personalización de colores/estilos/logo, fundamentos UI/UX, galería con menú kebab, edición/eliminación suave y métricas en tres niveles (`b8aa40c`, `e9f0c85`, `e4db44c`).
+- ✔ Tipos de QR: página de creación dedicada `/proyectos/[id]/nuevo` + selector de tipos (url/vcard activos; texto, email, llamada, SMS, wifi, evento "próximamente") + popup de confirmación con descarga PNG/SVG (`dd3b5f3`).
+- ✔ Compliance: documentación Ley 21.719/21.595 generada (`97d5a8b`, `467cb6e`); pendiente implementación en la app (migración `0004_...`).
+- ✖ Falta: la **prueba del "momento ajá" con teléfono** (contador 0→1 + ciudad/dispositivo) y del QR v-card (descarga del `.vcf`).
 
 ## Tutorial: pasos manuales (bloqueantes)
 
-Dominios definidos: **`qr.pivotit.cl`** = enlaces cortos (worker, listo y en vivo) y **`qrapp.pivotit.cl`** = panel (Vercel, en vivo). No quedan pasos manuales de infraestructura; falta solo la **prueba del "momento ajá"** (sección 4). La **Production Branch** de Vercel quedó validada como `master` (un push a `master` generó el deploy Production `pivot-926275143`; el push a `develop` generó Preview) — ver sección 3.
+Dominios definidos: **`qr.pivotit.cl`** = enlaces cortos (worker, listo y en vivo, con soporte vcard) y **`qrapp.pivotit.cl`** = panel (Vercel, en vivo). No quedan pasos manuales de infraestructura; falta solo la **prueba del "momento ajá"** (sección 4). La **Production Branch** de Vercel quedó validada como `master` — ver sección 3. Las fases 2-4 y los tipos de QR ya están implementados (ver `08-roadmap.md`).
 
 ## 1. Supabase (base + login + almacenamiento)
 

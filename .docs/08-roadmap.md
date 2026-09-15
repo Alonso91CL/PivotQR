@@ -1,29 +1,33 @@
 # PivotQR — Roadmap
 
-## Fase 1 — "El puente y el momento ajá"
+## Fase 1 — "El puente y el momento ajá" ✅ (2026-09-05, commits `4212069`→`bb69304`)
 - **Entregable:** un QR que escaneas y el contador pasa de 0 a 1.
 - **Incluye:** cuentas (correo + Google, con anti-bots Turnstile), proyectos, generador de `qr.pivotit.cl/XXXX` + QR simple con descarga PNG/SVG, Worker que mide y redirige, contador en vivo.
-- **Listo cuando:** creo un proyecto, genero, escaneo con mi teléfono, y el panel muestra "1 escaneo".
+- **Estado:** desplegada en producción (`qrapp.pivotit.cl` en Vercel, `qr.pivotit.cl` en Cloudflare). Pendiente la prueba física del "momento ajá" con teléfono.
 
-## Fase 2 — "Control de campaña"
+## Fase 2 — "Control de campaña" ✅ (commit `814ae23`)
 - **Entregable:** un QR impreso que sigue funcionando aunque cambie su destino.
 - **Incluye:** edición dinámica de la URL destino, activar/pausar con "Campaña pausada".
-- **Listo cuando:** cambio la URL y el escaneo va a la nueva; pauso y muestra el mensaje.
+- **Estado:** implementada y en producción.
 
-## Fase 3 — "Reporte ejecutivo"
+## Fase 3 — "Reporte ejecutivo" ✅ (commit `a07e07a`)
 - **Entregable:** el cliente abre su dashboard completo con su código de acceso.
 - **Incluye:** número gordo, mapa, gráfica de días/horas, dispositivos (reporte en vivo), compartir público/privado con "Copiar invitación".
-- **Listo cuando:** el cliente entra con su invitación y ve el reporte actualizándose en vivo.
+- **Estado:** implementada; ampliada con filtros por rango de fechas, export CSV y log de escaneos (`e16a2e9`).
 
-## Fase 4 — "Marca y lanzamiento"
+## Fase 4 — "Marca y lanzamiento" ✅ (commits `b8aa40c`, `e9f0c85`, `e4db44c`)
 - **Entregable:** el panel listo para mostrarle a un primer cliente de verdad.
-- **Incluye:** personalización del QR (colores y logo), diseño final del panel, prueba integral.
-- **Listo cuando:** un cliente real recibe su QR con su logo, escanea y ve su reporte sin asistencia tuya.
+- **Incluye:** personalización del QR (colores, estilos y logo), diseño final del panel, prueba integral.
+- **Estado:** implementada; galería con menú kebab, edición/eliminación suave y métricas en tres niveles.
+
+## Post-lanzamiento agregado
+- **Tipos de QR (v-card)** ✅ (commit `dd3b5f3`): QR de tarjeta de contacto que sirve un `.vcf` al escanear; selector de tipos con url/vcard activos y 6 más "próximamente"; página de creación dedicada `/proyectos/[id]/nuevo` con popup de confirmación y descarga PNG/SVG.
+- **Compliance Ley 21.719 / 21.595** (commits `97d5a8b`, `467cb6e`): documentación legal generada con la skill `compliance-cl`; pendiente la implementación en la app (consentimiento, canal de derechos, migración `0004_...`).
 
 ## PRÓXIMA FASE
-**Fase 1 — "El puente y el momento ajá".** Es lo que hay que construir mañana. Nada de las fases 2-4 antes de que esto funcione de punta a punta.
+**Fase 5 — "Tipos de QR y cumplimiento en la app"**. Habilitar los tipos "próximamente" (texto, email, llamada, SMS, wifi, evento) y llevar la documentación de cumplimiento a la aplicación (consentimiento en registro, política de privacidad, migración `0004_consentimiento` para la vigencia de la Ley 21.719 en dic-2026).
 
 ## Primeros pasos concretos
-1. Crear el repositorio y las cuentas gratuitas de Supabase, Vercel y Cloudflare.
-2. Configurar el dominio `qr.pivotit.cl` en Cloudflare (DNS) y vincular las cuentas a GitHub.
-3. Construir el flujo mínimo: login → proyecto → pegar URL → generar slug + QR → escanear → ver "1 escaneo" en vivo.
+1. Probar el "momento ajá" con un teléfono real (contador 0→1 + ciudad/dispositivo) y un QR v-card (que descargue el `.vcf`).
+2. Habilitar los tipos de QR restantes (texto, email, llamada, SMS, wifi, evento) en el selector y en el worker.
+3. Implementar compliance en la app: consentimiento de datos personales en registro, política de privacidad, canal de derechos (RDAT) y migración `0004_consentimiento`.
